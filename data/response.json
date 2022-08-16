@@ -1,0 +1,1025 @@
+[
+  {
+    "cached": true,
+    "customerId": "M19854",
+    "houses": [
+      {
+        "livingSpace": 145.0,
+        "rooms": 6.0,
+        "price": 0.0,
+        "id": "OBJ19854_1939877107",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-25T16:43:42",
+        "streetAddress": "Alekärrsvägen 13",
+        "coordinate": {
+          "longitud": 17.989014,
+          "latitud": 59.386044
+        },
+        "shortSaleDescription": "Välkommen till ett unikt kedjehus i perfekt läge med gaveltomt! Här bjuds på totalt 145 kvm att leva, umgås och njuta i. Utöver de rejäla husytorna bjuder boendet även på stora solaltaner och bra lekytor för barnens hoppmattor och bollspel. Lugnt och barnvänligt område, med närhet till naturen samt gångavstånd till kommunikationer och butiker. Här omges ni av en sagolik natur som du kan njuta av året runt genom stora fönsterpartier i insynsskyddat läge! . Ett arkitektritat hus med genomtänkt planlösning och fantastiskt ljusinsläpp från stora fönster och unika takfönster. Härlig uteplats på baksidan i fritt läge.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY017",
+        "mainImage": {
+          "imageId": "MEDA0D04EA36FCE4FEBAD8B1CF47FCCAC1C",
+          "dateChanged": "2022-07-20T23:53:26",
+          "dateChangedImageData": "2022-07-20T23:53:26",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MEDA0D04EA36FCE4FEBAD8B1CF47FCCAC1C",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      }
+    ],
+    "cottages": [],
+    "housingCooperativeses": [
+      {
+        "monthlyFee": 0.0,
+        "livingSpace": 0.0,
+        "rooms": null,
+        "price": 0.0,
+        "id": "OBJ19854_1936462361",
+        "status": {
+          "id": "1",
+          "name": "Intagsförsök"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-04T13:21:36",
+        "streetAddress": "",
+        "coordinate": {
+          "longitud": 0.0,
+          "latitud": 0.0
+        },
+        "shortSaleDescription": null,
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY001",
+        "mainImage": null
+      },
+      {
+        "monthlyFee": 3840.0,
+        "livingSpace": 58.0,
+        "rooms": 2.0,
+        "price": 5000000.0,
+        "id": "OBJ19854_1939594037",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-18T23:59:06",
+        "streetAddress": "Kolonnvägen 6",
+        "coordinate": {
+          "longitud": 18.015984,
+          "latitud": 59.364815
+        },
+        "shortSaleDescription": "*JURIDISK KÖPARE KAN BEVILJAS INTRÄDE I FÖRENINGEN*\r\n*2,7 METER I TAKHÖJD*\r\n*GEMENSAM TAKTERRASS, SPA, GYM, TVÄTTSTUGA OCH WORKSPACE*\r\n\r\nBostaden säljs på planritning med tidigast möjliga tillträde September 2022! \r\n\r\n\r\nDirekt när du kliver in möts du av den lyxiga hemtrevliga känslan. Golven är ljusa och av mattlackad ask. Väggarna och köket har varmgrå kulörer, som bryts av med vita detaljer och vita tak. Köket från Puustelli är miljösmart och helintegrerat med induktionshäll, ugn och micro, diskmaskin samt kyl och frys. Badrummet verkligen andas lyx, är helkaklat med grå granitkeramik på både väggar och golv, en rund bakbelyst spegel, svarta stilrena beslag, handdukstork, tvättmaskin och torktumlare..\r\n\r\nSom medlem i BRF Haga Norra 6A får du tillgång till en stor takterrass, gym, hobbyrum, co-working space och en relaxavdelning i huset. Parkering finns att hyra i ett parkeringshus som ligger ca 5 minuter bort för ca 800kr/månad (obs, i mån av plats).\r\n\r\nHär bor du nära Vasastan samt Hagaparkens vatten och natur som närmsta granne och du har 4 minuter till Odenplan och 7 minuter till city med pendeltåg. När tunnelbanan kommer till Arenastaden planeras en uppgång några minuters promenad från Haga Norra. Den nya omsorgsfullt utformade huvudgatan kommer att ge plats åt en matgränd, aktivitetsytor för boule och uteserveringar med dynamik och värme året om.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY002",
+        "mainImage": {
+          "imageId": "MED80FA5467F1014F038F3EFD9DCB7B226E",
+          "dateChanged": "2022-07-18T23:57:55",
+          "dateChangedImageData": "2022-07-18T23:57:55",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MED80FA5467F1014F038F3EFD9DCB7B226E",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 0.0,
+        "livingSpace": 0.0,
+        "rooms": null,
+        "price": 0.0,
+        "id": "OBJ19854_1939607398",
+        "status": {
+          "id": "1",
+          "name": "Intagsförsök"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-19T00:04:34",
+        "streetAddress": "",
+        "coordinate": {
+          "longitud": 0.0,
+          "latitud": 0.0
+        },
+        "shortSaleDescription": null,
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY003",
+        "mainImage": null
+      },
+      {
+        "monthlyFee": 2248.0,
+        "livingSpace": 55.5,
+        "rooms": 2.0,
+        "price": 0.0,
+        "id": "OBJ19854_1939612232",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-29T14:22:52",
+        "streetAddress": "Hallonbergsplan 2",
+        "coordinate": {
+          "longitud": 17.970112,
+          "latitud": 59.375885
+        },
+        "shortSaleDescription": "Här får du chansen att förvärva Hallonbergens finare lägenhet med utsökt placering i huset och högt i tak. En lägenhet med fönsterpartier som bidrar till ett rikligt ljusinsläpp, samt en optimal planlösning där varje kvadratmeter är väl genomtänkt. En inbjudande bostad med genomgående elegant golv i hela lägenheten och utmärkta materialval där designen präglas av stilren färgsättning.\r\n\r\nEn luftig och social yta mellan kök och vardagsrum där det skapas ett utrymme för ordentlig matplats. Köket är smakfullt inrett med ljusa luckor samt ljust stänkskydd. Ett stort sovrum  med plats för en stor säng, nattduksbord, garderober och en stor walk in closet gör att lägenheten är perfekt för ett par eller en familj. Fräscht badrum där väggarna  pryds med stora och enhetliga plattor som inger en stilren och modern känsla. \r\n\r\nEtt stenkast bort från tunnelbana, flertal busslinjer, grönområden, fritidsaktiviteter och shopping! En väldigt påkostad lägenhet med genomgående hög standard. \r\n\r\nFöreningen tillhandahåller varmgarage med en ingång till garaget direkt från huset.\r\nDetta är en bostad ni inte vill missa. Varmt välkomna på visning!\r\n\r\n\r\nNÄROMRÅDE OCH KOMMUNIKATIONER\r\nHallonbergen är en snabbväxande stadsdel rik på grönska, barnvänliga gångvägar och kultur. Utemiljön är noga genomtänkt med många fina utsiktsplatser och promenadstråk runt Råstasjön, Lötsjön och Golfängarnas naturreservat. Här finns också lek-och grillplatser, utegym, bangolf, fotbolls- och tennisplaner, m.m. Även Ursvik med Igelbäckens naturreservat med goda naturupplevelser, motions- och friluftsområde ligger på gångavstånd. Här finns det löp-, cykel- och skidspår, knattespår, grillplatser och en motionsgård. Det finns även en allaktivitetspark med lekplats och fotbollsplaner m.m. I närområdet finns även flertalet förskolor och skolor att tillgå.\r\n\r\nPå en 10 minuters bilfärd tar du dig till fantastiska Ulriksdals slott för en god picknick eller uppfriskande promenad vid slottsträdgården.\r\n\r\nI Hallonbergen finns bland annat två större livsmedelsaffärer, apotek, vårdcentral, tandläkare, gym och bibliotek, samt ett antal mindre butiker, postombud och serviceställen. Även Sundbybergs stadshus finner du där. En kort promenad bort ligger mysiga Sundbyberg centrum med sin genuina småstadskänsla. Här hittar du alla bekvämligheter du kan önska dig såsom caféer, restauranger, service, gym och matbutiker. Större serviceutbud finns framför allt i Mall of Scandinavia, Sveriges största shoppingcenter som ligger på andra sidan av Råstasjön i Arenastaden, också på gångavstånd. Här kan du även gå på matcher och konserter som visas i Friends Arena\r\n\r\nKommunikationer finns precis utanför porten och du tar dig till T-centralen med tunnelbanan på 12 minuter. Här finns även en bussterminal med flera olika busslinjer, allt från Karolinska sjukhuset till Universitet. På ett par minuter kommer du till E4 och E18 och har ca 11 min till Bromma flygplats och ca 30 min till Arlanda flygplats.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY004",
+        "mainImage": {
+          "imageId": "MED3C6D1CBEF0744A2D88E0945CA40CDD0D",
+          "dateChanged": "2022-07-19T00:24:48",
+          "dateChangedImageData": "2022-07-19T00:24:48",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MED3C6D1CBEF0744A2D88E0945CA40CDD0D",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 0.0,
+        "livingSpace": 0.0,
+        "rooms": null,
+        "price": 0.0,
+        "id": "OBJ19854_1939622133",
+        "status": {
+          "id": "1",
+          "name": "Intagsförsök"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-19T00:33:02",
+        "streetAddress": "",
+        "coordinate": {
+          "longitud": 0.0,
+          "latitud": 0.0
+        },
+        "shortSaleDescription": null,
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY005",
+        "mainImage": null
+      },
+      {
+        "monthlyFee": 1942.0,
+        "livingSpace": 21.0,
+        "rooms": 1.0,
+        "price": 0.0,
+        "id": "OBJ19854_1939625788",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-19T00:49:00",
+        "streetAddress": "Wiboms väg 8",
+        "coordinate": {
+          "longitud": 17.995567,
+          "latitud": 59.34687
+        },
+        "shortSaleDescription": "*HÖGST UPP PÅ 11 VÅNINGEN MED UTSIKT ÖVER STOCKHOLM*\r\n*LÄGENHET MED PENTHOUSE KÄNSLA*\r\n*FÖNSTER I TVÅ VÄDERSTECK*\r\n*STORT ÖPPNINGSBART TAKFÖNSTER SAMT PANORAMA ATELJÉFÖNSTER*\r\n*TERRASS PÅ 12,5 KVM I SÖDERLÄGE MED UTSIKT ÖVER VATTEN*\r\n*GENERÖS TAKHÖJD OM ÖVER 3 METER*\r\n\r\nUNIK möjlighet att förvärva en perfekt drömlägenhet med generös terrass om hela dryga 12 kvm med utsikt i tre vädersträck (bl. a söder!) samt härlig vy över vatten och Stockholms stad. Är du ute efter en lägenhet med hög wow-factor och penthouse känsla har du kommit rätt. Här har du himlen och utsikten som närmaste granne. Ateljéfönster ersätter ett helt väggparti samt stort glasat terrassparti med vacker utsikt samt stort ”sky window” bidrar till att bostaden badar i ljus. \r\n\r\nTerrassen är definitivt bostadens pärla. Den perfekta terrassen för nyårsskålen med utsikt över Stockholms tusentals ljus och Målarens glittrande vattenspegel. De generösa terrassen om 12 kvm rymmer både utomhusmöblemang för middagar samt soffgrupp. Perfekt för middag med vännerna, grillkvällen eller soliga dagar med en moijito och en god bok. \r\n\r\nVackert exklusivt ekparkettgolv (en-stav) från svenska Bjelin i ljus nyans är genomgående för hela lägenheten. Köket är totalrenoverat med ekbänk-och väggskiva i ljus ton. Badrum klätt den tyska exklusiva Jura kalksten (granitkeramik) från Bricmate samt blandare från högkvalitativa och stilsäkra Tapwell samt rund spegel med backlight. \r\n\r\nFör den som vill kan loftet ovan badrum inredas med säng för två. Det öppningsbara generösa Sky window ger loftet karaktär och hög mysfaktor en stjärnklar natt. \r\n\r\nDetta boende är för dig som söker det lilla extra, en lägenheten att umgås i, ett representativt boende eller övernattningslägenhet med högsta wow-factor samtidigt som den ligger i direkt närheten till Stockholms innerstad med dess restauranger och nattliv. Omgivningen erbjuder självklart även fina grönområden samt närhet till bad, gym, handel och kommunikationer. \r\n\r\nOmråde \r\nRogivande område på återvändsgata i Huvudsta Solna, med fantastiska grönområden såsom Huvudstabadet, H-gård, klipp och bryggbad vid Mälarens strand. \r\nFör dig som gillar att träna finns granbacka inom några minuters promenad. Här finns möjlighet till styrketräning, aerobics,spinning,solarium samt massage. \r\nBoendeparkering via Solna stad finns tillgängligt mot en kostnad kring 300/mån alternativt 750/kvartalet. \r\n\r\nKommunikation \r\nMed ca 3 minuters gångavstånd till västra skogens T-bana, som tar dig vidare till Stockholm city på ca 6-7 minuter. \r\nFrån T-centralen når du hela Stockholms olika tunnelbanelinjer. \r\nCykel/Gångväg längs vattnet som sträcker sig från Sundbyberg via Huvudsta till City.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY006",
+        "mainImage": {
+          "imageId": "MED977015569DEE4803BD93C35B77C3D425",
+          "dateChanged": "2022-07-19T00:48:50",
+          "dateChangedImageData": "2022-07-19T00:48:50",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MED977015569DEE4803BD93C35B77C3D425",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 0.0,
+        "livingSpace": 0.0,
+        "rooms": null,
+        "price": 0.0,
+        "id": "OBJ19854_1939630711",
+        "status": {
+          "id": "1",
+          "name": "Intagsförsök"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-19T00:49:59",
+        "streetAddress": "",
+        "coordinate": {
+          "longitud": 0.0,
+          "latitud": 0.0
+        },
+        "shortSaleDescription": null,
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY007",
+        "mainImage": null
+      },
+      {
+        "monthlyFee": 1507.0,
+        "livingSpace": 23.0,
+        "rooms": 1.0,
+        "price": 0.0,
+        "id": "OBJ19854_1939631873",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-19T00:58:37",
+        "streetAddress": "Flyginfarten 14A",
+        "coordinate": {
+          "longitud": 17.86014,
+          "latitud": 59.420174
+        },
+        "shortSaleDescription": "INVERSTERINGSMÖJLIGHET!\r\n\r\n*Denna möjlighet är enbart förknippad med denna lägenhet och övergår till nästa part den dagen man säljer*\r\n*Juridisk person kan köpa*\r\n*Uthyrning tillåts till både privat och juridisk person i obestämd tid*\r\n*Man kan även köpa en lägenhet med befintlig hyresgäst*\r\n*Det finns lägenheter på olika våningsplan med olika prisnivåer*\r\n\r\nStora fönsterpartier låter bostaden präglas av underbart ljus och härlig rymd ihop med de stilrena ytskikten. Vitmålade väggar ramar in det genomgående vackra tre- stavsparkett i ek. Föreningen bjuder på gemensam tvättstuga, cykelparkering, gemensamma vädringsbalkonger och trevlig uteplats för alla att vistas vid.\r\n\r\nVälkomnande hall som bryter av mot bostadens resterande vackra tre-stavsparkett i ek som följer hela lägenheten med vita väggar som skapar en modern känsla. Hallen tar er till lägenhetens kök och vardagsrum och har goda avhängningsmöjligheter invid entrédörr samt förvaringsutrymme i måttanpassade garderober. Självklart är det säkerhetsdörr.\r\n\r\nVardagsrummet är i öppen planlösning mot kök med stora fönsterpartier som ger ett imponerande ljusflöde och påtaglig rymd för alla att vistas i. Rummets vackra utformning skänker karaktär och plats för soffgrupp med tillhörande möblemang samt matplats. Genomgående tre-stavsparkett i ek och vitmålade väggar. Välplanerat kök med stilsäkert släta i vit kulör skåpsluckor och generöst ljusflöde från fönsterpartier. Praktiska högskåp med gott om förvaring och ordentliga arbetsytor ovan bänkskiva i grå laminat, med ho i rostfritt stål gör köket fulländat när minimalistisk design möter funktion. Mörkt stänkskydd ovan bänkskiva med infälld LED-bänkbelysning under väggskåpen och matplats intill. Den måttanpassade köksinredningen består av integrerad frys och kyl, infälld ugn, spis och induktionshäll, integrerad köksfläkt samt diskmaskin gör detta kök komplett.\r\n\r\nTilltalande materialval som vitkaklade väggar i matta vita plattor och grå klinker på golv. Badrummet bjuder på porslinshandfat med vit kommod undertill, spegel ovan handfatet, WC, handdukstork, tvättmaksin, modern glasad duschvägg och LED- spotlights med dimmerfunktion.\r\n\r\n- Attraktivt läge i området\r\n- Hög standard och fullutrustade lägenheter\r\n- Vindsförråd\r\n- Parkering\r\n- Närhet till kommunikationer service\r\n- Närhet till planerad tunnelbana 2026\r\n\r\nÖvrigt:\r\n-Det kommer att tillkomma en kostnad om 200 kr för internet och bredband.\r\n-Det finns externa förråd som kan hyras mot en kostnad.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY008",
+        "mainImage": {
+          "imageId": "MED1A40D02BD10F4E65A1F5C61BE9702339",
+          "dateChanged": "2022-07-19T00:57:56",
+          "dateChangedImageData": "2022-07-19T00:57:56",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MED1A40D02BD10F4E65A1F5C61BE9702339",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 0.0,
+        "livingSpace": 0.0,
+        "rooms": null,
+        "price": 0.0,
+        "id": "OBJ19854_1939635854",
+        "status": {
+          "id": "1",
+          "name": "Intagsförsök"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-19T01:00:14",
+        "streetAddress": "",
+        "coordinate": {
+          "longitud": 0.0,
+          "latitud": 0.0
+        },
+        "shortSaleDescription": null,
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY009",
+        "mainImage": null
+      },
+      {
+        "monthlyFee": 1448.0,
+        "livingSpace": 23.0,
+        "rooms": 1.0,
+        "price": 0.0,
+        "id": "OBJ19854_1939637407",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-19T01:12:18",
+        "streetAddress": "Flyginfarten 14B",
+        "coordinate": {
+          "longitud": 17.860205,
+          "latitud": 59.420204
+        },
+        "shortSaleDescription": "*Juridisk person kan köpa*\r\n*Uthyrning tillåts till både privat och juridisk person i obestämd tid*\r\n\r\nVälkomna till ett flaggskepp av toppmoderna lägenheterna med perfekt planerade kvadratmeter! \r\nSamtliga lägenheter bjuder på genomgående hög standard och fantastiska ljusflöden genom stora fönsterpartier med trevliga vyer. Lägenheterna är utrustade med allt man önskar av en modern lägenhet och fastighet belägen i attraktiva områden.\r\n\r\n- Attraktivt läge i området\r\n- Hög standard och fullutrustade lägenheter\r\n- Vindsförråd\r\n- Parkering\r\n- Närhet till kommunikationer service\r\n- Närhet till planerad tunnelbana 2026",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY010",
+        "mainImage": {
+          "imageId": "MED6BE3C004DE6947688FC1EA4E16171B17",
+          "dateChanged": "2022-07-19T01:12:18",
+          "dateChangedImageData": "2022-07-19T01:12:18",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MED6BE3C004DE6947688FC1EA4E16171B17",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 0.0,
+        "livingSpace": 0.0,
+        "rooms": null,
+        "price": 0.0,
+        "id": "OBJ19854_1939642871",
+        "status": {
+          "id": "1",
+          "name": "Intagsförsök"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-19T01:14:15",
+        "streetAddress": "",
+        "coordinate": {
+          "longitud": 0.0,
+          "latitud": 0.0
+        },
+        "shortSaleDescription": null,
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY011",
+        "mainImage": null
+      },
+      {
+        "monthlyFee": 1880.0,
+        "livingSpace": 32.0,
+        "rooms": 1.0,
+        "price": 2500000.0,
+        "id": "OBJ19854_1939644008",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-19T01:44:43",
+        "streetAddress": "Palmstruchs väg 82",
+        "coordinate": {
+          "longitud": 18.092031,
+          "latitud": 59.46198
+        },
+        "shortSaleDescription": "*DOLDA TILLGÅNGAR I FÖRENINGEN I FORM AV 67 HYRESLÄGENEHTER SAMT 14 KOMMERSIELLA LOKALER*\r\n*FÖNSTER I TRE VÄDERSTECK*\r\n*FLEXIBELT TILLTRÄDE*\r\n*GENERÖS UTEPLATS I INSYNSSKYDDAT LÄGE*\r\n\r\nUNIK möjlighet att förvärva en perfekt drömlägenhet med generös uteplats i ett insynsskyddat läge. God förvaring och ett modernt, tilltalande koncept präglar denna genomtänkta lägenhet där design och funktion går hand i hand. \r\n\r\nDen generösa uteplatsen rymmer både utomhusmöblemang för middagar samt soffgrupp. Perfekt för middag med vännerna, grillkvällen eller soliga dagar. Den väl tilltagna uteplatsen är grädden på moset som gör denna bostad till ett hem man snabbt förälskar sig i.\r\n\r\nHär finner ni allt ni kan önska och lite till. Det här är ett hem med karaktär och en egen identitet. Lägenheten bjuder på bland annat en uteplats med en egen ingång/utgång!\r\nEleganta materialval där designen präglas av sober färgsättning och blandning av olika stilrena material. Välplanerade kvadratmeter med en social planlösning mellan kök och vardagsrum. Kök som kommer vara utrustat med kyl, fläkt, ung och spishäll. \r\nDet här är en dröm för den som uppskattar ett ljust och fräscht boende med en stor uteplats.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY012",
+        "mainImage": {
+          "imageId": "MEDC521B89C9DF7437CA4651505EA4BE059",
+          "dateChanged": "2022-07-19T01:21:07",
+          "dateChangedImageData": "2022-07-19T01:21:07",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MEDC521B89C9DF7437CA4651505EA4BE059",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 0.0,
+        "livingSpace": 0.0,
+        "rooms": null,
+        "price": 0.0,
+        "id": "OBJ19854_1939648685",
+        "status": {
+          "id": "1",
+          "name": "Intagsförsök"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-19T01:26:16",
+        "streetAddress": "",
+        "coordinate": {
+          "longitud": 0.0,
+          "latitud": 0.0
+        },
+        "shortSaleDescription": null,
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY013",
+        "mainImage": null
+      },
+      {
+        "monthlyFee": 0.0,
+        "livingSpace": 36.0,
+        "rooms": 2.0,
+        "price": 0.0,
+        "id": "OBJ19854_1939650033",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-19T01:32:24",
+        "streetAddress": "Ulvsundavägen 1",
+        "coordinate": {
+          "longitud": 17.968115,
+          "latitud": 59.335003
+        },
+        "shortSaleDescription": "\r\n*Denna möjlighet är enbart förknippad med denna lägenhet*\r\n*Juridisk person kan köpa*\r\n*Uthyrning tillåts till både privat och juridisk person i obestämd tid*\r\n\r\nStora fönsterpartier låter bostaden präglas av underbart ljus och härlig rymd ihop med de stilrena ytskikten. Vitmålade väggar ramar in det genomgående vackra två- stavsparkett i ek. Föreningen bjuder på gemensam tvättstuga, cykelparkering, gemensamma vädringsbalkonger och trevlig uteplats för alla att vistas vid.\r\n\r\nVälkomnande hall med grått klinker som bryter av mot bostadens resterande vackra två-stavsparkett i ek som följer hela lägenheten med vita väggar som skapar en modern känsla. Hallen tar er till lägenhetens kök och vardagsrum och har goda avhängningsmöjligheter invid entrédörr samt förvaringsutrymme i måttanpassade garderober. Självklart är det säkerhetsdörr.\r\n\r\nVardagsrummet är i öppen planlösning mot kök med stora fönsterpartier som ger ett imponerande ljusflöde och påtaglig rymd för alla att vistas i. Rummets vackra utformning skänker karaktär och plats för soffgrupp med tillhörande möblemang samt matplats. Genomgående två-stavsparkett i ek och vitmålade väggar. Välplanerat kök med stilsäkert släta i ljusgrå kulör skåpsluckor och generöst ljusflöde från fönsterpartier. Praktiska högskåp med gott om förvaring och ordentliga arbetsytor ovan bänkskiva i grå laminat, med ho i rostfritt stål gör köket fulländat när minimalistisk design möter funktion. Vit matt kakelsättning ovan bänkskiva med infälld LED-bänkbelysning under väggskåpen och matplats intill. Den måttanpassade köksinredningen kommer från Decoform och vitvaror från Siemens består av integrerad frys och kyl, infälld ugn, spis och induktionshäll, integrerad köksfläkt samt diskmaskin gör detta kök komplett. Genomgående två-stavsparkett i ek och vitmålade väggar.\r\n\r\nLiksom vardagsrummet erbjuder sovrummet på imponerande rymd samt genomgående två-stavsparkett i ek och fantastiskt ljusinsläpp. Sovrummet bjuder på gott om plats för dubbelsäng och nattduksbord invid stort fönsterparti. Gott om förvaringsutrymme i platsbyggda garderober bakom ljusgrå kulör.\r\n\r\nTilltalande materialval som vitkaklade väggar i matta vita plattor och grå klinker på golv med elburen golvvärme. Badrummet bjuder på porslinshandfat med vit kommod undertill, spegel ovan handfatet, WC, handdukstork, modern glasad duschvägg och LED- spotlights med dimmerfunktion.\r\n\r\nKommunikationer:\r\nBrf Brommas Entré ligger precis intill trafikknutpunkten Stora Mossen som trafikeras av tunnelbanan, med vilken du tar dig in till T-Centralen på bara omkring 15 min. Utöver det har du direkt tillgång till snabba billeder både in till och ut ur stan. Att det finns smidiga kommunikationer är ingen underdrift när det kommer till detta boende. Fastigheten har tillgång till 10st parkeringsplatser till en månadskostnad. Här tillämpas först till kvarn principen. Om du har planer att resa utomlands så är de bara ett kort avstånd till Bromma flygplats.\r\n\r\nI direkt närhet till Bromma Blocks med shopping i hela 3 plan, ca 80 butiker i en spännande mix, delikatesshall, caféer och restauranger. Vid Brommaplan finns redan nu matbutiker, apotek, gym, restauranger, hotell och Systembolag, all service du behöver. I närheten ligger utöver denna mecka av serviceutbud även Bromma Handelsplats med Coop Forum, City Gross, Willys med flera. Skolor finns det gott om i närområdet i form av förskolor, Bromma Gymnasium, Ulvsundaskolan samt Alviksskolan.\r\n\r\n\r\nOmråde:\r\nUlvsunda är en citynära del av Bromma som är en av Stockholms mest omtyckta förorter med sin direkta närhet till grönska och vackra trivsamma bostadsområden. Området kring Alvik och Stora Mossen är trevligt och uppskattat av de boende med småstadens lugn och lummiga promenadstråk runt Lillsjön invid det mäktiga Ulvsunda Slott.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY014",
+        "mainImage": null
+      },
+      {
+        "monthlyFee": 1249.0,
+        "livingSpace": 31.0,
+        "rooms": 1.0,
+        "price": 0.0,
+        "id": "OBJ19854_1939870324",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-25T17:10:21",
+        "streetAddress": "Hallonbergsplan 2",
+        "coordinate": {
+          "longitud": 17.970112,
+          "latitud": 59.375885
+        },
+        "shortSaleDescription": "*Uthyrning tillåts till både privat och juridisk person, föreningen accepterar endast privatpersoner som köpare.*\r\n\r\nMagnifik lägenhet i en populär förening med låga avgifter. Väldigt påkostad lägenhet med genomgående hög standard där man får allt och lite till. Kommunikationer finns precis utanför porten och du tar dig in i stan väldigt snabbt.\r\n\r\nMissa inte chansen att förvärva en av Hallonbergens finaste lägenheter.\r\nInbjudande lägenhet med eleganta materialval där designen präglas av sober färgsättning och blandning av olika stilrena material. \r\n\r\nMed en låg avgift och i välskött förening, är detta en bostad ni inte vill missa! \r\nVarmt välkomna på visning.\r\n\r\nOmgivning:\r\n\r\nMed tunnelbanan från Hallonbergen kommer man på bara några minuter till innerstan. Här är det med andra ord nära till det mesta.\r\n\r\nI Brf Kompassen 1 bor man i den gröna stadsdelen Hallonbergen i Sundbyberg. Husen ligger intill en lugn och lummig parkmiljö och runt knuten har man Råstasjön, Lötsjön och Golfängarna, med fina promenadstigar, motionsspår och möjligheter till fritidsaktiviteter. Även Ursviks motions- och friluftsområde ligger på bekvämt gångavstånd.\r\n\r\nNärservicen finns i Hallonbergen. Här finns bland annat två större livsmedelsaffärer, apotek, vårdcentral, gym och bibliotek, samt ett antal mindre butiker och serviceställen. Även Sundbybergs stadshus ligger där. Större serviceutbud finns i Sundbybergs centrum och framför allt på Mall of Scandinavia på andra sidan Råstasjön, även det på gångavstånd.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY015",
+        "mainImage": {
+          "imageId": "MEDCC630C03AA6145FA8F8178C5CCC98628",
+          "dateChanged": "2022-07-20T23:41:35",
+          "dateChangedImageData": "2022-07-20T23:41:35",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MEDCC630C03AA6145FA8F8178C5CCC98628",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 0.0,
+        "livingSpace": 0.0,
+        "rooms": null,
+        "price": 0.0,
+        "id": "OBJ19854_1939876921",
+        "status": {
+          "id": "1",
+          "name": "Intagsförsök"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-20T23:45:26",
+        "streetAddress": "",
+        "coordinate": {
+          "longitud": 0.0,
+          "latitud": 0.0
+        },
+        "shortSaleDescription": null,
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY016",
+        "mainImage": null
+      },
+      {
+        "monthlyFee": 3250.0,
+        "livingSpace": 60.0,
+        "rooms": 2.0,
+        "price": 0.0,
+        "id": "OBJ19854_1939881636",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-21T00:07:57",
+        "streetAddress": "Arvid Tydéns allé 4",
+        "coordinate": {
+          "longitud": 18.005243,
+          "latitud": 59.352444
+        },
+        "shortSaleDescription": "***Juridisk person godkänns***\r\n\r\n Vi på Bronze Fastighetsförmedling hälsar er varmt välkomna till detta boende med en underbar planlösning utan dess like. God förvaring och ett modernt, tilltalande koncept präglar detta genomtänkta där design och funktion går hand i hand. \r\nHär finner ni allt ni kan önska och lite till. Det här är ett hem med karaktär och en egen identitet. Väldigt luftig lägenhet som bjuder på bland annat en optimal planlösning. \r\nEleganta materialval där designen präglas av sober färgsättning och blandning av olika stilrena material. Välplanerade kvadratmeter med en social planlösning mellan kök och vardagsrum. \r\nDet här är en dröm för den som uppskattar ett ljust och fräscht boende. Den väl tilltagna balkongen med gott om plats för utemöbler och socialt liv är grädden på moset som gör denna bostad till ett hem man snabbt förälskar sig i.\r\n\r\nBRF – The Lab är idag Solnas mest exklusiva projekt! Föreningen satsar på att du skall ha \"allt\" utanför porten! Därför kommer du ha tillgång till en härlig solterrass på taket, ett relaxområde med spabad, en stor, inbjudande och bekväm tvättstuga, ett rymligt cykelrum med tillhörande verkstad, ett utegym på gården och två våningars garage. \r\nVarmt välkommen på visning!\r\n\r\nOmgivning\r\nHär bor ni med närhet till mataffärer, restauranger, apotek, T-bana, bussar och all övrig tänkbar service. Västra Skogen är ett naturskönt område med närhet till vackra Pampas Marina och Huvudsta Gård. Några minuter bort finner ni Huvudstabadet med både utomhusbassäng, bryggbad samt Augustendals 4H gård med många djur och mysigt café. Närområdet erbjuder fina promenadstråk vid Ulvsundasjön, Pampas Marina samt hela vägen in mot Vasastan, Kungsholmen och Karlbergs slott.\r\nOmrådet har en egen tunnelbanestation som heter Västra Skogen. Här passerar två olika tunnelbanelinjer mot T-centralen med avgångar var 5:e minut. Resan till T-centralen tar ca 7 min. Linje mot Solna C tar ca 2 minuter och till Kista C om ca 10 minuter. Bussar går direkt till Solna C och till Karlbergs Station. I området finns med andra ord utmärkta kommunikationer med anslutning till tunnelbanan samt flertalet busslinjer!",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY018",
+        "mainImage": {
+          "imageId": "MEDBD51C63476E74229A2F7A3F4AC2A01CE",
+          "dateChanged": "2022-07-21T00:05:41",
+          "dateChangedImageData": "2022-07-21T00:05:41",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MEDBD51C63476E74229A2F7A3F4AC2A01CE",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 1942.0,
+        "livingSpace": 33.0,
+        "rooms": 2.0,
+        "price": 0.0,
+        "id": "OBJ19854_1939888141",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-21T00:20:08",
+        "streetAddress": "Wiboms väg 8",
+        "coordinate": {
+          "longitud": 17.995567,
+          "latitud": 59.34687
+        },
+        "shortSaleDescription": "Vi på Bronze Fastighetsförmedling hälsar er varmt välkomna till detta boende med en underbar uteplats utan dess like. God förvaring och ett modernt, tilltalande koncept präglar detta genomtänkta där design och funktion går hand i hand. \r\nHär finner ni allt ni kan önska och lite till. Det här är ett hem med karaktär och en egen identitet. Lägenheten bjuder på bland annat en uteplats med en egen ingång/utgång!\r\nEleganta materialval där designen präglas av sober färgsättning och blandning av olika stilrena material. Välplanerade kvadratmeter med en social planlösning mellan kök och vardagsrum. \r\nDet här är en dröm för den som uppskattar ett ljust och fräscht boende med en stor uteplats. Den väl tilltagna uteplatsen med gott om plats för utemöbler och socialt liv är grädden på moset som gör denna bostad till ett hem man snabbt förälskar sig i.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY019",
+        "mainImage": {
+          "imageId": "MED6FB2B7B4E5454B7994308CE515745694",
+          "dateChanged": "2022-07-21T00:19:09",
+          "dateChangedImageData": "2022-07-21T00:19:09",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MED6FB2B7B4E5454B7994308CE515745694",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 2231.0,
+        "livingSpace": 55.5,
+        "rooms": 2.0,
+        "price": 0.0,
+        "id": "OBJ19854_1939893740",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-21T00:28:17",
+        "streetAddress": "Hallonbergsplan 6",
+        "coordinate": {
+          "longitud": 17.96992,
+          "latitud": 59.375908
+        },
+        "shortSaleDescription": "\r\n*STABIL FÖRENING\r\n*LÅNG UTHYRNING OK\r\n\r\nVälkommen till en fantastisk lägenhet, ett stenkast bort från tunnelbana, flertal busslinjer, grönområden, fritidsaktiviteter och shopping! En väldigt påkostad lägenhet med genomgående hög standard. \r\n\r\nHär får du chansen att förvärva en lägenhet utsökt placering i huset. Ett bra läge med fönsterpartier som bidrar till ett rikligt ljusinsläpp, samt en optimal planlösning där varje kvadratmeter är väl genomtänkt. \r\n\r\nEn välplanerad, luftig och mycket social yta mellan kök och vardagsrum där det skapas ett utrymme för ordentlig matplats intill fönster. Köket är smakfullt inrett med ljusa luckor samt ljust stänkskydd. Separat sovrum med plats för stor säng gör att lägenheten är perfekt för ett par eller en liten familj. \r\n\r\nFöreningen tillhandahåller varmgarage med en ingång till garaget direkt från huset.\r\nDetta är en bostad ni inte vill missa. Varmt välkomna på visning!\r\n\r\n\r\nNÄROMRÅDE OCH KOMMUNIKATIONER\r\nHallonbergen är en snabbväxande stadsdel rik på grönska, barnvänliga gångvägar och kultur. Utemiljön är noga genomtänkt med många fina utsiktsplatser och promenadstråk runt Råstasjön, Lötsjön och Golfängarnas naturreservat. Här finns också lek-och grillplatser, utegym, bangolf, fotbolls- och tennisplaner, m.m. Även Ursvik med Igelbäckens naturreservat med goda naturupplevelser, motions- och friluftsområde ligger på gångavstånd. Här finns det löp-, cykel- och skidspår, knattespår, grillplatser och en motionsgård. Det finns även en allaktivitetspark med lekplats och fotbollsplaner m.m. I närområdet finns även flertalet förskolor och skolor att tillgå.\r\n\r\nPå en 10 minuters bilfärd tar du dig till fantastiska Ulriksdals slott för en god picknick eller uppfriskande promenad vid slottsträdgården.\r\n\r\nI Hallonbergen finns bland annat två större livsmedelsaffärer, apotek, vårdcentral, tandläkare, gym och bibliotek, samt ett antal mindre butiker, postombud och serviceställen. Även Sundbybergs stadshus finner du där. En kort promenad bort ligger mysiga Sundbyberg centrum med sin genuina småstadskänsla. Här hittar du alla bekvämligheter du kan önska dig såsom caféer, restauranger, service, gym och matbutiker. Större serviceutbud finns framför allt i Mall of Scandinavia, Sveriges största shoppingcenter som ligger på andra sidan av Råstasjön i Arenastaden, också på gångavstånd. Här kan du även gå på matcher och konserter som visas i Friends Arena\r\n\r\nKommunikationer finns precis utanför porten och du tar dig till T-centralen med tunnelbanan på 12 minuter. Här finns även en bussterminal med flera olika busslinjer, allt från Karolinska sjukhuset till Universitet. På ett par minuter kommer du till E4 och E18 och har ca 11 min till Bromma flygplats och ca 30 min till Arlanda flygplats.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY020",
+        "mainImage": {
+          "imageId": "MEDD4FE40146A8A4B24BA3378BF5018B34A",
+          "dateChanged": "2022-07-21T00:26:42",
+          "dateChangedImageData": "2022-07-21T00:26:42",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MEDD4FE40146A8A4B24BA3378BF5018B34A",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 0.0,
+        "livingSpace": 0.0,
+        "rooms": null,
+        "price": 0.0,
+        "id": "OBJ19854_1939897205",
+        "status": {
+          "id": "1",
+          "name": "Intagsförsök"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-21T00:30:05",
+        "streetAddress": "",
+        "coordinate": {
+          "longitud": 0.0,
+          "latitud": 0.0
+        },
+        "shortSaleDescription": null,
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY021",
+        "mainImage": null
+      },
+      {
+        "monthlyFee": 1628.0,
+        "livingSpace": 40.0,
+        "rooms": 1.5,
+        "price": 0.0,
+        "id": "OBJ19854_1939898033",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-21T00:36:41",
+        "streetAddress": "Lötsjövägen 1A",
+        "coordinate": {
+          "longitud": 17.968636,
+          "latitud": 59.37653
+        },
+        "shortSaleDescription": "*Uthyrning tillåts till både privat och juridisk person, föreningen accepterar endast privatpersoner som köpare.*\r\n\r\nMagnifik lägenhet i en populär förening med låga avgifter. Väldigt påkostad lägenhet med genomgående hög standard där man får allt och lite till. Kommunikationer finns precis utanför porten och du tar dig in i stan väldigt snabbt.\r\n\r\nMissa inte chansen att förvärva en av Hallonbergens finaste lägenheter.\r\nInbjudande lägenhet med eleganta materialval där designen präglas av sober färgsättning och blandning av olika stilrena material. \r\n\r\nMed en låg avgift och i välskött förening, är detta en bostad ni inte vill missa! \r\nVarmt välkomna på visning.\r\n\r\nOmgivning:\r\n\r\nMed tunnelbanan från Hallonbergen kommer man på bara några minuter till innerstan. Här är det med andra ord nära till det mesta.\r\n\r\nI Brf Kompassen 1 bor man i den gröna stadsdelen Hallonbergen i Sundbyberg. Husen ligger intill en lugn och lummig parkmiljö och runt knuten har man Råstasjön, Lötsjön och Golfängarna, med fina promenadstigar, motionsspår och möjligheter till fritidsaktiviteter. Även Ursviks motions- och friluftsområde ligger på bekvämt gångavstånd.\r\n\r\nNärservicen finns i Hallonbergen. Här finns bland annat två större livsmedelsaffärer, apotek, vårdcentral, gym och bibliotek, samt ett antal mindre butiker och serviceställen. Även Sundbybergs stadshus ligger där. Större serviceutbud finns i Sundbybergs centrum och framför allt på Mall of Scandinavia på andra sidan Råstasjön, även det på gångavstånd.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY022",
+        "mainImage": {
+          "imageId": "MED05659A12F9B24690B1FCA980FE5DA29F",
+          "dateChanged": "2022-07-21T00:33:01",
+          "dateChangedImageData": "2022-07-21T00:33:01",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MED05659A12F9B24690B1FCA980FE5DA29F",
+          "showImageOnInternet": false,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 4476.0,
+        "livingSpace": 83.0,
+        "rooms": 4.0,
+        "price": 0.0,
+        "id": "OBJ19854_1939901408",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-21T00:45:38",
+        "streetAddress": "Göran Perssons Väg 31",
+        "coordinate": {
+          "longitud": 17.9836,
+          "latitud": 59.353474
+        },
+        "shortSaleDescription": "STHLM ESTATE hälsar er varmt välkomna till detta nyrenoverade boende med en underbar planlösning. God förvaring och ett modernt, tilltalande koncept präglar detta genomtänkta där design och funktion går hand i hand. \r\nHär finner ni allt ni kan önska och lite till. Det här är ett hem med karaktär och en egen identitet.\r\nEleganta materialval där designen präglas av sober färgsättning och blandning av olika stilrena material. Välplanerade kvadratmeter med en social planlösning mellan kök och vardagsrum. \r\nDet här är en dröm för den som uppskattar ett ljust och fräscht boende.\r\n\r\nMed närhet till vatten, vackra promenadstråk, dagis, skola och nära till bra kommunikationer finner vi denna luftiga och välplanerade bostad. Lägenheten ligger i ett lugnt läge med närhet till serviceutbud. Perfekt chans för den som vill flytta in i ett perfekt boende från första dagen. Göran Perssons Väg 31 -  helt enkelt ett hem att trivas i!",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY023",
+        "mainImage": {
+          "imageId": "MED77CEAC2474C54D5A90249FCA194A5D0A",
+          "dateChanged": "2022-07-21T00:45:38",
+          "dateChangedImageData": "2022-07-21T00:45:38",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MED77CEAC2474C54D5A90249FCA194A5D0A",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 0.0,
+        "livingSpace": 0.0,
+        "rooms": null,
+        "price": 0.0,
+        "id": "OBJ19854_1940303066",
+        "status": {
+          "id": "1",
+          "name": "Intagsförsök"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-23T17:22:11",
+        "streetAddress": "",
+        "coordinate": {
+          "longitud": 0.0,
+          "latitud": 0.0
+        },
+        "shortSaleDescription": null,
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY024",
+        "mainImage": null
+      },
+      {
+        "monthlyFee": 2432.0,
+        "livingSpace": 46.0,
+        "rooms": 2.0,
+        "price": 0.0,
+        "id": "OBJ19854_1940304783",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-23T17:35:35",
+        "streetAddress": "Turebergs allé 43",
+        "coordinate": {
+          "longitud": 17.941288,
+          "latitud": 59.433617
+        },
+        "shortSaleDescription": "MAKALÖS OCH LJUS TVÅA MED HÖGT I TAKHÖJD, WALK-IN-CLOSET, EXKLUSIVA MATERIALVAL GENOMGÅENDE I HELA BOSTADEN OCH BALKONG PÅ ATTRAKTIV ADRESS!\r\nPå attraktiv adress finner vi denna fulländade och makalösa bostad med naturen som granne i ett insynsskyddat läge om 2 rum. Omtalat projekt i exklusivt modernt utförande av Magnolia fastighetsbolag med fokus på exklusivt boende utöver det vanliga! Här erbjuds flexibla möblerings och förvaringsmöjligheter, rymlig Walk-In-Closet, högkvalitativa materialval som bland annat Tapwell som är beständiga över tid, separat sovrum, generös takhöjd, helkaklat badrum, kök i toppskick och full maskinell utrustning som karakteriserar detta ljuvliga. Här är det fokuserat på material som är beständiga över tid och håller länge.\r\nTack vare det väl tilltagna vardagsrummet och dess breda fönsterpartier med låg bröstning skapas ett fint ljusflöde i lägenheten där ni omfamnas av ljus och härlig rymd från brett fönsterparti. Bostadens pärla, den inbjudande balkongen bjuder på härligt sällskap av grönskan där du kan njuta av den färgsprakande himlen och grillkvällar. Solid Brf som dessutom äger sin mark med god ekonomi och parkering i garage.\r\n\r\nBRF Lumen är inspirerad av det ljusa söderläget har Vera Arkitekter tagit fram Lumen – ett modernt hus med unik arkitektur vars form skapar flera stora terrasser.  \r\nMed utsikt över ett mysigt villaområde kunde läget inte vara bättre. Huset ligger en kort promenad från Sollentuna Centrum och med goda kommunikationer från Sollentuna Station når du snabbt Stockholm City och Arlanda. Runt hörnet hittar du Sollentunas stora naturområde och rika kulturliv.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY025",
+        "mainImage": {
+          "imageId": "MED91BBB2C31EEE415E831336628665F8F8",
+          "dateChanged": "2022-07-23T17:35:29",
+          "dateChangedImageData": "2022-07-23T17:35:29",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MED91BBB2C31EEE415E831336628665F8F8",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 2699.0,
+        "livingSpace": 71.5,
+        "rooms": 2.0,
+        "price": 0.0,
+        "id": "OBJ19854_1940310159",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-23T17:51:53",
+        "streetAddress": "Kavaljersbacken 2",
+        "coordinate": {
+          "longitud": 17.97843,
+          "latitud": 59.374744
+        },
+        "shortSaleDescription": "Optimalt planerad 2:a med balkong med grönskande utsikt. Lägenheten har bra ljusinsläpp och en luftig atmosfär. Bostaden disponeras med en rymlig hall, ett sovrum, ett praktiskt kök med mycket förvaringsmöjligheter samt ett vardagsrum som har stora sociala ytor. \r\n\r\nLägenheten är belägen med närhet till det mesta. På några minuters gångavstånd finns en matvarubutik och kommunikationer (T-banan och bussar) samt till skolor, dagis, tennisbana och fotbollsplan. Runt hörnet finns också ett antal trevliga promenadstråk såsom Råstasjön och Lötsjön.\r\n\r\nHär bor ni i en stabil förening som erbjuder de boende låga avgifter, där stora renoveringar såsom stambyte, bergvärmeinstallation och ombyggnationer gjorts. Utanför bostaden finns en trevlig grillplats för föreningens medlemmar där grannar kan mötas.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY026",
+        "mainImage": {
+          "imageId": "MEDA1F30B3F597945849A670F6D06B6A5E3",
+          "dateChanged": "2022-07-23T17:51:52",
+          "dateChangedImageData": "2022-07-23T17:51:52",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MEDA1F30B3F597945849A670F6D06B6A5E3",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 0.0,
+        "livingSpace": 0.0,
+        "rooms": null,
+        "price": 0.0,
+        "id": "OBJ19854_1940317959",
+        "status": {
+          "id": "1",
+          "name": "Intagsförsök"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-23T17:53:08",
+        "streetAddress": "",
+        "coordinate": {
+          "longitud": 0.0,
+          "latitud": 0.0
+        },
+        "shortSaleDescription": null,
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY027",
+        "mainImage": null
+      },
+      {
+        "monthlyFee": 1950.0,
+        "livingSpace": 36.0,
+        "rooms": 2.0,
+        "price": 0.0,
+        "id": "OBJ19854_1940318486",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-23T18:01:19",
+        "streetAddress": "Epistelvägen 1B",
+        "coordinate": {
+          "longitud": 18.005037,
+          "latitud": 59.35172
+        },
+        "shortSaleDescription": "Varmt välkomna till denna utomordentliga tvårumslägenhet belägen på populär adress i magiska Solna. \r\nMed öppen planlösning mellan kök och vardagsrum skapas en social karaktär med känsla av rymd.\r\nVidare erbjuder bostaden ett fint ljusinsläpp från stora fönsterpartier, fullt utrustat kök, helkaklat badrum som är förberett för tvättmaskin och en stor balkong.\r\nDetta är det absolut perfekta boendet med utmärkta bekvämligheter. \r\nHär bor du i en välskött förening med god ekonomi, gemensam takterrass, SPA och relaxavdelning med pool samt en gemensam innergård. En förening som tar väl hand om sina medlemmar.\r\nVälkommen att längta hem!",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY028",
+        "mainImage": {
+          "imageId": "MEDA9ACDB4A610A45669DFC2933EE9EB92D",
+          "dateChanged": "2022-07-23T18:01:12",
+          "dateChangedImageData": "2022-07-23T18:01:12",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MEDA9ACDB4A610A45669DFC2933EE9EB92D",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 0.0,
+        "livingSpace": 0.0,
+        "rooms": null,
+        "price": 0.0,
+        "id": "OBJ19854_1940323432",
+        "status": {
+          "id": "1",
+          "name": "Intagsförsök"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-23T18:03:08",
+        "streetAddress": "",
+        "coordinate": {
+          "longitud": 0.0,
+          "latitud": 0.0
+        },
+        "shortSaleDescription": null,
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY029",
+        "mainImage": null
+      },
+      {
+        "monthlyFee": 4067.0,
+        "livingSpace": 89.0,
+        "rooms": 3.0,
+        "price": 0.0,
+        "id": "OBJ19854_1940324461",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-23T18:13:38",
+        "streetAddress": "Evenemangsgatan 14",
+        "coordinate": {
+          "longitud": 18.000061,
+          "latitud": 59.370686
+        },
+        "shortSaleDescription": "Unik gaveltrea med hörnbalkong belägen högt upp i huset i expansiva och populära Arenastaden finner ni denna trea med en härlig hörnbalkong där du kan njuta av en imponerande utsikt under ljumma sommarkvällar.\r\nLägenheten karaktäriseras av alltigenom stilrena och moderna materialval såsom ekparkett, vitmålade ytskikt och ett helkaklat badrum med tvättmöjligheter.\r\nDen öppna sociala planlösningen mellan köket och vardagsrummet gör det möjligt att samtala med familj och vänner samtidigt som middagen tillagas. Invid det generösa fönsterpartiet finns plats för ett stort matsalsbord med plats för många gäster. och Utsikten, som sträcker sig från de nybyggda husen i området bort mot den lummiga skogen och Råstasjön, blir en extra krydda. Väntas mingel eller många gäster finns det gott om plats för umgänge på de fria öppna ytorna i vardagsrummet. \r\n\r\nDe båda sovrummen ligger bredvid varandra och inrymmer båda två plats för säng och förvaring. Det större sovrummet har dessutom ingång till en rymlig, inredd klädkammare. I lägenheten finns också extra förvaring genom ett stort förråd som nås från hallen. Sammanfattningsvis ett högklassigt boende med modern standard som kännetecknas av öppna ytor och en luftig och rymlig känsla.\r\n\r\nI Arenastaden får du det bästa av två världar; du bor mitt i händelsernas centrum samtidigt som du har nära till naturen och fin strandpromenad. Här finns Mall of Scandinavia som är ett fullvärdigt alternativ, inte bara till Stockholm city, utan även till många internationella motsvarigheter med dess arkitektur, flaggskeppsbutiker, restauranger och evenemang utöver det vanliga. I gallerian finns också Sveriges modernaste biograf. Naturen finns runt knuten, Råstasjöns och Lötsjöns fina promenad- och löpvägar bildar tillsammans en underbar miljö.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY030",
+        "mainImage": {
+          "imageId": "MEDB44E412A570B4FE78FF53FC7979877F9",
+          "dateChanged": "2022-07-23T18:11:14",
+          "dateChangedImageData": "2022-07-23T18:11:14",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MEDB44E412A570B4FE78FF53FC7979877F9",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 1970.0,
+        "livingSpace": 27.0,
+        "rooms": 1.0,
+        "price": 0.0,
+        "id": "OBJ19854_1940798125",
+        "status": {
+          "id": "4",
+          "name": "Såld"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-26T17:24:12",
+        "streetAddress": "Birger Jarlsgatan 104N",
+        "coordinate": {
+          "longitud": 18.062183,
+          "latitud": 59.347897
+        },
+        "shortSaleDescription": "STHLM ESTATE hälsar er varmt välkomna till en fantastiskt bra lägenhet i en vacker och välbevarad tjugotalsfastighet. Lägenheten är belägen på attraktiv adress med närhet till grönområden såsom Hagaparken, Lill-Jansskogen och Brunnsviken samt pulsen inom gångavstånd. Dessutom utmärkta kommunikationer! Lägenheten erbjuder ett fantastiskt naturligt ljusinsläpp ifrån två väderstreck, luftigt allrum med ljusa väggar och vackra golv samt flertalet bevarade tidstypiska detaljer såsom spröjsade fönster, originaldörrar och bra takhöjd. Elegant, ljust och smakfullt samt en öppen social planlösning. Ett hem som inbringar lugn mitt i staden! \r\n\r\nBoendet erbjuder dessutom ett unikt mervärde i form av föreningens gemensamhetsanläggningar bl.a. en stor vacker innergård med flera sittgrupper samt en anlagd trädgård kallad \"Arvids Terrass\" med grillar och utemöbler. Vidare finns tvättstuga, övernattningsrum, samlingslokal/festlokal, cykelparkering, cykelförråd, hobbyrum, bastu samt grovsoprum. \r\n\r\nHär bor ni i gränslandet mellan Vasastan/Östermalm med närhet till kommunikationer i form av både gröna och röda linjens tunnelbana, flertalet busslinjer, Roslagsbanan och gångavstånd till såväl Vasastan och Östermalms puls som natursköna grönområden. Flera universitet/högskolor i direktområdet samt rikligt med restauranger och caféer.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY031",
+        "mainImage": {
+          "imageId": "MED887EB5C3DBBF4C69BE0F8871CDF5EBC4",
+          "dateChanged": "2022-07-25T18:35:27",
+          "dateChangedImageData": "2022-07-25T18:35:27",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MED887EB5C3DBBF4C69BE0F8871CDF5EBC4",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 2941.0,
+        "livingSpace": 34.0,
+        "rooms": 2.0,
+        "price": 0.0,
+        "id": "OBJ19854_1940812552",
+        "status": {
+          "id": "4",
+          "name": "Såld"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-27T14:22:43",
+        "streetAddress": "Kungsholmsgatan 9",
+        "coordinate": {
+          "longitud": 18.049154,
+          "latitud": 59.330795
+        },
+        "shortSaleDescription": "\r\nPå en eftertraktad adress precis vid Kungsbron hittar du denna fantastiskt sociala tvårummare, med stora fönsterpartier och genomgående spotlights i hela bostaden har lägenheten ett ordentligt ljus oavsett årstid. Sonos högtalare inbyggda i vardagsrum och badrum samt eldrivna gardiner i hela bostaden. Modernt kök i anslutning till social yta och vardagsrum gör lägenheten perfekt för middagar och social tillställning. Belägen ett stenkast från city och alla kommunikationer så som buss och tunnelbana som tar dig vart du vill. Här bor du i en av Sveriges största föreningar vilket ger dig tryggheten att ditt hem står på stabil grund. \r\n\r\nVälkommen att längta hem!",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY032",
+        "mainImage": {
+          "imageId": "MED5C138423360F4477A80D8BA464F7E460",
+          "dateChanged": "2022-07-25T18:56:03",
+          "dateChangedImageData": "2022-07-25T18:56:03",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MED5C138423360F4477A80D8BA464F7E460",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 2957.0,
+        "livingSpace": 47.5,
+        "rooms": 2.0,
+        "price": 0.0,
+        "id": "OBJ19854_1940847024",
+        "status": {
+          "id": "3",
+          "name": "Till salu"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-29T14:35:09",
+        "streetAddress": "Gaffelseglet 41",
+        "coordinate": {
+          "longitud": 18.136322,
+          "latitud": 59.181465
+        },
+        "shortSaleDescription": "I Vega är det nära till det mesta. Nära till badsjö och strövområden i vackra Rudan med badstrand och elspår samt skidspår på vintern. Nära till stora naturområden och skärgården som Dalarö, Utö, Kymmendö och Huvudskär och även nära till shopping och stadsliv med centrala Stockholm bara en kort bilresa iväg eller med närliggande direktbuss.\r\n\r\nVega är ett mycket attraktivt och välplanerat bostadsområde. Ett fint område att växa upp i för familjer som vill bo nära Stockholm men ändå kunna njuta av natur och friluftsliv. Här finns flera nybyggda förskolor och en ny skola. Haninge kommun har drygt 80 000 invånare och är en av Stockholms största och mest expansiva kranskommuner. Vegastaden med en ny pendeltågsstation och centrum gör att Vega/Hermanstorp/Kolartorp växer ihop med centrala Handen. Så härifrån tar du dig bland annat in till Stockholm Södra på ca 20min.\r\n\r\nDe större matvarubutikerna, som Maxi Stormarknad och Coop Forum med Port 73 finns endast några minuter bort. I närliggande Länna köpcentrum finns bl a Willys och Citygross och Haninge Centrum ligger en kort promenad bort. Här finns apotek, flertalet klädbutiker, caféer m.m. Sjukhus och annan kommunal service finns också på bekvämt avstånd. I Haninge kommun finns ett gediget utbud av fritidsaktiviteter, skolor och service. Simhall, flera ridsportsanläggningar, sporthall och bibliotek samt trevliga restauranger och kaféer ger en trivsam närmiljö.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY033",
+        "mainImage": {
+          "imageId": "MED46D637896A6941F18FEE565F4CB896B1",
+          "dateChanged": "2022-07-25T20:39:19",
+          "dateChangedImageData": "2022-07-25T20:39:19",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MED46D637896A6941F18FEE565F4CB896B1",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 2248.0,
+        "livingSpace": 40.5,
+        "rooms": 2.0,
+        "price": 0.0,
+        "id": "OBJ19854_1941148634",
+        "status": {
+          "id": "1",
+          "name": "Intagsförsök"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-27T19:30:11",
+        "streetAddress": "Hallonbergsplan 12",
+        "coordinate": {
+          "longitud": 17.969383,
+          "latitud": 59.37641
+        },
+        "shortSaleDescription": "Här får du chansen att förvärva Hallonbergens finare lägenhet med utsökt placering i huset och högt i tak. En lägenhet med fönsterpartier som bidrar till ett rikligt ljusinsläpp, samt en optimal planlösning där varje kvadratmeter är väl genomtänkt. En inbjudande bostad med genomgående elegant golv i hela lägenheten och utmärkta materialval där designen präglas av stilren färgsättning.\r\n\r\nEn luftig och social yta mellan kök och vardagsrum där det skapas ett utrymme för ordentlig matplats. Köket är smakfullt inrett med ljusa luckor samt ljust stänkskydd. Ett stort sovrum  med plats för en stor säng, nattduksbord, garderober och en stor walk in closet gör att lägenheten är perfekt för ett par eller en familj. Fräscht badrum där väggarna  pryds med stora och enhetliga plattor som inger en stilren och modern känsla. \r\n\r\nEtt stenkast bort från tunnelbana, flertal busslinjer, grönområden, fritidsaktiviteter och shopping! En väldigt påkostad lägenhet med genomgående hög standard. \r\n\r\nFöreningen tillhandahåller varmgarage med en ingång till garaget direkt från huset.\r\nDetta är en bostad ni inte vill missa. Varmt välkomna på visning!\r\n\r\n\r\nNÄROMRÅDE OCH KOMMUNIKATIONER\r\nHallonbergen är en snabbväxande stadsdel rik på grönska, barnvänliga gångvägar och kultur. Utemiljön är noga genomtänkt med många fina utsiktsplatser och promenadstråk runt Råstasjön, Lötsjön och Golfängarnas naturreservat. Här finns också lek-och grillplatser, utegym, bangolf, fotbolls- och tennisplaner, m.m. Även Ursvik med Igelbäckens naturreservat med goda naturupplevelser, motions- och friluftsområde ligger på gångavstånd. Här finns det löp-, cykel- och skidspår, knattespår, grillplatser och en motionsgård. Det finns även en allaktivitetspark med lekplats och fotbollsplaner m.m. I närområdet finns även flertalet förskolor och skolor att tillgå.\r\n\r\nPå en 10 minuters bilfärd tar du dig till fantastiska Ulriksdals slott för en god picknick eller uppfriskande promenad vid slottsträdgården.\r\n\r\nI Hallonbergen finns bland annat två större livsmedelsaffärer, apotek, vårdcentral, tandläkare, gym och bibliotek, samt ett antal mindre butiker, postombud och serviceställen. Även Sundbybergs stadshus finner du där. En kort promenad bort ligger mysiga Sundbyberg centrum med sin genuina småstadskänsla. Här hittar du alla bekvämligheter du kan önska dig såsom caféer, restauranger, service, gym och matbutiker. Större serviceutbud finns framför allt i Mall of Scandinavia, Sveriges största shoppingcenter som ligger på andra sidan av Råstasjön i Arenastaden, också på gångavstånd. Här kan du även gå på matcher och konserter som visas i Friends Arena\r\n\r\nKommunikationer finns precis utanför porten och du tar dig till T-centralen med tunnelbanan på 12 minuter. Här finns även en bussterminal med flera olika busslinjer, allt från Karolinska sjukhuset till Universitet. På ett par minuter kommer du till E4 och E18 och har ca 11 min till Bromma flygplats och ca 30 min till Arlanda flygplats.",
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY034",
+        "mainImage": {
+          "imageId": "MED6E539A7C6C66411D9C335A27CEB1C3A6",
+          "dateChanged": "2022-07-27T19:20:52",
+          "dateChangedImageData": "2022-07-27T19:20:52",
+          "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MED6E539A7C6C66411D9C335A27CEB1C3A6",
+          "showImageOnInternet": true,
+          "extension": "jpg",
+          "cdnReferences": []
+        }
+      },
+      {
+        "monthlyFee": 0.0,
+        "livingSpace": 0.0,
+        "rooms": null,
+        "price": 0.0,
+        "id": "OBJ19854_1941623330",
+        "status": {
+          "id": "1",
+          "name": "Intagsförsök"
+        },
+        "customerId": "M19854",
+        "areaName": null,
+        "dateChanged": "2022-07-29T14:29:15",
+        "streetAddress": "Skägglavsvägen 14",
+        "coordinate": {
+          "longitud": 17.64619,
+          "latitud": 59.21849
+        },
+        "shortSaleDescription": null,
+        "viewingsList": [],
+        "bidding": false,
+        "objectNumber": "GY035",
+        "mainImage": null
+      }
+    ],
+    "plots": [],
+    "projects": [],
+    "farms": [],
+    "commercialPropertys": [],
+    "condominiums": [],
+    "foreignProperties": [],
+    "premises": []
+  }
+]

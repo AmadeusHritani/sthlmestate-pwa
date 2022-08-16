@@ -1,0 +1,31 @@
+{
+    "short_name": "Sthlm Estate",
+    "name": "Find and buy your dream estate in Stockholm.",
+    "icons": [
+        {
+            "src": "/app-logo.svg",
+            "type": "image/svg+xml",
+            "sizes": "512x512"
+        },
+        {
+        "src": "/icon.png",
+        "type": "image/png",
+        "sizes": "192x192"
+        }
+    ],
+    "start_url": "/?source=pwa",
+    "background_color": "#1e1e1e",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#21dc82",
+    "shortcuts": [
+      {
+        "name": "Get Started!",
+        "short_name": "Starta",
+        "description": "Get inspired to view weather information for today!",
+        "url": "/alla?source=pwa",
+        "icons": [{ "src": "/icon.png", "sizes": "192x192" }]
+      }
+    ],
+    "description": "Sthlm Estate: Find and buy your dream estate in Stockholm."
+  }

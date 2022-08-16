@@ -1,0 +1,22 @@
+{
+  "search": {
+    "label": "Search",
+    "placeholder": "Search estates.."
+  },
+  "back": "Back",
+  "back-to-list": "Back to list",
+  "description": "Description",
+  "facts": "Facts",
+  "operation-cost": "Operating Cost",
+  "waterAndDrain": "Water & Drain",
+  "electricity": "Electricity",
+  "heating": "Heating",
+  "insurance": "Insurance",
+  "sum": "Total Ops Cost",
+  "personsInTheHousehold": "Persons In The Household",
+  "association": "Association",
+  "documents": "Documents",
+  "viewings": "Planned Viewings",
+  "show-all": "Show All",
+  "show-less": "Show Less"
+}

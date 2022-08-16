@@ -1,0 +1,29 @@
+{
+  "title": "Sthlm Estate Inc.",
+  "items": [
+    {
+      "slug": "/en",
+      "label": "Home",
+      "title": "Sthlm Estate AB Homepage",
+      "short_desc": "Explore properties for sale and rent"
+    },
+    {
+      "slug": "/en/estates",
+      "label": "For Sale",
+      "title": "All Properties",
+      "short_desc": "Explore all properties for sale."
+    },
+    {
+      "slug": "/en/about-us",
+      "label": "About Us",
+      "title": "Om Sthlm Estate AB",
+      "short_desc": "Information Om Sthlm Estate AB"
+    },
+    {
+      "slug": "/en/contact-us",
+      "label": "Contact Us",
+      "title": "Kontakta Sthlm Estate AB",
+      "short_desc": "Explore properties for sale."
+    }
+  ]
+}

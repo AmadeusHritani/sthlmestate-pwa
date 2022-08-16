@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Verifieringsfil för domänägarskap för Microsoft 365 – placera i webbplatsens rot",
+  "Domain": "sthlmestate.se",
+  "Id": "7fbcbd25-d3d7-4881-ab48-62fb7a1dbdf0"
+}

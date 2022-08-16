@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "home",
+    "icon": "mdi-home-circle-outline"
+  },
+  {
+    "id": 2,
+    "name": "estate-list",
+    "icon": "mdi-crown-circle-outline"
+  },
+  {
+    "id": 3,
+    "name": "about",
+    "icon": "mdi-information-outline"
+  },
+  {
+    "id": 4,
+    "name": "contact",
+    "icon": "mdi-send-circle-outline"
+  }
+]

@@ -1,0 +1,10 @@
+@import './_variables.scss';
+@import './_colors.scss';
+@import './_elevations.scss';
+@import './_utilities.scss';
+
+// Theme specific setup
+// ordering is important
+@import './_light.scss';
+@import './_dark.scss';
+@import './_theme.scss';

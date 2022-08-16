@@ -1,0 +1,22 @@
+{
+  "search": {
+    "label": "Sök",
+    "placeholder": "Sök fastigheter.."
+  },
+  "back": "Tillbaka",
+  "back-to-list": "Tillbaka till listan",
+  "description": "Beskrivning",
+  "facts": "Fakta",
+  "operation-cost": "Driftkostnad",
+  "waterAndDrain": "Vatten Och Avlopp",
+  "electricity": "Elkostnad",
+  "heating": "Uppvärmning",
+  "insurance": "Försäkring",
+  "sum": "Total Driftkostnad",
+  "personsInTheHousehold": "Personer I Hushållet",
+  "association": "Förening",
+  "documents": "Dokument",
+  "viewings": "Planerade Visningar",
+  "show-all": "Visa Allt",
+  "show-less": "Visa Mindre"
+}

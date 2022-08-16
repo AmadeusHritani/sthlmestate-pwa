@@ -1,0 +1,1007 @@
+{
+  "advertiseOn": {
+    "homepage": true,
+    "firstPublishingDateOnHomepage": "2022-08-08T17:22:34",
+    "showAsComming": false,
+    "showAsSoonForSale": false,
+    "showTodaysHousing": false,
+    "hidePrice": false,
+    "hideAddress": false,
+    "showInImageLoop": false,
+    "showAsReferenceHousing": false,
+    "changingRequirementsText": null,
+    "imageIds": [
+      "MEDB44E412A570B4FE78FF53FC7979877F9",
+      "MED1E48F120D3E94F73A9DE14B1D84FE023",
+      "MED335CCD4F8EE94B96B5665CB429B17939",
+      "MED1AC2627F166347E598CE3E7A13A8DDC3",
+      "MEDF70D2680FF7A4EBCA29F813FD61187AF",
+      "MEDA1EC97C0B4CD44E5A671E9894643C050",
+      "MED26C32939493E4FAAA6997F1179583E64",
+      "MED93B54CBD320A47119CEBBA99FF653B9C",
+      "MEDCA112BC4124B47CE9AD207180F6732E0",
+      "MED9AB8EDB9B3474B0B89F2CC43E83A0566",
+      "MEDB148FC0A736A46CDB167086C9F8D2687",
+      "MEDF82DE8077B6841DE91246B8221011098",
+      "MED7D026FA9D7C7493F8C67BA9C14C551FA",
+      "MED49D4756EC6704FBDA2888E862868CEC5",
+      "MED605498AA5DA84363B2CA2F69F1A7C295",
+      "MEDA547AC1A0FD84F19A23FE82617059BC3",
+      "MED84BE4C5720F447DDB21F92735FE226B6",
+      "MED87979999C08C4DA3B54BD03C9D34DFCF",
+      "MED486E59392AC9406CA886B9ABB17D78D2",
+      "MED5888454A21A54CDB957CDF193EF409D8",
+      "MED5207D9F6FB8F4BDB91D76061CEA7F279",
+      "MED7A8E23B359224B1B8097DAA1250C40CC",
+      "MED0C8F5385E3654A08BC6645374432A67D",
+      "MEDF6032DE6F42F4FEC8DDE8713729D8089",
+      "MED0100BE95F5AB41588CFB2F19FC9BD34F",
+      "MED353B66AEB78A483FA4D9E935E6E5B80A",
+      "MED3238EA54C4B24CF584C68802952CDC31",
+      "MED217F2AE784CE430190137579DF8B670C",
+      "MEDA6BAE19ED6A54602A0E50C247D10D4F3",
+      "MED8DB1FC82063540938020835BA4E40480",
+      "MED19F32E2D468C4D3EAB1E5C5CABB496C8",
+      "MED04CD04560D674D1290A6486D2306D4A4"
+    ],
+    "documents": [],
+    "links": [],
+    "marketplaces": [
+      "Booli"
+    ],
+    "showAsPreview": false
+  },
+  "baseInformation": {
+    "newConstruction": false,
+    "livingSpace": 89,
+    "otherSpace": 0,
+    "apartmentNumber": "A15",
+    "apartmentNumberRegistration": null,
+    "monthlyFee": 4067,
+    "monthlyFeeIsZero": false,
+    "includedInFee": null,
+    "commentary": null,
+    "disposalForm": "BR",
+    "tenure": "Bostadsrätt",
+    "increaseSeekConception": [],
+    "objectAddress": {
+      "municipality": "Solna",
+      "area": "",
+      "coordinate": {
+        "longitud": 18.000061,
+        "latitud": 59.370686
+      },
+      "countyMunicipalityParishCode": "018400",
+      "districtCode": "",
+      "district": null,
+      "localIncomeTax": "29,461",
+      "parish": null,
+      "county": "Stockholms",
+      "areaId": null,
+      "areaArchived": true,
+      "streetAddress": "Evenemangsgatan 14",
+      "zipCode": "16979",
+      "city": "SOLNA",
+      "countryCode": "SE"
+    },
+    "areaSource": null,
+    "areaSourceComment": null,
+    "other": null,
+    "projectId": null,
+    "sensitiveBusiness": false,
+    "propertyType": "Bostadsrätt"
+  },
+  "interior": {
+    "kitchenType": null,
+    "numberOfBedroom": null,
+    "maxNumberOfBedroom": null,
+    "numberOfRooms": 3,
+    "generealDescription": "",
+    "compiledDescription": false,
+    "rooms": [
+      {
+        "heading": "Hall",
+        "text": "Hall med parkettgolv och vita väggar, förvaring genom en rymlig skjutdörrsgarderob till vänster sett från entrén. I hallens inre del finns extra förvaring genom ett förråd. Kök och vardagsrum i öppen planlösning med parkettgolv och vita väggar."
+      },
+      {
+        "heading": "Vardagsrum",
+        "text": "Spatiöst vardagsrum med väggar i vit nyans och parkett på golv samt ett härligt ljusinsläpp från fönsterpartierna. Här finns plats för sällskapsspel med soffgrupp, matgrupp och tv-möblemang. Via vardagsrummet tar man sig vidare ut på lägenhetens mysiga och rymliga balkong i solsäkert läge. \r\nI anslutning till vardagsrummet finns även rymlig plats för förvaring garderober."
+      },
+      {
+        "heading": "Kök",
+        "text": "Köket är maskinellt utrustat med vitvaror bestående av kyl och frys i fullhöjd samt häll, ugn, diskmaskin och vinkyl. Dessutom inbyggd mikrovågsugn från Siemens och fläkt från Franke. Bänkskiva i mörkt laminat med vitt kakel ovanför. I vardagsrumsdelen finns gott om plats för både soffgrupp och matsalsmöbel. Härifrån nås också balkongen i nordvästläge. Ljusinsläpp genom stort fönsterparti i samma väderstreck."
+      },
+      {
+        "heading": "Sovrum I",
+        "text": "Med parkettgolv och vita väggar. Plats för dubbelsäng och annat sovrumsmöblemang, förvaring finns genom inredd klädkammare. Ljusinsläpp genom glasad altandörr med utgång till balkongen."
+      },
+      {
+        "heading": "Sovrum II",
+        "text": "Med parkettgolv och vita väggar. Plats för säng, förvaring i en garderob. Ljusinsläpp från fönster i nordväst."
+      },
+      {
+        "heading": "Badrum",
+        "text": "Badrum med mörkgrått klinkergolv och vitt kakel på väggarna. Här finns takdusch med dubbla munstycken och glasad vägg. Här finns även tvättmaskin samt torktumlare för största möjliga trevnad med tillhörande förvaring ovanför."
+      },
+      {
+        "heading": "Balkong",
+        "text": "Magisk balkong som vetter mot fantastiska grönområden samt vackra fasader. Här finns utrymme för rejäl loungegrupp samt övrigt önskat möblemang. En balkong i världsklass helt enkelt!"
+      }
+    ]
+  },
+  "building": {
+    "buildingType": "Flerbostadshus",
+    "buildingYear": "2015",
+    "commentaryForBuildingYear": null,
+    "heating": null,
+    "windows": "3-glas",
+    "otherAboutTheBuildning": null,
+    "otherBuildings": null,
+    "propertyUnitDesignation": "",
+    "renovations": null
+  },
+  "ventilation": {
+    "type": "",
+    "inspection": ""
+  },
+  "energyDeclaration": {
+    "completed": "NotSelected",
+    "energyDeclarationDate": null,
+    "energyConsumption": "",
+    "energyClass": "",
+    "primaryEnergyNumber": null
+  },
+  "groundIncludetToHousingCooperative": {
+    "squereMetre": "",
+    "description": null
+  },
+  "floorAndElevator": {
+    "descriptionOfElevator": null,
+    "elevator": "Yes",
+    "totalNumberFloors": 0,
+    "totalNumberOfFloors": 0,
+    "floor": 7,
+    "floorCommentary": null
+  },
+  "price": {
+    "startingPrice": 0,
+    "finalPrice": 0,
+    "priceInOtherCurrencie": 0,
+    "otherCurrency": "",
+    "text": ""
+  },
+  "date": {
+    "possibleAccessDate": null,
+    "accessDate": null,
+    "accessTime": null,
+    "agreementDate": null,
+    "assignmentDate": "2022-07-23T18:13:38",
+    "allTermsMettDate": null
+  },
+  "participationAndRepairFund": {
+    "repairFund": 0,
+    "participationOffAnnualFee": 0,
+    "participationInAssociation": 1.23115,
+    "shareComment": null
+  },
+  "association": {
+    "id": "ORGBRF88F8020ECFA54B5DB23F2BE4F6E9BEC7",
+    "name": "BRF Stjärnhimlen",
+    "organizationalForm": "Bostadsratt",
+    "corporateNumber": "769626-6167",
+    "streetAddress": "Evenemangsgatan 12",
+    "zipCode": "16979",
+    "city": "SOLNA",
+    "email": {
+      "emailAddress": null,
+      "emailAddress2": null
+    },
+    "homePage": null,
+    "genuineAssociation": null,
+    "publicContact": null,
+    "phonePublicContact": null,
+    "applicationEntranceResignation": null,
+    "responsibleApartmentRegister": null,
+    "generalAboutAssociation": "Brf Stjärnhimlen är en äkta förening. Föreningen består av tre flerbostadshus och 24 st radhus vilket ger totalt 82 st bostadsrättslägenheter från 2 rok - 5 rok.\n\nÄgande i föreningen\nFöreningen godkänner delat ägande och inga gränser finns i stadgarna för minsta procentsats, dock har styrelsen rätt att neka delat ägande eller föreslagen procentsats om sådana skäl föreligger.\nJuridisk person godkänns ej.\n\nRenoveringar\nFastigheten är nybyggd, Fasadbyte kommer ske,\ningen tidplan finns för tillfället (garantiärende) inga\nplaner för andra större renoveringar I närtid.\n\nFörsäkring\nFörsäkring via Folksam\n\nTv och bredband\nTelia Digital-tv, grundutbud Lagom 18 kanaler ingår i månadsavgiften.\nTelia Bredband FiberLan 100/100 Mbit/s samt Telia IP-telefoni ingår i månadsavgiften.\n\nBilplats\nFöreningen har inga egna parkeringsplatser, det finns dock en mängd parkeringsmöjligheter i närheten bl.a. i Arenagaraget.\n\nGemensamma utrymmen\nDet finns torkrum. Tvättmaskin och torktumlare finns i varje lägenhet, ingen gemensam tvättstuga finns.\nCykelrum och barnvagnsrum finns på entréplanet,\nInga förråd finns förutom de som finns i varje bostad.\nSoprum nås från Evenemangsgatan.\n\nÖverlåtelseavgift\n2,5 % av prisbasbeloppet och debiteras\nav köparen\n\nAvgiftsförändring: Fr.o.m. 1/3 2022 görs en justering av medlemsavgifterna med 2%, p.g.a. inflation. Även elpriset har ökat under senaste åren och för att få en mer realistisk debitering mot medlemmar så ökar kwh-priset med ca 20% till 1,70 kr mot tidigare 1,40 kr. Priset för elen gäller retroaktivt fr.o.m. 1/12 2021.\n\n\nEnergideklaration\nEnergideklaration finns ej att tillhandahålla.\n\nÖvrigt\nFöreningen kommer att ingå i en gemensamhetsanläggning med nationalarenan 7 för bostadsgården på plan 9. Föreningens andel kommer att beräknas vid en framtida förrättning.",
+    "noteAboutHousingCooperative": null,
+    "notes": null,
+    "finances": null,
+    "theAssociationOwnTheGround": null,
+    "numberOfApartments": 82,
+    "numberOfRentalUnits": 0,
+    "numberOfLocals": 0,
+    "renovations": null,
+    "parking": null,
+    "tvAndBroadband": null,
+    "transferFee": 0,
+    "pledgeFee": 0,
+    "allowLegalPersonAsBuyer": "Ej angiven",
+    "allowTwinOwnership": null,
+    "transferFeePaidBy": "",
+    "courtyard": null,
+    "other": null,
+    "sharedSpaces": null,
+    "documents": [],
+    "monthlyFeeinfinformation": null,
+    "images": [],
+    "insurance": null,
+    "buildingYear": null,
+    "commentaryForBuildingYear": null
+  },
+  "inspection": {
+    "inspected": false,
+    "sellerInsurence": false
+  },
+  "predge": {
+    "pawned": false,
+    "taskControlled": null,
+    "notes": null
+  },
+  "operation": {
+    "heating": 0,
+    "electricity": 3500,
+    "waterAndDrain": 0,
+    "chimneySweeping": 0,
+    "roadCommunity": 0,
+    "sanitation": 0,
+    "insurance": 1500,
+    "other": 0,
+    "sum": 5000,
+    "personsInTheHousehold": 3,
+    "commentary": null,
+    "roadCharge": 0,
+    "maintenance": 0
+  },
+  "electricity": {
+    "companie": "",
+    "distributor": "",
+    "powerConsumptionKWH": 0
+  },
+  "sellers": [
+    "ADR7528327D61B64827A367643DBDE56539"
+  ],
+  "bids": [],
+  "viewingSettings": {
+    "showOneViewingTimeOnInternet": false,
+    "missingViewingTimeDescription": null
+  },
+  "viewings": [],
+  "marketedAs": "Apartment",
+  "balconyPatio": {
+    "squereMeterype": null,
+    "type": null,
+    "summary": null,
+    "parking": null,
+    "balcony": true,
+    "patio": null,
+    "parkingLot": null
+  },
+  "commissionType": "Sale",
+  "tvAndBroadband": {
+    "tv": null,
+    "broadband": null
+  },
+  "surrounding": null,
+  "buyers": [],
+  "internetSettings": {
+    "bidSetting": "DontShowBidding",
+    "isVerifiedBidding": false
+  },
+  "webbId": null,
+  "estateId": "OBJ19854_1940324461",
+  "customerId": "M19854",
+  "officeId": "FIR19854",
+  "dateChanged": "2022-08-13T17:38:38",
+  "assignment": {
+    "status": {
+      "id": "3",
+      "name": "Till salu"
+    },
+    "marketingMethods": null,
+    "responsibleBroker": "HAN1A29280EBA944CEF8C87E156DE6C7BBB",
+    "additionalContact": null,
+    "estatenumber": "GY030",
+    "producer": null
+  },
+  "description": {
+    "sellPhrase": "",
+    "generally": null,
+    "sellingHeading": "",
+    "shortSellingDescription": "Unik gaveltrea med hörnbalkong belägen högt upp i huset i expansiva och populära Arenastaden finner ni denna trea med en härlig hörnbalkong där du kan njuta av en imponerande utsikt under ljumma sommarkvällar.\r\nLägenheten karaktäriseras av alltigenom stilrena och moderna materialval såsom ekparkett, vitmålade ytskikt och ett helkaklat badrum med tvättmöjligheter.\r\nDen öppna sociala planlösningen mellan köket och vardagsrummet gör det möjligt att samtala med familj och vänner samtidigt som middagen tillagas. Invid det generösa fönsterpartiet finns plats för ett stort matsalsbord med plats för många gäster. och Utsikten, som sträcker sig från de nybyggda husen i området bort mot den lummiga skogen och Råstasjön, blir en extra krydda. Väntas mingel eller många gäster finns det gott om plats för umgänge på de fria öppna ytorna i vardagsrummet. \r\n\r\nDe båda sovrummen ligger bredvid varandra och inrymmer båda två plats för säng och förvaring. Det större sovrummet har dessutom ingång till en rymlig, inredd klädkammare. I lägenheten finns också extra förvaring genom ett stort förråd som nås från hallen. Sammanfattningsvis ett högklassigt boende med modern standard som kännetecknas av öppna ytor och en luftig och rymlig känsla.\r\n\r\nI Arenastaden får du det bästa av två världar; du bor mitt i händelsernas centrum samtidigt som du har nära till naturen och fin strandpromenad. Här finns Mall of Scandinavia som är ett fullvärdigt alternativ, inte bara till Stockholm city, utan även till många internationella motsvarigheter med dess arkitektur, flaggskeppsbutiker, restauranger och evenemang utöver det vanliga. I gallerian finns också Sveriges modernaste biograf. Naturen finns runt knuten, Råstasjöns och Lötsjöns fina promenad- och löpvägar bildar tillsammans en underbar miljö.",
+    "longSellingDescription": "",
+    "wayDescription": "",
+    "language": "SV",
+    "other": null
+  },
+  "images": [
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 1,
+      "hemnetOrderNumber": 1,
+      "imageId": "MEDB44E412A570B4FE78FF53FC7979877F9",
+      "dateChanged": "2022-07-23T18:11:14",
+      "dateChangedImageData": "2022-07-23T18:11:14",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MEDB44E412A570B4FE78FF53FC7979877F9",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MEDB44E412A570B4FE78FF53FC7979877F9.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 2,
+      "hemnetOrderNumber": 2,
+      "imageId": "MED1E48F120D3E94F73A9DE14B1D84FE023",
+      "dateChanged": "2022-07-23T18:12:25",
+      "dateChangedImageData": "2022-07-23T18:11:14",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED1E48F120D3E94F73A9DE14B1D84FE023",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED1E48F120D3E94F73A9DE14B1D84FE023.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 3,
+      "hemnetOrderNumber": 3,
+      "imageId": "MED335CCD4F8EE94B96B5665CB429B17939",
+      "dateChanged": "2022-07-23T18:11:14",
+      "dateChangedImageData": "2022-07-23T18:11:14",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED335CCD4F8EE94B96B5665CB429B17939",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED335CCD4F8EE94B96B5665CB429B17939.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 4,
+      "hemnetOrderNumber": 4,
+      "imageId": "MED1AC2627F166347E598CE3E7A13A8DDC3",
+      "dateChanged": "2022-07-23T18:11:14",
+      "dateChangedImageData": "2022-07-23T18:11:14",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED1AC2627F166347E598CE3E7A13A8DDC3",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED1AC2627F166347E598CE3E7A13A8DDC3.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 5,
+      "hemnetOrderNumber": 5,
+      "imageId": "MEDF70D2680FF7A4EBCA29F813FD61187AF",
+      "dateChanged": "2022-07-23T18:11:03",
+      "dateChangedImageData": "2022-07-23T18:11:03",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MEDF70D2680FF7A4EBCA29F813FD61187AF",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MEDF70D2680FF7A4EBCA29F813FD61187AF.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 6,
+      "hemnetOrderNumber": 6,
+      "imageId": "MEDA1EC97C0B4CD44E5A671E9894643C050",
+      "dateChanged": "2022-07-23T18:11:03",
+      "dateChangedImageData": "2022-07-23T18:11:03",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MEDA1EC97C0B4CD44E5A671E9894643C050",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MEDA1EC97C0B4CD44E5A671E9894643C050.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 7,
+      "hemnetOrderNumber": 7,
+      "imageId": "MED26C32939493E4FAAA6997F1179583E64",
+      "dateChanged": "2022-07-23T18:11:00",
+      "dateChangedImageData": "2022-07-23T18:10:58",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED26C32939493E4FAAA6997F1179583E64",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED26C32939493E4FAAA6997F1179583E64.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 8,
+      "hemnetOrderNumber": 8,
+      "imageId": "MED93B54CBD320A47119CEBBA99FF653B9C",
+      "dateChanged": "2022-07-23T18:11:14",
+      "dateChangedImageData": "2022-07-23T18:11:14",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED93B54CBD320A47119CEBBA99FF653B9C",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED93B54CBD320A47119CEBBA99FF653B9C.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 9,
+      "hemnetOrderNumber": 9,
+      "imageId": "MEDCA112BC4124B47CE9AD207180F6732E0",
+      "dateChanged": "2022-07-23T18:11:15",
+      "dateChangedImageData": "2022-07-23T18:11:15",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MEDCA112BC4124B47CE9AD207180F6732E0",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MEDCA112BC4124B47CE9AD207180F6732E0.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 10,
+      "hemnetOrderNumber": 10,
+      "imageId": "MED9AB8EDB9B3474B0B89F2CC43E83A0566",
+      "dateChanged": "2022-07-23T18:11:15",
+      "dateChangedImageData": "2022-07-23T18:11:15",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED9AB8EDB9B3474B0B89F2CC43E83A0566",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED9AB8EDB9B3474B0B89F2CC43E83A0566.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 11,
+      "hemnetOrderNumber": 11,
+      "imageId": "MEDB148FC0A736A46CDB167086C9F8D2687",
+      "dateChanged": "2022-07-23T18:11:15",
+      "dateChangedImageData": "2022-07-23T18:11:15",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MEDB148FC0A736A46CDB167086C9F8D2687",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MEDB148FC0A736A46CDB167086C9F8D2687.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 12,
+      "hemnetOrderNumber": 12,
+      "imageId": "MEDF82DE8077B6841DE91246B8221011098",
+      "dateChanged": "2022-07-23T18:11:13",
+      "dateChangedImageData": "2022-07-23T18:11:12",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MEDF82DE8077B6841DE91246B8221011098",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MEDF82DE8077B6841DE91246B8221011098.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 13,
+      "hemnetOrderNumber": 13,
+      "imageId": "MED7D026FA9D7C7493F8C67BA9C14C551FA",
+      "dateChanged": "2022-07-23T18:11:04",
+      "dateChangedImageData": "2022-07-23T18:11:04",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED7D026FA9D7C7493F8C67BA9C14C551FA",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED7D026FA9D7C7493F8C67BA9C14C551FA.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 14,
+      "hemnetOrderNumber": 14,
+      "imageId": "MED49D4756EC6704FBDA2888E862868CEC5",
+      "dateChanged": "2022-07-23T18:11:05",
+      "dateChangedImageData": "2022-07-23T18:11:05",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED49D4756EC6704FBDA2888E862868CEC5",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED49D4756EC6704FBDA2888E862868CEC5.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 15,
+      "hemnetOrderNumber": 15,
+      "imageId": "MED605498AA5DA84363B2CA2F69F1A7C295",
+      "dateChanged": "2022-07-23T18:11:14",
+      "dateChangedImageData": "2022-07-23T18:11:14",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED605498AA5DA84363B2CA2F69F1A7C295",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED605498AA5DA84363B2CA2F69F1A7C295.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 16,
+      "hemnetOrderNumber": 16,
+      "imageId": "MEDA547AC1A0FD84F19A23FE82617059BC3",
+      "dateChanged": "2022-07-23T18:11:04",
+      "dateChangedImageData": "2022-07-23T18:11:04",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MEDA547AC1A0FD84F19A23FE82617059BC3",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MEDA547AC1A0FD84F19A23FE82617059BC3.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 17,
+      "hemnetOrderNumber": 17,
+      "imageId": "MED84BE4C5720F447DDB21F92735FE226B6",
+      "dateChanged": "2022-07-23T18:11:15",
+      "dateChangedImageData": "2022-07-23T18:11:15",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED84BE4C5720F447DDB21F92735FE226B6",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED84BE4C5720F447DDB21F92735FE226B6.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 18,
+      "hemnetOrderNumber": 18,
+      "imageId": "MED87979999C08C4DA3B54BD03C9D34DFCF",
+      "dateChanged": "2022-07-23T18:11:14",
+      "dateChangedImageData": "2022-07-23T18:11:14",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED87979999C08C4DA3B54BD03C9D34DFCF",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED87979999C08C4DA3B54BD03C9D34DFCF.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 19,
+      "hemnetOrderNumber": 19,
+      "imageId": "MED486E59392AC9406CA886B9ABB17D78D2",
+      "dateChanged": "2022-07-23T18:11:00",
+      "dateChangedImageData": "2022-07-23T18:10:59",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED486E59392AC9406CA886B9ABB17D78D2",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED486E59392AC9406CA886B9ABB17D78D2.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 20,
+      "hemnetOrderNumber": 20,
+      "imageId": "MED5888454A21A54CDB957CDF193EF409D8",
+      "dateChanged": "2022-07-23T18:11:00",
+      "dateChangedImageData": "2022-07-23T18:10:58",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED5888454A21A54CDB957CDF193EF409D8",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED5888454A21A54CDB957CDF193EF409D8.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 21,
+      "hemnetOrderNumber": 21,
+      "imageId": "MED5207D9F6FB8F4BDB91D76061CEA7F279",
+      "dateChanged": "2022-07-23T18:11:00",
+      "dateChangedImageData": "2022-07-23T18:10:58",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED5207D9F6FB8F4BDB91D76061CEA7F279",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED5207D9F6FB8F4BDB91D76061CEA7F279.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 22,
+      "hemnetOrderNumber": 22,
+      "imageId": "MED7A8E23B359224B1B8097DAA1250C40CC",
+      "dateChanged": "2022-07-23T18:11:14",
+      "dateChangedImageData": "2022-07-23T18:11:14",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED7A8E23B359224B1B8097DAA1250C40CC",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED7A8E23B359224B1B8097DAA1250C40CC.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 23,
+      "hemnetOrderNumber": 23,
+      "imageId": "MED0C8F5385E3654A08BC6645374432A67D",
+      "dateChanged": "2022-07-23T18:11:04",
+      "dateChangedImageData": "2022-07-23T18:11:03",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED0C8F5385E3654A08BC6645374432A67D",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED0C8F5385E3654A08BC6645374432A67D.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 24,
+      "hemnetOrderNumber": 24,
+      "imageId": "MEDF6032DE6F42F4FEC8DDE8713729D8089",
+      "dateChanged": "2022-07-23T18:11:03",
+      "dateChangedImageData": "2022-07-23T18:11:03",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MEDF6032DE6F42F4FEC8DDE8713729D8089",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MEDF6032DE6F42F4FEC8DDE8713729D8089.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 25,
+      "hemnetOrderNumber": 25,
+      "imageId": "MED0100BE95F5AB41588CFB2F19FC9BD34F",
+      "dateChanged": "2022-07-23T18:11:14",
+      "dateChangedImageData": "2022-07-23T18:11:14",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED0100BE95F5AB41588CFB2F19FC9BD34F",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED0100BE95F5AB41588CFB2F19FC9BD34F.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 26,
+      "hemnetOrderNumber": 26,
+      "imageId": "MED353B66AEB78A483FA4D9E935E6E5B80A",
+      "dateChanged": "2022-07-23T18:11:15",
+      "dateChangedImageData": "2022-07-23T18:11:15",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED353B66AEB78A483FA4D9E935E6E5B80A",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED353B66AEB78A483FA4D9E935E6E5B80A.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 27,
+      "hemnetOrderNumber": 27,
+      "imageId": "MED3238EA54C4B24CF584C68802952CDC31",
+      "dateChanged": "2022-07-23T18:11:05",
+      "dateChangedImageData": "2022-07-23T18:11:05",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED3238EA54C4B24CF584C68802952CDC31",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED3238EA54C4B24CF584C68802952CDC31.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 28,
+      "hemnetOrderNumber": 28,
+      "imageId": "MED217F2AE784CE430190137579DF8B670C",
+      "dateChanged": "2022-07-23T18:11:00",
+      "dateChangedImageData": "2022-07-23T18:10:58",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED217F2AE784CE430190137579DF8B670C",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED217F2AE784CE430190137579DF8B670C.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 29,
+      "hemnetOrderNumber": 29,
+      "imageId": "MEDA6BAE19ED6A54602A0E50C247D10D4F3",
+      "dateChanged": "2022-07-23T18:11:15",
+      "dateChangedImageData": "2022-07-23T18:11:14",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MEDA6BAE19ED6A54602A0E50C247D10D4F3",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MEDA6BAE19ED6A54602A0E50C247D10D4F3.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 30,
+      "hemnetOrderNumber": 30,
+      "imageId": "MED8DB1FC82063540938020835BA4E40480",
+      "dateChanged": "2022-07-23T18:11:14",
+      "dateChangedImageData": "2022-07-23T18:11:14",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED8DB1FC82063540938020835BA4E40480",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED8DB1FC82063540938020835BA4E40480.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 31,
+      "hemnetOrderNumber": 31,
+      "imageId": "MED19F32E2D468C4D3EAB1E5C5CABB496C8",
+      "dateChanged": "2022-07-23T18:12:25",
+      "dateChangedImageData": "2022-07-23T18:11:14",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED19F32E2D468C4D3EAB1E5C5CABB496C8",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED19F32E2D468C4D3EAB1E5C5CABB496C8.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": null,
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 32,
+      "hemnetOrderNumber": 32,
+      "imageId": "MEDEA1959A8AB074311BE5047A597108D18",
+      "dateChanged": "2022-07-23T18:13:19",
+      "dateChangedImageData": "2022-07-23T18:11:01",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MEDEA1959A8AB074311BE5047A597108D18",
+      "showImageOnInternet": false,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MEDEA1959A8AB074311BE5047A597108D18.jpg"
+      ]
+    },
+    {
+      "category": "",
+      "supplier": "",
+      "supplierId": "",
+      "text": "Planritning",
+      "name": null,
+      "textExtended": null,
+      "orderNumber": 33,
+      "hemnetOrderNumber": 33,
+      "imageId": "MED04CD04560D674D1290A6486D2306D4A4",
+      "dateChanged": "2022-08-13T17:38:38",
+      "dateChangedImageData": "2022-07-23T18:13:28",
+      "url": "https://connect.maklare.vitec.net:443/image/GetImage?customerId=M19854&imageId=MED04CD04560D674D1290A6486D2306D4A4",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/MED04CD04560D674D1290A6486D2306D4A4.jpg"
+      ]
+    }
+  ],
+  "interests": [],
+  "customFields": [],
+  "broker": {
+    "archived": false,
+    "public": true,
+    "userId": "HAN1A29280EBA944CEF8C87E156DE6C7BBB",
+    "customerId": [
+      "M19854"
+    ],
+    "orderNumber": 1,
+    "userName": "Gabriel Youhanoun",
+    "department": null,
+    "category": null,
+    "title": "Fastighetsmäklare",
+    "extraTitle": null,
+    "allowLogOn": true,
+    "emailAddress": "gabriel@sthlmestate.se",
+    "telePhone": null,
+    "cellPhone": "073-73 900 01",
+    "directPhonenumbers": [
+      {
+        "customerId": "M19854",
+        "phonenumber": null
+      }
+    ],
+    "publicPhonenumber": "0737390001",
+    "spokenLanguages": [],
+    "bank": "SEB",
+    "cleringNumber": null,
+    "account": "5385 11 513 48",
+    "iban": null,
+    "swift": null,
+    "comment": null,
+    "image": {
+      "imageId": "MED62B5DBF5163D4ECBB1C232C3E52E1FBD",
+      "dateChanged": "2022-08-11T22:23:25",
+      "dateChangedImageData": "2022-08-11T22:23:25",
+      "url": "https://connect.maklare.vitec.net/Image/GetImage?customerId=M19854&imageId=MED62B5DBF5163D4ECBB1C232C3E52E1FBD",
+      "showImageOnInternet": true,
+      "extension": "jpg",
+      "cdnReferences": [
+        "estate-images/OBJ19854_1940324461/HAN1A29280EBA944CEF8C87E156DE6C7BBB/MED62B5DBF5163D4ECBB1C232C3E52E1FBD.jpg"
+      ]
+    },
+    "publishedOnOffice": [
+      "M19854"
+    ],
+    "internalEmployeeNumber": null,
+    "externalUserId": null,
+    "customerIdsWithSortOrder": [
+      {
+        "customerId": "M19854",
+        "orderNumber": 1936293773,
+        "mainBusiness": true,
+        "officeId": "FIR19854"
+      }
+    ],
+    "dateChanged": "2022-08-10T20:42:31",
+    "subOffices": [],
+    "reviews": []
+  },
+  "mainImageUrl": "https://driftservice.blob.core.windows.net/cdn/OBJ19854_1940324461/EQ_Z7HQss0OWQnc9HFFzhg.._4k"
+}

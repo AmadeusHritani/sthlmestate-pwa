@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sthlm Estate AB | Server is busy</title>
+    <style>
+      body, html { margin: 0; padding: 0; }
+      body {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+      }
+      .wrapper {
+        position: absolute;
+        background-color: black;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        background-image: url('/about.jpg');
+        background-position: center center;
+        background-size: cover;
+      }
+      .content {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: white;
+        font-size: 1rem;
+        text-align: center;
+      }
+      .content img {
+        width: 70%;
+        max-width: 450px;
+      }
+      .content div {
+        text-align: center;
+        line-height: 1.7;
+        font-family: 'Consolas', Courier, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <img src="/sthlmestate-logo.svg" alt="Sthlm Estate AB">
+        <div>
+          Sthlm Estate App Server är upptagen.<br>Vänligen kom tillbaka om några minuter.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
