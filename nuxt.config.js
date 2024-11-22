@@ -1,60 +1,25 @@
 /* eslint-disable no-console */
-// import axios from '@nuxtjs/axios'
-import bodyParser from 'body-parser'
 import core from './config/core'
 const dev = process.env.NODE_ENV !== 'production'
-// import { getEstates } from './functions/api'
-// const hostname = process.env.NODE_ENV === 'production'
-//   ? core.settings.baseUrl.prod
-//   : core.settings.baseUrl.dev
-
-// const api = process.env.NODE_ENV === 'production'
-//   ? core.api.target
-//   : core.api.target
-
-// const squareEndPoint = process.env.NODE_ENV === 'production'
-//   ? core.settings.square.prod.endpoint
-//   : core.settings.square.test.endpoint
 
 export default {
   vue: {
     config: {
       productionTip: false,
-      devtools: true
+      devtools: dev
     }
   },
-  ssr: true,
-  // target: 'static',
-  target: 'server',
   server: {
-    port: dev ? '3000' : '3000', // default: 3000
-    host: 'localhost' // default: localhost
-    // host: '0.0.0.0' // default: localhost
+    host: '0.0.0.0'
+  },
+  ssr: true,
+  target: dev ? 'server' : 'static',
+  generate: {
+    crawler: true
   },
   router: {
     base: '/'
   },
-  publicRuntimeConfig: {
-    axios: {
-      browserBaseURL: core.api.hasProxy ? '/api/' : '/'
-    }
-  },
-  privateRuntimeConfig: {
-    axios: {
-      baseURL: core.api.target
-    }
-  },
-  // generate: {
-  //   routes () {
-  //     getEstates(false, true, axios, null, false).then((estateList) => {
-  //       // console.log(estateList)
-  //       return {
-  //         route: '*',
-  //         payload: estateList
-  //       }
-  //     })
-  //   }
-  // },
   render: {
     asynchScripts: true,
     http2: {
@@ -68,19 +33,23 @@ export default {
       amp: true
     },
     titleTemplate: '%s | ' + core.settings.title,
-    title: core.settings.titleLong,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: core.settings.description || '' },
-      { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: core.settings.appTitle || 'Sthlm Estate AB' },
+      { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: core.settings.appTitle || 'Sthlm Estate' },
       { hid: 'og:title', name: 'og:title', property: 'og:title', content: core.settings.appTitle || 'Sthlm Estate by SimHop' },
       { hid: 'og:site_name', name: 'og:site_name', property: 'og:site_name', content: core.settings.appTitle || 'Sthlm Estate by SimHop' },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'Progressive Web App'
+      },
       { name: 'format-detection', content: 'telephone=no' }
       // { name: 'google-site-verification', content: core.settings.googleSiteVerification },
       // { name: 'dmca-site-verification', content: core.settings.dmcaSiteVerification }
     ],
     script: [
+      { src: 'https://www.googletagmanager.com/gtag/js?id=G-4D4GTXS2PV', async: 'async' }
       // { src: `${squareEndPoint}`, defer: 'defer' },
       // { src: core.settings.googleOptimizeKey ? `'https://www.googleoptimize.com/optimize.js?id=${core.settings.googleOptimizeKey}` : null }
     ],
@@ -104,9 +73,12 @@ export default {
       src: '~/plugins/vue-video-background',
       ssr: false
     },
+    { src: '~/plugins/lightGallery.client.js' },
     { src: '~/plugins/i18n.js' },
+    { src: '~/plugins/preview.client.js' },
     { src: '~/plugins/txt.js' },
-    { src: '~/plugins/skrollTo.js' }
+    { src: '~/plugins/skrollTo.js' },
+    { src: '~/plugins/vue-iframes.js' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -129,16 +101,18 @@ export default {
     '@nuxtjs/i18n',
     '@nuxtjs/pwa',
     'nuxt-mail',
-    ['cookie-universal-nuxt', { alias: 'secookie' }]
+    ['cookie-universal-nuxt', { alias: 'secookie' }],
+    ['vue-iframes/nuxt', { mode: 'client' }]
   ],
 
   i18n: {
     locales: [
-      { code: 'sv', iso: 'sv-SE', file: 'sv/get.js', dir: 'ltr' },
-      { code: 'en', iso: 'en-US', file: 'en/get.js', dir: 'ltr' }
+      { code: 'sv', iso: 'sv-SE', file: 'sv/get.js', dir: 'ltr' }
+      // { code: 'en', iso: 'en-US', file: 'en/get.js', dir: 'ltr' }
     ],
     baseUrl: dev ? process.env.APP_URL_DEV : process.env.APP_URL_PROD,
-    strategy: 'prefix_except_default',
+    // strategy: 'prefix_except_default',
+    strategy: 'no_prefix',
     langDir: '~/locales/',
     defaultLocale: 'sv',
     vueI18n: {
@@ -155,16 +129,32 @@ export default {
     // color: '#999999',
     // height: '10px'
   },
-
+  publicRuntimeConfig: dev
+    ? {
+        axios: {
+          browserBaseURL: '/api/'
+        }
+      }
+    : {},
+  privateRuntimeConfig: dev
+    ? {
+        axios: {
+          baseURL: core.api.vitec
+        }
+      }
+    : {},
   axios: {
-    // baseURL: !process.env.NODE_ENV === 'production' ? core.api.target : '/api/'
-    // baseURL: core.api.target
-    proxy: true
+    prefix: '/api',
+    credentials: true,
+    proxy: !!dev
   },
-  proxy: core.api.proxy,
+  proxy: dev
+    ? core.api.proxy
+    : false,
 
   serverMiddleware: [
-    bodyParser.json()
+    // bodyParser.json(),
+    { path: '/server-api', handler: '~/server-api/index.js' }
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -175,7 +165,7 @@ export default {
         name3g: core.settings.titleLong,
         icons: [
           {
-            src: '/veutify-logo.svg',
+            src: '/logo-stacked-light-margin.svg',
             type: 'image/svg+xml',
             sizes: '512x512'
           },
@@ -230,7 +220,7 @@ export default {
             : css
         }
       },
-      dark: core.settings.navigator.dark,
+      dark: core.settings.deusNav.dark,
       themes: {
         light: {
           application: '#f1f1f1',
@@ -272,16 +262,19 @@ export default {
         implementation: require('sass')
       }
     },
-    extend (config, { isDev, isClient }) {
-      config.node = {
-        fs: 'empty'
-      }
-    },
     minifyCSS: true,
     minifyJS: true,
     html: {
       minifyCSS: false,
       minifyJS: false
+    },
+    extend (config, { isDev, isClient }) {
+      if (isClient) {
+        config.node = {
+          fs: 'empty',
+          'fs-extra': 'empty'
+        }
+      }
     }
   }
 }

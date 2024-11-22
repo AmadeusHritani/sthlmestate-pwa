@@ -1,10 +1,10 @@
 {
-  "title": "Sthlm Estate Inc.",
+  "title": "Sthlm Estate",
   "items": [
     {
       "slug": "/en",
       "label": "Home",
-      "title": "Sthlm Estate AB Homepage",
+      "title": "Sthlm Estate Homepage",
       "short_desc": "Explore properties for sale and rent"
     },
     {
@@ -16,13 +16,13 @@
     {
       "slug": "/en/about-us",
       "label": "About Us",
-      "title": "Om Sthlm Estate AB",
-      "short_desc": "Information Om Sthlm Estate AB"
+      "title": "Om Sthlm Estate",
+      "short_desc": "Information Om Sthlm Estate"
     },
     {
       "slug": "/en/contact-us",
       "label": "Contact Us",
-      "title": "Kontakta Sthlm Estate AB",
+      "title": "Kontakta Sthlm Estate",
       "short_desc": "Explore properties for sale."
     }
   ]

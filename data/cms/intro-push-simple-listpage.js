@@ -18,8 +18,8 @@ export default {
     }
   },
   heading: {
-    label: 'Våra bostäder',
-    uppercase: true,
+    label: 'Våra Bostäder',
+    uppercase: false,
     size: {
       desktop: '2.5rem',
       mobile: '2rem'
@@ -33,7 +33,7 @@ export default {
       dark: '#999999',
       light: '#333333'
     },
-    border: '0',
+    border: '1px',
     radius: '4px',
     bgcolor: {
       dark: 'transparent',

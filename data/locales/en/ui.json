@@ -1,22 +1,102 @@
 {
+  "phone-number": "08-889360",
   "search": {
     "label": "Search",
     "placeholder": "Search estates.."
   },
+  "back-to-top": "UP",
+  "coming-soon": "Coming Soon",
+  "our-latest-objects": "Our Latest Estates",
   "back": "Back",
   "back-to-list": "Back to list",
   "description": "Description",
-  "facts": "Facts",
+  "other": {
+    "label": "Other",
+    "text": {
+      "balcony": "Balcony",
+      "parking": "Parking",
+      "parkingLot": "Parking Lot",
+      "patio": "Patio",
+      "squereMeterype": "Land included in the grant",
+      "summary": "Summary",
+      "type": "Type"
+    }
+  },
+  "facts": {
+    "label": "Facts"
+  },
+  "bidding": "Bidding in progress",
+  "bidder": "Bidder",
   "operation-cost": "Operating Cost",
-  "waterAndDrain": "Water & Drain",
-  "electricity": "Electricity",
-  "heating": "Heating",
-  "insurance": "Insurance",
-  "sum": "Total Ops Cost",
-  "personsInTheHousehold": "Persons In The Household",
+  "operations": {
+    "annualFeeCommunity": "Annual Community Fee",
+    "annualFeeCommunityIncluded": "Comments",
+    "chimneySweeping": "Chimney Sweeping",
+    "commentAnnualFee": "Comment Annual Fee",
+    "commentary": "Commentary",
+    "electricity": "Electricity",
+    "heating": "Heating",
+    "insurance": "Insurance",
+    "maintenance": "Maintenance",
+    "other": "Other",
+    "personsInTheHousehold": "Persons in household",
+    "road-community-fee": "Road/Community Fee",
+    "roadCharge": "Road Charges",
+    "sanitation": "Sanitation",
+    "sum": "Total Operations Cost",
+    "waterAndDrain": "Water and Drain"
+  },
   "association": "Association",
   "documents": "Documents",
-  "viewings": "Planned Viewings",
+  "viewings": {
+    "label": "Planned Viewings",
+    "more-options": "More Options",
+    "less-options": "Less Options",
+    "no-options": "Select Viewing",
+    "select-time": "Select time",
+    "sms-reminder": "SMS Reminder",
+    "minutes": "minutes",
+    "messages": {
+      "vi": {
+        "main": "There are no preplanned viewings",
+        "call": "To plan a viewing, please give us a call at",
+        "form-unfilled": "You can also fill the Intresse form. We'll contact you shortly.",
+        "form-filled": "Your data looks good. Hit 'Skicka' to continue."
+      },
+      "is": {
+        "main": "Please choose a preplanned viewing",
+        "call": "Need help? Give us a call at",
+        "form-unfilled": "Fill all form fields.",
+        "form-filled": "Form is ready to send.."
+      },
+      "form": "Please fill in your data correctly so we can contact you.",
+      "deselected": "Select one or more viewing times.",
+      "deselected-title": "Click to select viewing day and time.",
+      "selected-one": "One Viewing time is selected.",
+      "selected-multiple": "Multiple Viewing times are selected.",
+      "selected-title": "Click again to deselect"
+    }
+  },
+  "all": "View All",
   "show-all": "Show All",
-  "show-less": "Show Less"
+  "send": "Send",
+  "show-less": "Show Less",
+  "location": "Location",
+  "go-to-location": "Location",
+  "floorplan": "Floorplans",
+  "go-to-floorplan": "Floorplans",
+  "photos": "Photos",
+  "go-to-photos": "Photos",
+  "interest-privacy-text1": "I have taken note of",
+  "interest-privacy-link": "Privacy",
+  "interest-privacy-hint": "Information on the processing of personal data",
+  "interest-privacy-text2": "and consent to my data being saved.",
+  "interest-privacy-error": "You must agree to continue.",
+  "email-success-msg": "Thanks! We'll contact you shortly.",
+  "email-error-msg": "Oops! There was an error. Please try again.",
+  "form": {
+    "evaluate": "Evaluate",
+    "buy": "Buy",
+    "sell": "Sell"
+  }
 }

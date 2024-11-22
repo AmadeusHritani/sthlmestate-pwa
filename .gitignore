@@ -34,6 +34,10 @@ bower_components
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 
+# Files directories
+static/estate-images
+static/estate-files
+
 # Dependency directories
 node_modules/
 jspm_packages/
@@ -69,7 +73,7 @@ typings/
 .nuxt
 
 # Nuxt generate
-#dist
+dist
 
 # vuepress build output
 .vuepress/dist
@@ -79,6 +83,7 @@ typings/
 
 # IDE / Editor
 .idea
+.fleet
 
 # Service worker
 sw.*

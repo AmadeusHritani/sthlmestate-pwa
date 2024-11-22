@@ -4,20 +4,22 @@
     <estate-details-image
       :city="estate.baseInformation.objectAddress.city"
       :street="estate.baseInformation.objectAddress.streetAddress"
-      :image-url="estate.mainImageUrl"
-      @scrollto="client ? $skrollTo(target, root, $vuetify.breakpoint.smAndDown) : null, null, false"
+      :image-url="mainImage"
+      @scrollto="client ? $skrollTo(refs['estate-details-wrapper'].$el, root, $vuetify.breakpoint.smAndDown, null, null,) : false"
+      @scroll-to-location="client ? $skrollTo(refs['estate_location'], root, $vuetify.breakpoint.smAndDown, -65, null,) : false"
+      @scroll-to-floorplan="client ? $skrollTo(refs['estate_gallery'].$refs['estate_floorplan'], root, $vuetify.breakpoint.smAndDown, -85, null,) : false"
+      @scroll-to-photos="client ? $skrollTo(refs['estate_gallery'].$refs['estate_photos'], root, $vuetify.breakpoint.smAndDown, null, null,) : false"
     />
     <!-- Estate Details Section -->
-    <section id="estate_details_wrapper" ref="estate-details-wrapper" class="estate-details-wrapper">
+    <v-card id="estate_details_wrapper" ref="estate-details-wrapper" class="estate-details-wrapper" elevation="5">
       <v-banner
-        :color="$vuetify.theme.dark ? '#101010' : '#FAFAFA'"
         single-line
       >
         <div class="estate-features-wrapper">
-          <div class=" mb-2 city">
+          <div class="city">
             {{ estate.baseInformation.objectAddress.city }}
           </div>
-          <h1 class="street mb-4">
+          <h1 class="street mb-2">
             {{ estate.baseInformation.objectAddress.streetAddress }}
           </h1>
           <div class="estate-features">
@@ -32,22 +34,16 @@
               <span class="label">Boarea</span>
               <span>{{ estate.baseInformation.livingSpace }} kvm</span>
             </span>
-            <v-icon v-if="estate && estate.baseInformation && estate.baseInformation.livingSpace && estate.floorAndElevator">
+            <v-icon v-if="estate && estate.baseInformation && estate.baseInformation.livingSpace && estate.floorAndElevator && estate.floorAndElevator.totalNumberFloors">
               mdi-circle-small
             </v-icon>
-            <span v-if="estate.floorAndElevator" class="estate-feature">
+            <span v-if="estate.floorAndElevator && estate.floorAndElevator.totalNumberFloors" class="estate-feature">
               <span class="label">
                 Våning
               </span>
               <span>{{ estate.floorAndElevator.floor }}/{{ estate.floorAndElevator.totalNumberFloors || estate.floorAndElevator.totalNumberOfFloors }}</span>
-              <span v-if="estate.floorAndElevator && estate.floorAndElevator.elevator && estate.floorAndElevator.elevator.toLowerCase() === 'yes'">
-                <v-icon small>
-                  mdi-check
-                </v-icon>
-                <span>Hiss</span>
-              </span>
             </span>
-            <v-icon v-if="estate.floorAndElevator && estate.baseInformation.monthlyFee">
+            <v-icon v-if="estate.floorAndElevator && estate.floorAndElevator.totalNumberFloors && estate.baseInformation.monthlyFee">
               mdi-circle-small
             </v-icon>
             <div v-if="estate.baseInformation.monthlyFee" class="estate-feature">
@@ -63,11 +59,11 @@
                 tag="span"
               />/mån
             </div>
-            <v-icon v-if="estate.baseInformation && estate.baseInformation.monthlyFee && estate.price && estate.price.startingPrice">
+            <v-icon v-if="estate.baseInformation && (estate.baseInformation.monthlyFee || (estate.floorAndElevator && estate.floorAndElevator.totalNumberFloors) || (estate && estate.baseInformation && estate.baseInformation.livingSpace)) && estate.price && estate.price.startingPrice">
               mdi-circle-small
             </v-icon>
             <div v-if="estate.price && estate.price.startingPrice" class="estate-feature">
-              <span style="font-style: italic; opacity: .5;">
+              <span class="label">
                 Utgångspris
               </span>
               <money-format
@@ -83,43 +79,209 @@
         </div>
       </v-banner>
       <v-container class="estate-details-container">
-        <v-row justify="center">
+        <v-row>
           <v-col
             cols="12"
-            md="8"
-            lg="9"
+            md="9"
           >
             <div class="estate-details-col-inner">
               <v-expansion-panels
-                v-if="items && items.length"
+                v-if="estatePanel && estatePanel.length"
                 ref="estate_details_panels"
                 v-model="panel"
                 multiple
-                accordion
                 flat
                 style="background-color: transparent;"
               >
                 <v-expansion-panel
-                  v-for="item in items"
-                  :id="`estate_details_panel_${item.slug}`"
-                  :key="item.id"
+                  v-for="estatePanelItem in estatePanel"
+                  :id="`estate_details_panel_${estatePanelItem.slug}`"
+                  :key="`${estatePanelItem.slug}_${estatePanelItem.id}`"
                   style="background-color: transparent;"
                 >
                   <v-expansion-panel-header
-                    :ref="`estate_details_panel_header_${item.slug}`"
-                    :class="(item.slug === 'facts' && (!facts || !facts.length)) || (item.slug === 'operations' && !estate.operation.length) || (item.slug === 'documents' && (!estate.association || !estate.association.documents)) ? 'd-none' : ''"
+                    :ref="`estate_details_panel_header_${estatePanelItem.slug}`"
+                    :class="(estatePanelItem.slug === 'description' && (!estate.description.shortSellingDescription && !estate.description.longSellingDescription)) || (estatePanelItem.slug === 'bidding' && (estate.internetSettings.bidSetting === 'DontShowBidding' || !bids || !bids.length)) || (estatePanelItem.slug === 'facts' && (!facts || !facts.length)) || (estatePanelItem.slug === 'operations' && (!operations || !operations.length)) || (estatePanelItem.slug === 'documents' && (!estate.association || !estate.association.documents.length)) || (estatePanelItem.slug === 'association' && (!estate.association || !estate.association.generalAboutAssociation)) ? 'd-none' : ''"
+                    :style="estatePanelItem.slug === 'viewings' ? 'border: none;' : ''"
                   >
-                    {{ $t(`${item.label ? 'ui.' + item.label : 'Förening'}`) }}
+                    <template
+                      v-if="estatePanelItem.slug === 'bidding'"
+                      #default="{ open }"
+                    >
+                      <v-row no-gutters>
+                        <v-col cols="7" sm="6">
+                          {{ $t(`${estatePanelItem.label ? 'ui.' + estatePanelItem.label : 'Förening'}`) }}
+                        </v-col>
+                        <v-col
+                          cols="5"
+                          sm="6"
+                          class="text--secondary"
+                        >
+                          <v-fade-transition hide-on-leave>
+                            <span
+                              v-if="open"
+                              key="0"
+                              style="font-weight: 300; font-size: smaller;"
+                            >
+                              {{ estate.internetSettings.bidSetting === 'ShowHighestBid' ? 'Högsta Budgivare' : estate.internetSettings.bidSetting === 'ShowBidding' ? '' : estate.internetSettings.bidSetting === 'ShowBiddhistory' ? 'Aktuella bud' : '' }}
+                            </span>
+                            <span
+                              v-else
+                              key="1"
+                            >
+                              <template v-if="estate.internetSettings.bidSetting === 'ShowBiddhistory' || estate.internetSettings.bidSetting === 'ShowHighestBid'">
+                                <money-format
+                                  :value="bids[0].amount"
+                                  locale="sv-SE"
+                                  currency-code="SEK"
+                                  :subunits-value="false"
+                                  :hide-subunits="true"
+                                  style="font-weight: 400; font-size: smaller;"
+                                />
+                              </template>
+                            </span>
+                          </v-fade-transition>
+                        </v-col>
+                      </v-row>
+                    </template>
+                    <span v-else-if="estatePanelItem.slug === 'facts'">
+                      {{ $txt('ui.facts.label') }}
+                    </span>
+                    <span v-else-if="estatePanelItem.slug === 'other'">
+                      {{ $txt('ui.other.label') }}
+                    </span>
+                    <span v-else>
+                      {{ $txt(`${estatePanelItem.label ? 'ui.' + estatePanelItem.label : 'Förening'}`) }}
+                    </span>
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
                     <!-- ************************ -->
                     <!-- ***** Tabs Targets ***** -->
                     <!-- ******** START ********* -->
+
+                    <!-- Tab Target - BIDDING -->
+                    <div
+                      v-if="estatePanelItem.slug === 'bidding' && bids.length"
+                      class="estate-bidding"
+                    >
+                      <div v-if="estate.internetSettings.bidSetting === 'ShowHighestBid'" class="highest-bid">
+                        <v-row dense align="center">
+                          <v-col cols="6" md="3">
+                            <div class="pa-1">
+                              {{ bids[0].bidder }}
+                            </div>
+                          </v-col>
+                          <v-col cols="6" md="4">
+                            <div class="pa-1">
+                              <money-format
+                                :value="bids[0].amount"
+                                locale="sv-SE"
+                                currency-code="SEK"
+                                :subunits-value="false"
+                                :hide-subunits="true"
+                                style="font-weight: 400;"
+                              />
+                            </div>
+                          </v-col>
+                          <v-col cols="6" md="3">
+                            <div class="pa-1">
+                              {{ bids[0].date }}
+                            </div>
+                          </v-col>
+                          <v-col cols="6" md="2">
+                            <div class="pa-1">
+                              {{ bids[0].time }}
+                            </div>
+                          </v-col>
+                        </v-row>
+                      </div>
+                      <div v-if="estate.internetSettings.bidSetting === 'ShowBiddhistory'" style="max-width: 600px;">
+                        <v-row v-if="!$vuetify.breakpoint.smAndDown" dense style="background-color: rgba(180,180,180, .5); opacity: .5;">
+                          <v-col cols="3">
+                            <div class="pa-1">
+                              Budgivare
+                            </div>
+                          </v-col>
+                          <v-col cols="4">
+                            <div class="pa-1">
+                              Bud
+                            </div>
+                          </v-col>
+                          <v-col cols="3">
+                            <div class="pa-1">
+                              Datum
+                            </div>
+                          </v-col>
+                          <v-col cols="2">
+                            <div class="pa-1">
+                              Tid
+                            </div>
+                          </v-col>
+                        </v-row>
+                        <v-row
+                          v-for="(bid, b) in bids"
+                          :key="`bid_${b}`"
+                          dense
+                          align="center"
+                          justify="center"
+                          style="border-bottom: thin solid rgba(180,180,180,.3);"
+                        >
+                          <v-col cols="6" md="3">
+                            <div class="pa-1">
+                              {{ bid.bidder }}
+                            </div>
+                          </v-col>
+                          <v-col cols="6" md="4">
+                            <div class="pa-1">
+                              <money-format
+                                :value="bid.amount"
+                                locale="sv-SE"
+                                currency-code="SEK"
+                                :subunits-value="false"
+                                :hide-subunits="true"
+                                style="font-weight: 400;"
+                              />
+                            </div>
+                          </v-col>
+                          <v-col cols="6" md="3">
+                            <div class="pa-1">
+                              {{ bid.date }}
+                            </div>
+                          </v-col>
+                          <v-col cols="6" md="2">
+                            <div class="pa-1">
+                              {{ bid.time }}
+                            </div>
+                          </v-col>
+                        </v-row>
+                      </div>
+                      <v-alert
+                        v-if="estate.internetSettings.bidSetting === 'ShowBidding'"
+                        icon="mdi-information"
+                        color="currentColor"
+                        dense
+                        text
+                      >
+                        <span>
+                          Kontakta mäklaren för mer information.
+                        </span>
+                      </v-alert>
+                    </div>
+                    <!-- end - BIDDING -->
                     <!-- Tab Target - DESCRIPTION -->
-                    <div v-if="item.slug === 'description'" class="estate-description-wrapper">
-                      <div class="estate-description-inner">
-                        <p v-html="estate.description.shortSellingDescription.replace(/(?:\r\n|\r|\n)/g, '<br>')" />
-                        <p v-if="item.slug === 'description'" v-html="estate.description.longSellingDescription.replace(/(?:\r\n|\r|\n)/g, '<br>')" />
+                    <div v-if="estatePanelItem.slug === 'description' && estate.description" class="estate-description-wrapper">
+                      <div
+                        v-if="estate.description && (estate.description.shortSellingDescription || estate.description.longSellingDescription)"
+                        class="estate-description-inner"
+                      >
+                        <p
+                          v-if="estate.description && estate.description.shortSellingDescription"
+                          v-html="estate.description.shortSellingDescription.replace(/(\r\n|\r|\n)/g, '<br>')"
+                        />
+                        <p
+                          v-if="estate.description && estate.description.longSellingDescription"
+                          v-html="estate.description.longSellingDescription.replace(/(\r\n|\r|\n)/g, '<br>')"
+                        />
                       </div>
                       <div v-if="!!rooms" class="desc-rooms">
                         <h2>
@@ -134,40 +296,44 @@
                     </div>
                     <!-- end - DESCRIPTION -->
                     <!-- Tab Target - FACTS -->
-                    <div v-if="item.slug === 'facts' && facts && facts.length" class="estate-facts">
+                    <div v-if="estatePanelItem.slug === 'facts' && facts && facts.length" class="estate-facts">
                       <v-row
                         v-for="(fact, f) in facts.filter(f => !!f.value)"
                         :key="fact.slug"
                         dense
                         align="center"
                         justify="center"
-                        :style="`background-color: ${f % 2 == 0 ? '#FFFFFF' : '#F1F1F1'}; ${!fact.value ? 'display: none;' : ''}`"
+                        :style="`background-color: ${f % 2 == 0 ? 'rgba(150,150,150,.1)' : ''}; ${!fact.value ? 'display: none;' : ''}`"
                       >
                         <v-col cols="7" md="2">
-                          {{ fact.label }}
+                          <div class="pa-1">
+                            {{ fact.label }}
+                          </div>
                         </v-col>
                         <v-col cols="5" md="2">
-                          <span v-if="fact.tag !== 'money-format' && !!fact.value">
-                            <span v-if="fact.prefix" class="prefix">
-                              {{ fact.prefix }}
+                          <div class="pa-1">
+                            <span v-if="fact.tag !== 'money-format' && !!fact.value">
+                              <span v-if="fact.prefix" class="prefix">
+                                {{ fact.prefix }}
+                              </span>
+                              <span v-if="fact.value" class="value" style="font-weight: 600 !important;">
+                                {{ fact.value }}
+                              </span>
+                              <span v-if="fact.suffix" class="suffix">
+                                {{ fact.suffix }}
+                              </span>
                             </span>
-                            <span v-if="fact.value" class="value" style="font-weight: 600 !important;">
-                              {{ fact.value }}
+                            <span v-else>
+                              <money-format
+                                :value="fact.value"
+                                locale="sv-SE"
+                                currency-code="SEK"
+                                :subunits-value="false"
+                                :hide-subunits="true"
+                                style="font-weight: 600;"
+                              />
                             </span>
-                            <span v-if="fact.suffix" class="suffix">
-                              {{ fact.suffix }}
-                            </span>
-                          </span>
-                          <span v-else>
-                            <money-format
-                              :value="fact.value"
-                              locale="sv-SE"
-                              currency-code="SEK"
-                              :subunits-value="false"
-                              :hide-subunits="true"
-                              style="font-weight: 600;"
-                            />
-                          </span>
+                          </div>
                         </v-col>
                         <v-col cols="12" md="8">
                           <div v-if="fact.text && fact.text.find(element => !!element.data)">
@@ -187,32 +353,86 @@
                           </div>
                         </v-col>
                       </v-row>
+                      <!-- Balcony and Patio info -->
+                      <template v-if="estate.balconyPatio">
+                        <v-row
+                          v-if="estate.balconyPatio.balcony"
+                          :style="`background-color: ${other.length % 2 == 0 ? 'rgba(150,150,150,.1)' : ''};`"
+                          dense
+                          align="center"
+                        >
+                          <v-col cols="7" md="2">
+                            <div class="pa-1">
+                              Balkong
+                            </div>
+                          </v-col>
+                          <v-col cols="fill">
+                            <v-icon small>
+                              mdi-checkbox-marked-outline
+                            </v-icon>
+                          </v-col>
+                        </v-row>
+                        <v-row
+                          v-if="estate.balconyPatio.patio"
+                          :style="`background-color: ${other.length % 2 == 0 && estate.balconyPatio.balcony ? '' : 'rgba(150,150,150,.1)'};`"
+                          dense
+                          align="center"
+                        >
+                          <v-col cols="7" md="2">
+                            <div class="pa-1">
+                              Uteplats
+                            </div>
+                          </v-col>
+                          <v-col cols="fill">
+                            <v-icon small>
+                              mdi-checkbox-marked-outline
+                            </v-icon>
+                          </v-col>
+                        </v-row>
+                      </template>
+                      <v-row
+                        v-if="estate.floorAndElevator && estate.floorAndElevator.elevator !== 'No'"
+                        :style="`background-color: ${other.length % 2 == 0 && estate.balconyPatio.balcony && estate.balconyPatio.patio ? 'rgba(150,150,150,.1)' : estate.balconyPatio.balcony || estate.balconyPatio.patio ? '' : ''};`"
+                        dense
+                        align="center"
+                      >
+                        <v-col cols="7" md="2">
+                          <div class="pa-1">
+                            Hiss
+                          </div>
+                        </v-col>
+                        <v-col cols="fill">
+                          <v-icon small>
+                            mdi-checkbox-marked-outline
+                          </v-icon>
+                        </v-col>
+                      </v-row>
                     </div>
                     <!-- end - FACTS -->
                     <!-- Tab Target - ASSOCIATION -->
                     <div
-                      v-if="item.slug === 'association' && estate.association"
+                      v-if="estatePanelItem.slug === 'association' && estate.association && estate.association.generalAboutAssociation"
                       class="estate-association"
                       v-html="estate.association.generalAboutAssociation.replace(/(?:\r\n|\r|\n)/g, '<br>')"
                     />
                     <!-- end - ASSOCIATION -->
                     <!-- Tab Target - OPERATIONS COST -->
-                    <div v-if="item.slug === 'operations' && estate.operation" class="estate-operations">
+                    <div v-if="estatePanelItem.slug === 'operations' && !!operations" class="estate-operations">
                       <v-row
-                        v-for="(op, o) in arrayfyOperations(estate.operation)"
+                        v-for="(op, o) in operations"
                         :key="o"
                         :style="op.name === 'sum' ? 'border-top: thin dashed rgba(140,140,140,.5); padding-top: 10px; padding-top: 5px;' : op.name === 'personsInTheHousehold' ? 'padding-top: 10px; padding-top: 5px;' : 'padding-left: 5px;'"
                         dense
                       >
-                        <v-col cols="6">
-                          <v-icon v-if="op.name == 'personsInTheHousehold'" style="margin-right: 5px;">
+                        <v-col v-if="op.name !== 'annualFeeCommunityIncluded'" cols="6" class="d-flex align-center">
+                          <v-icon v-if="op.name === 'personsInTheHousehold'" style="margin-right: 5px;">
                             mdi-information-outline
                           </v-icon>
-                          {{ $t(`ui.${op.name}`) }}
+                          {{ $t(`ui.operations.${op.name}`) }}
                         </v-col>
-                        <v-col cols="6">
+                        <v-col :cols="op.name === 'annualFeeCommunityIncluded' ? 12 : 6">
                           <money-format
-                            v-if="op.name !== 'personsInTheHousehold'"
+                            v-if="typeof op.value !== 'string' && op.name !== 'annualFeeCommunityIncluded' && op.name !== 'personsInTheHousehold'"
                             :value="op.value"
                             locale="sv-SE"
                             currency-code="SEK"
@@ -221,18 +441,53 @@
                             style="font-weight:600; font-size: 1.1rem"
                           />
                           <div v-else class="label">
-                            {{ op.value }}
+                            <v-alert
+                              v-if="op.name === 'annualFeeCommunityIncluded'"
+                              dense
+                              icon="mdi-information-outline"
+                            >
+                              <div class="comment">
+                                {{ op.value }}
+                              </div>
+                            </v-alert>
+                            <template v-else>
+                              <v-icon v-if="op.name === 'annualFeeCommunityIncluded'" small style="margin-right: 5px; margin-top: -2px;">
+                                mdi-information-outline
+                              </v-icon>
+                              <span :style="op.name === 'personsInTheHousehold' ? 'font-weight: 600;' : ''">{{ op.value }}</span>
+                              <span v-if="op.name === 'personsInTheHousehold'" class="font-italic">Personer</span>
+                            </template>
                           </div>
                         </v-col>
                       </v-row>
                     </div>
                     <!-- end - OPERATIONS COST -->
                     <!-- Tab Target - DOCUMENTS -->
-                    <div v-if="item.slug === 'documents' && estate.association && estate.association.documents.length" class="estate-documents">
-                      <v-row v-for="(document, d) in estate.association.documents" :key="d" dense align="center">
+                    <div v-if="estatePanelItem.slug === 'documents' && estate.association && estate.association.documents.length" class="estate-documents">
+                      <v-row
+                        v-for="(document, d) in estate.association.documents"
+                        :key="d"
+                        :style="d % 2 === 0 ? 'background-color:rgba(150,150,150,.1)' : ''"
+                        style="cursor:pointer;"
+                        dense
+                        align="center"
+                      >
                         <v-col cols="10">
-                          <v-btn :title="document.id" text>
-                            {{ document.name }}
+                          <v-btn
+                            :to="`${document.src}`"
+                            target="_blank"
+                            :title="document.id"
+                            plain
+                            class="file-btn"
+                            left
+                            style=""
+                          >
+                            <v-icon class="mr-3">
+                              mdi-file-document
+                            </v-icon>
+                            <span class="text-truncate" style="max-width:250px;">
+                              {{ document.name }}
+                            </span>
                           </v-btn>
                         </v-col>
                         <v-col cols="2" class="text-uppercase">
@@ -241,61 +496,6 @@
                       </v-row>
                     </div>
                     <!-- end - DOCUMENTS -->
-                    <!-- Tab Target - VIEWINGS -->
-                    <div v-if="item.slug === 'viewings'" class="estate-viewings">
-                      <v-item-group
-                        v-if="estate.viewings.length"
-                        v-model="selected"
-                      >
-                        <v-row>
-                          <v-col
-                            v-for="(viewing, i) in viewings"
-                            :key="i"
-                            cols="12"
-                            md="6"
-                            align-self="center"
-                          >
-                            <v-item v-slot="{ active, toggle }">
-                              <v-card
-                                height="150"
-                                class="pa-5"
-                                outlined
-                                @click="toggle"
-                              >
-                                <div style="text-align: center;">
-                                  <v-btn
-                                    icon
-                                  >
-                                    <v-icon large class="mb-2">
-                                      {{ active ? 'mdi-calendar-clock' : 'mdi-calendar-clock' }}
-                                    </v-icon>
-                                  </v-btn>
-                                  <div style="font-size: 1.5rem;" class="my-2">
-                                    {{ viewing.date }}
-                                  </div>
-                                </div>
-                                <div class="text-center" style="font-size:1.1rem;">
-                                  {{ viewing.start }} - {{ viewing.end }}
-                                </div>
-                              </v-card>
-                            </v-item>
-                          </v-col>
-                        </v-row>
-                      </v-item-group>
-                      <div v-else>
-                        Inga planerade visningar.<br>
-                        Ring 08-889360 för visning.
-                      </div>
-                      <!-- <v-row v-for="(viewing, v) in estate.viewings" :key="v" dense>
-                        <v-col cols="6">
-                          {{ $t(`ui.${viewing.name}`) }}
-                        </v-col>
-                        <v-col cols="6">
-                          {{ viewing.value }}
-                        </v-col>
-                      </v-row> -->
-                    </div>
-                    <!-- end - VIEWINGS -->
                     <!-- ********* END ********** -->
                     <!-- ***** Tabs Targets ***** -->
                     <!-- ************************ -->
@@ -303,38 +503,42 @@
                 </v-expansion-panel>
               </v-expansion-panels>
             </div>
-            <estate-interest-form />
           </v-col>
           <v-col
             cols="12"
-            md="4"
-            lg="3"
+            md="3"
+            :order="$vuetify.breakpoint.smAndDown ? '2' : ''"
           >
-            <div class="nav-footer">
-              <v-btn
-                class="my-2"
-                block
-                outlined
-                large
-                @click.prevent="$router.push(localePath('/fastigheter'))"
-              >
-                <v-icon left dark>
-                  mdi-backburger
-                </v-icon>
-                {{ $t('ui.back') }}
-              </v-btn>
-            </div>
-            <v-row>
-              <v-col cols="12">
-                <div class="broker-image-wrapper">
+            <v-row no-gutters align="center" justify="center">
+              <v-col cols="12" sm="4" md="12">
+                <div class="nav-footer">
+                  <v-btn
+                    class="my-2"
+                    block
+                    outlined
+                    large
+                    @click.prevent="$router.push(localePath('/bostader'))"
+                  >
+                    <v-icon left dark>
+                      mdi-backburger
+                    </v-icon>
+                    {{ $t('ui.back') }}
+                  </v-btn>
+                </div>
+              </v-col>
+              <v-col cols="12" sm="8" md="12">
+                &nbsp;
+              </v-col>
+              <v-col cols="12" sm="4" md="12">
+                <div v-if="estate.broker.image.cdnReferences" class="broker-image-wrapper">
                   <img
-                    :src="estate.broker.userId === 'HAN1A29280EBA944CEF8C87E156DE6C7BBB' ? '/gabriel-portrait.jpg' : estate.broker.image.cdnReferences[0]"
+                    :src="estate.broker.image.cdnReferences[0]"
                     :alt="estate.broker.userName"
                   >
                 </div>
               </v-col>
-              <v-col cols="12">
-                <div class="pa-3">
+              <v-col cols="12" sm="8" md="12">
+                <div class="pa-6">
                   <div class="broker-name">
                     {{ estate.broker.userName }}
                   </div>
@@ -349,97 +553,56 @@
               </v-col>
             </v-row>
           </v-col>
+          <v-col
+            :md="!viewings || !viewings.length ? 12 : 12"
+            :xl="!viewings || !viewings.length ? 12 : 12"
+            cols="12"
+          >
+            <!-- Tab Target - VIEWINGS -->
+            <div class="estate-viewings">
+              <estate-interest-form
+                :estate-id="estate.estateId"
+                :estate-broker-id="estate.broker.userId"
+                :dense="true"
+                :viewings="viewings"
+                :title="'Anmäl Intresse'"
+              />
+            </div>
+            <!-- end - VIEWINGS -->
+          </v-col>
         </v-row>
       </v-container>
-      <div class="map">
-        <iframe
-          width="100%"
-          :height="$vuetify.breakpoint.mdAndDown ? 450 : 550"
-          style="border:0"
-          :style="$vuetify.theme.dark ? 'filter: invert(90%) grayscale()' : 'filter: grayscale()'"
-          loading="lazy"
-          allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade"
-          :src="estateMapSrc"
-        />
-      </div>
-    </section>
-    <v-row no-gutters>
-      <v-col
-        v-for="image in [...estate.images].slice(0, 4)"
-        :key="image.imageId"
-        col="12"
-        md="6"
-      >
-        <v-img
-          :src="`/${image.cdnReferences[0]}`"
-          lazy-src="/estate-image-placeholder.jpg"
-          aspect-ratio="1.4"
-          cover
-          class="ma-2"
-        >
-          <template #placeholder>
-            <v-row
-              class="fill-height ma-0"
-              align="center"
-              justify="center"
-            >
-              <v-progress-circular
-                indeterminate
-                color="grey lighten-5"
-              />
-            </v-row>
-          </template>
-        </v-img>
-      </v-col>
-    </v-row>
-    <div class="actions">
-      <v-btn outlined x-large @click="showImages = !showImages">
-        {{ showImages ? $t('ui.show-less') : $t('ui.show-all') }}
-      </v-btn>
+    </v-card>
+    <client-only>
+      <estate-gallery ref="estate_gallery" :estate-images="estate.images" :floorplans="floorplans" />
+    </client-only>
+    <div id="estate_location" ref="estate_location" class="map">
+      <iframe
+        width="100%"
+        :height="$vuetify.breakpoint.mdAndDown ? 450 : 650"
+        referrerpolicy="strict-origin-when-cross-origin"
+        style="border:0"
+        :style="$vuetify.theme.dark ? 'filter: invert(90%);' : ''"
+        loading="lazy"
+        allowfullscreen
+        :src="estateMapSrc"
+      />
     </div>
-    <v-row v-if="showImages" no-gutters>
-      <v-col
-        v-for="(image) in estate.images"
-        :key="image.imageId"
-        col="12"
-        :md="6"
-      >
-        <v-img
-          :src="`/${image.cdnReferences[0]}`"
-          lazy-src="/estate-image-placeholder.jpg"
-          aspect-ratio="1.4"
-          cover
-          class="ma-2"
-        >
-          <template #placeholder>
-            <v-row
-              class="fill-height ma-0"
-              align="center"
-              justify="center"
-            >
-              <v-progress-circular
-                indeterminate
-                color="grey lighten-5"
-              />
-            </v-row>
-          </template>
-        </v-img>
-      </v-col>
-    </v-row>
   </div>
 </template>
 
 <script>
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
+import { mapState } from 'vuex'
 import MoneyFormat from 'vue-money-format'
-import { mapState, mapActions } from 'vuex'
 import EstateDetailsImage from './EstateDetailsImage.vue'
 import EstateInterestForm from './EstateInterestForm.vue'
-import { getEstateData } from '@/functions/api'
-import facts from '@/abstract/facts'
-import { cacheEstateImages } from '@/images'
+import EstateGallery from './EstateGallery.vue'
+import estate from './props'
+import facts from '~/abstract/facts'
+import estatePanel from '~/data/estate-details'
+import { weekdays, months } from '~/data/basic'
 
 export default {
   name: 'EstateDetails',
@@ -447,99 +610,77 @@ export default {
     // eslint-disable-next-line vue/no-unused-components
     'money-format': MoneyFormat,
     EstateDetailsImage,
-    EstateInterestForm
+    EstateInterestForm,
+    EstateGallery
   },
-  props: {
-    estate: {
-      type: Object,
-      required: true
-    }
-  },
+  props: { estate },
   data () {
     return {
-      weekdays: ['Söndag', 'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag'],
-      months: ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December'],
-      selected: [],
+      weekdays: weekdays(),
+      months: months(),
       facts,
-      panel: [0],
       options: {
         duration: 500,
         offset: 0,
         easing: 'easeInOutCubic'
       },
       showImages: false,
-      items: [
-        {
-          id: 1,
-          slug: 'description',
-          label: 'description',
-          active: true,
-          content: [
-            {
-              id: 1,
-              name: 'short-description',
-              label: null,
-              tag: 'p',
-              classes: ['short-desc'],
-              data: {
-                type: String,
-                value: ''
-              }
-            }, {
-              id: 2,
-              name: 'long-description',
-              label: null,
-              tag: 'p',
-              classes: ['long-desc'],
-              data: {
-                type: String,
-                value: ''
-              }
-            }
-          ]
-        }, {
-          id: 2,
-          slug: 'facts',
-          label: 'facts',
-          active: false,
-          content: [
-            {
-              id: 1,
-              name: 'rooms',
-              label: 'Rum',
-              tag: 'span',
-              classes: ['horizontal-list-item', 'rooms'],
-              data: {
-                type: String,
-                value: ''
-              }
-            }
-          ]
-        }, {
-          id: 3,
-          slug: 'association',
-          label: 'association',
-          active: false
-        }, {
-          id: 4,
-          slug: 'operations',
-          label: 'operation-cost',
-          active: false
-        }, {
-          id: 5,
-          slug: 'documents',
-          label: 'documents',
-          active: false
-        }, {
-          id: 6,
-          slug: 'viewings',
-          label: 'viewings',
-          active: false
-        }
-      ]
+      estatePanel: estatePanel.data,
+      panel: [1]
     }
   },
   computed: {
+    ...mapState({
+      currentEstate: 'currentEstate'
+    }),
+    mainImage () {
+      let imageUrl = this.estate?.mainImageUrl
+      if (!imageUrl) {
+        imageUrl = this.estate && this.estate.images.length && this.estate.images.find(img => img.orderNumber === 1)
+          ? this.estate.images.find(img => img.orderNumber === 1).cdnReferences[0]
+          : 'placeholder-home.png'
+      }
+      return imageUrl
+    },
+    bids () {
+      const bids = []
+      if (this.estate.bids && this.estate.bids.length) {
+        const activeBids = this.estate.bids.filter(bidObj => !bidObj.cancelled)
+        for (let i = 0; i < activeBids.length; i++) {
+          if (activeBids[i].status === 'DeltarBudgivning') {
+            const bidder = `${this.$txt('ui.bidder')} ${activeBids[i].alias}:`
+            const amount = activeBids[i].amount
+            const timestamp = activeBids[i].dateAndTime
+            const bidDate = new Date(timestamp)
+            bids[i] = {
+              cancelled: activeBids[i].cancelled,
+              bidder,
+              amount,
+              date: `${bidDate.toLocaleDateString('sv')}`,
+              time: `${bidDate.getHours().toString().padStart(2, '0')}:${bidDate.getMinutes().toString().padStart(2, '0')}`
+            }
+          }
+        }
+      }
+      return bids.sort(function (a, b) { return a - b })
+    },
+    operations () {
+      return this.estate.operation ? this.arrayfyOperations(this.estate.operation) : null
+    },
+    other () {
+      return this.estate.balconyPatio ? this.arrayfyOperations(this.estate.balconyPatio, false) : null
+    },
+    floorplans () {
+      const floorplans = this.estate.images.filter(image => image.text && image.text.toLowerCase().includes('plan'))
+      return floorplans && floorplans.length
+        ? floorplans.map((image) => {
+          return {
+            ...image,
+            url: image.cdnReferences[0]
+          }
+        })
+        : []
+    },
     estateMapSrc () {
       const mapsApi = 'https://www.google.com/maps/embed/v1/place'
       const apiKey = process.env.GOOGLE_MAPS_API_KEY
@@ -548,9 +689,7 @@ export default {
       const zip = addressObj.zipCode
       const coordinates = `${addressObj.coordinate.latitud},${addressObj.coordinate.longitud}`
       const q = `${street}+${zip}`
-      const center = coordinates
-      const src = `${mapsApi}?key=${apiKey}&q=${q}&center=${center}`
-      return src
+      return `${mapsApi}?key=${apiKey}&q=${q}&center=${coordinates}`
     },
     viewings () {
       const viewings = []
@@ -565,6 +704,7 @@ export default {
             date: `${this.getWeekDay(s)}, ${sd.getDate()} ${this.getMonthName(s)}`,
             start: `Kl ${sd.getHours().toString().padStart(2, '0')}:${sd.getMinutes().toString().padStart(2, '0')}`,
             end: `Kl ${ed.getHours().toString().padStart(2, '0')}:${ed.getMinutes().toString().padStart(2, '0')}`,
+            active: false,
             source: this.estate.viewings[i]
           }
         }
@@ -582,6 +722,14 @@ export default {
         ? this.elements.target.prod.$el
         : this.elements.target.dev.$el
     },
+    thisElem () {
+      return process.env.NODE_ENV === 'production'
+        ? this.elements.this.prod
+        : this.elements.this.dev
+    },
+    refs () {
+      return this.$refs
+    },
     root () {
       return process.env.NODE_ENV === 'production'
         ? this.elements.root.prod.$el
@@ -589,6 +737,17 @@ export default {
     },
     elements () {
       return {
+        this: {
+          dev: this.$nuxt && this.$nuxt.$children && this.$nuxt.$children.length && !!this.$nuxt.$children[2] &&
+          !!this.$nuxt.$children[2].$refs && !!this.$nuxt.$children[2].$refs['deus-application']
+            ? this.$nuxt.$root.$children[2].$children[0].$children[0].$children[0].$children[0].$children[0]
+            : this.$nuxt.$root.$children[1].$children[0].$children[0].$children[0].$children[0].$children[0],
+
+          prod: this.$nuxt && this.$nuxt.$children && this.$nuxt.$children.length && !!this.$nuxt.$children[1] &&
+          !!this.$nuxt.$children[1].$refs && this.$nuxt.$children[1].$refs['deus-application']
+            ? this.$nuxt.$children[1].$refs['deus-application'].$children[0].$children[0].$children[0].$children[0]
+            : this.$nuxt.$children[2].$refs['deus-application'].$children[0].$children[0].$children[0].$children[0]
+        },
         target: {
           dev: this.$nuxt && this.$nuxt.$children && this.$nuxt.$children.length && !!this.$nuxt.$children[2] &&
           !!this.$nuxt.$children[2].$refs && !!this.$nuxt.$children[2].$refs['deus-application']
@@ -622,19 +781,24 @@ export default {
     }
   },
   created () {
-    // this.facts = this.updateFacts(this.estate, this.facts)
+    const noDesc = !this.estate.description.shortSellingDescription && !this.estate.description.longSellingDescription
+    if (!this.$vuetify.breakpoint.smAndDown && !noDesc) {
+      this.panel.push(1)
+    }
+    if (this.estate.internetSettings.bidSetting === 'ShowBiddhistory') {
+      this.panel.push(0)
+    }
+    if (noDesc && this.estate.internetSettings.bidSetting !== 'ShowBiddhistory') {
+      this.panel.push(2)
+    }
   },
   mounted () {
     this.facts = this.updateFacts(this.estate, this.facts)
+    if (this.client) {
+      this.$skrollTo(this.root, this.root, this.$vuetify.breakpoint.smAndDown, -10000, null)
+    }
   },
   methods: {
-    addZero (val) {
-      val = parseInt(val)
-      if (val && val < 10) {
-        return `0${val}`
-      }
-      return '00'
-    },
     getWeekDay (rawDate) {
       const d = new Date(rawDate)
       return this.weekdays[d.getDay()]
@@ -642,12 +806,6 @@ export default {
     getMonthName (rawDate) {
       const d = new Date(rawDate)
       return this.months[d.getMonth()]
-    },
-    goto (refName) {
-      const mobile = this.$vuetify.breakpoint.mdAndDown
-      const element = this.$refs[refName]
-      const top = element.offsetTop
-      window.scrollTo(0, top)
     },
     updateFacts (estate, facts) { // Return Updated Facts
       // console.log(estate)
@@ -679,57 +837,123 @@ export default {
       }
       return facts
     },
-    arrayfyOperations (ops) {
+    arrayfyOperations (ops, trueOnly = true) {
       const opsArray = []
       for (const [key, value] of Object.entries(ops)) {
-        if (!!value && value !== 0) {
-          opsArray.push({
-            name: key,
-            value
-          })
+        if (trueOnly) {
+          if (!!value && value !== 0) {
+            opsArray.push({
+              name: key,
+              value
+            })
+          }
+        } else if (!trueOnly) {
+          if (key === 'parkingLot' || key === 'balcony' || key === 'patio') {
+            opsArray.push({
+              type: key === 'balcony' ? 'check-only' : 'check-text',
+              name: key,
+              value,
+              text: key === 'parkingLot' ? ops.parking : key === 'patio' ? ops.summary : null
+            })
+          } else if (key === 'squereMeterype') {
+            opsArray.push({
+              type: 'text-only',
+              name: key,
+              value: (this.estate.groundIncludetToHousingCooperative.squereMetre ? this.estate.groundIncludetToHousingCooperative.squereMetre : '0') + ' kvm',
+              text: 'Typ: ' + (this.estate.groundIncludetToHousingCooperative.description ? `<b>${this.estate.groundIncludetToHousingCooperative.description}</b>` : '<em>Unavailable</em>')
+            })
+          }
         }
       }
       return opsArray
-    },
-    activateItem (itemId) {
-      let items = this.makeAllFalse(this.items)
-      this.items = [...items]
-      items = items.map((i) => {
-        if (i.id === itemId) {
-          i.active = true
-        }
-        return i
-      })
-      this.items = [...items]
-    },
-    makeAllFalse (items) {
-      return items.map((items) => {
-        return {
-          ...items,
-          active: false
-        }
-      })
     }
   }
 }
 </script>
 
 <style lang="scss">
-.v-expansion-panel-content__wrap {
-  padding: 0 !important;
-  flex: 1 1 auto;
-  max-width: 100%;
+.v-application.theme--light .elevation-5 {
+  box-shadow: 0 5px 12px rgb(0 0 0 / 10%) !important;
 }
-.v-banner__wrapper {
+.theme--light.v-banner.v-sheet:not(.v-sheet--outlined):not(.v-sheet--shaped) .v-banner__wrapper {
   border: none !important;
 }
-.theme--light.v-banner .v-banner__wrapper {
-  background-color: #FFFFFF !important;
+
+.v-banner--is-mobile.v-banner--single-line .v-banner__wrapper {
+  padding-top: 0 !important;
+  h1 {
+    line-height: 1.2 !important;
+    font-size: 1.6rem;
+  }
+}
+
+.v-application.theme--light .v-banner .v-banner__wrapper {
+  background-color: var(--v-secondary-base) !important;
   // padding: 20px 10px 5px 10px;
 }
-.theme--dark.v-banner .v-banner__wrapper {
-  background-color: #0c0c0c !important;
+.v-application.theme--dark .v-banner .v-banner__wrapper {
+  background-color: #3d3c36 !important;
   // padding: 20px 10px 5px 10px;
+}
+.v-sheet.v-banner {
+  margin-bottom: 10px;
+}
+.estate-details-col-inner {
+  .v-expansion-panel-content__wrap {
+    padding: 0 !important;
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+  .v-banner__wrapper {
+    border: none !important;
+  }
+
+  .v-expansion-panel--active > .v-expansion-panel-header {
+    min-height: auto !important;
+    padding-left: 0 !important;
+  }
+  .v-expansion-panel-header {
+    font-size: 1.4rem !important;
+    padding: 15.5px 24px 15.5px 0 !important;
+    border-bottom: solid thin #999999;
+    align-items: center;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    display: flex;
+    line-height: 1;
+    min-height: 48px;
+    outline: none;
+    position: relative;
+    transition: 0.3s all cubic-bezier(0.25, 0.8, 0.5, 1);
+    width: 100%;
+  }
+}
+
+.file-btn {
+  .v-btn__content {
+    justify-content: left;
+  }
+}
+
+//.v-application.theme--light {
+  // .viewing-card {
+  //   &.v-item--active.v-card--link:focus:before {
+  //     background-color: var(--v-primary-darken3);
+  //   }
+  //   &.v-item--active:before {
+  //     background-color: var(--v-primary-darken3);
+  //   }
+  // }
+//}
+
+.active-viewing {
+  position: absolute;
+  background-color: #FFFFFF;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 // .theme--light.v-banner {
@@ -741,24 +965,6 @@ export default {
 //   box-shadow: 0 3px 7px rgba(0,0,0,.9) !important;
 // }
 
-.v-expansion-panel--active > .v-expansion-panel-header {
-  min-height: auto !important;
-  padding-left: 0 !important;
-}
-.v-expansion-panel-header {
-  padding-left: 0 !important;
-  align-items: center;
-  border-top-left-radius: inherit;
-  border-top-right-radius: inherit;
-  display: flex;
-  font-size: 0.9375rem;
-  line-height: 1;
-  min-height: 48px;
-  outline: none;
-  position: relative;
-  transition: 0.3s all cubic-bezier(0.25, 0.8, 0.5, 1);
-  width: 100%;
-}
 .text-data, .text-label {
   text-transform: capitalize;
 }
@@ -772,23 +978,36 @@ export default {
   font-style: italic !important;
   font-size: .75rem;
 }
-.estate-facts {
-  color: #333333;
-}
+// .estate-facts {
+//   color: #333333;
+// }
 .estate-facts,
 .estate-description-wrapper,
 .estate-association,
 .estate-operations,
 .estate-documents,
-.estate-viewings {
+.estate-bidding,
+.estate-other {
   padding: 20px 0 30px 0;
 }
-.v-expansion-panel-header {
-  font-size: 1.4rem !important;
-  padding: 15.5px 24px 15.5px 0 !important;
-  border-bottom: solid thin #999999;
+
+.other-label {
+  font-size: smaller;
+  .the-label {
+    font-family: $heading-font-family;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: smaller;
+  }
+  .the-text {
+    font-size: smaller;
+    font-style: italic;
+    padding-top: 3px;
+    margin-top: 3px;
+    border-top: dashed thin rgba(130,130,130,.5);
+  }
 }
-// .v-expansion-panel--active > .v-expansion-panel-header {
+  // .v-expansion-panel--active > .v-expansion-panel-header {
 //   border: none;
 // }
 .estate-description-inner {
@@ -799,9 +1018,9 @@ export default {
   padding: 30px;
 }
 .map {
-  margin: 15px 0 25px 0;
-  border-bottom: thin solid var(--v-primary-base);
-  border-top: thin solid var(--v-primary-base);
+  margin: 15px 0 0 0;
+  //border-bottom: thin solid var(--v-primary-base);
+  //border-top: thin solid var(--v-primary-base);
 }
 .active-item {
   display: none;
@@ -830,44 +1049,55 @@ export default {
 }
 .estate-features-wrapper {
   text-align: center;
-  margin-bottom: 20px;
-  .estate-feature {
-    margin: 5px 4px;
+  margin: 10px 0;
+}
+
+.v-expansion-panel--active:not(:first-child), .v-expansion-panel--active + .v-expansion-panel {
+  margin-top: 0;
+}
+
+.estate-feature {
+  display: inline-block;
+  .money_format {
     display: inline-block;
-    .money_format {
-      display: inline-block;
-    }
-    .label {
-      font-weight: 300;
-    }
-    span {
-      // display: inline-block;
-      margin: 0;
-    }
   }
+  .label {
+    font-weight: 100;
+  }
+  span {
+    // display: inline-block;
+    margin: 0;
+  }
+}
+.comment {
+  font-style: italic;
+  font-weight: 400;
+  font-size: smaller;
 }
 .estate-features-wrapper span {
   display: inline-block;
-  margin: 0 2px;
+  //margin: 0 2px;
 }
 .estate-features {
   font-family: $heading-font-family;
 }
 .broker-name {
   font-family: $heading-font-family;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
+  font-weight: 400;
 }
 .broker-title {
   margin-top: 8px;
-  font-size: 1rem;
+  font-size: .7rem;
   font-weight: 400;
-  text-transform: uppercase;
+  //text-transform: uppercase;
 }
 
 .broker-info {
   padding: 15px 0;
-  font-size: 1rem;
+  font-size: .8rem;
+  font-weight: 400;
 }
 
 .broker-image-wrapper img {
@@ -876,75 +1106,97 @@ export default {
 }
 
 .broker-image-wrapper {
-  margin: 20px 0;
+  margin: 0;
 }
 
 .estate-details-wrapper {
   min-height: auto;
-  background-color: #FFFFFF;
+  background-color: transparent;
 }
-.v-application.theme--light .estate-details-wrapper {
-  background-color: #FFFFFF;
-}
-.v-application.theme--dark .estate-details-wrapper {
-  background-color: #040404;
-}
+//.v-application.theme--light .estate-details-wrapper {
+//  background-color: #f6f6f6;
+//}
+//.v-application.theme--dark .estate-details-wrapper {
+//  background-color: #171717;
+//}
 
 .estate-details-container {
-  padding-top: 40px;
+  padding-top: 0;
   background-color: transparent
 }
 
+.main-image-overlay,
+.main-image-wrapper {
+  position: absolute;
+  top: -64px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+}
 .main-image-wrapper {
   background-position: center center;
   background-size: cover;
-  position: absolute !important;
-  top: -65px;
-  left: 0;
-  width: 100%;
-  height: 100vh;
 }
 @media screen and (max-width: 500px) {
-  .main-image-wrapper {
-    top: -56px;
+  .main-image-wrapper,
+  .main-image-overlay {
+    height: calc(100vh - 56px);
+  }
+  .city {
+    display: none;
   }
 }
 
-.main-image-overlay {
-  // z-index: 10;
-  position: absolute;
-  top: -65px;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-
+.city {
+  line-height: 1.5;
+  font-size: 1.5rem !important;
+  letter-spacing: 2px;
+  font-weight: 300;
+  padding: 0 0 8px 0;
 }
-.city { line-height: 1.5; font-size: 1.5rem !important; letter-spacing: 2px; font-weight: 300; padding: 25px 0 5px 0; }
 .street {
-  font-family: Barlow, Arial;
+  font-family: $heading-font-family;
   text-transform: uppercase;
   font-size: 2.5rem;
   font-weight: 300;
-  text-transform: uppercase;
+  line-height: 1;
 }
+
+.estate-features {
+  display: block;
+  & > .v-icon {
+    display: none;
+  }
+}
+.estate-feature {
+  margin-right: 0;
+  &:first-child {
+    margin-left: 0;
+  }
+  &:not(:last-child):after {
+    content: ',';
+  }
+  //display: block !important;
+  // width: 40% !important;
+}
+.v-banner--single-line .v-banner__text {
+  white-space: unset !important;
+}
+
+.v-expansion-panel-header > *:not(.v-expansion-panel-header__icon) {
+  font-family: $heading-font-family;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 @media screen and (max-width: 500px) {
   .street {
     font-size: 2rem;
   }
-  .estate-features {
-    display: block;
-    & > .v-icon {
-      display: none;
-    }
-  }
-  .estate-feature {
-    display: block !important;
-    // width: 40% !important;
-  }
-
-  .estate-details-wrapper .v-banner {
-    top: 56px !important;
-    z-index: 10 !important;
+  .estate-features-wrapper {
+    margin: 10px 0 5px 0;
   }
 }
 </style>

@@ -66,7 +66,7 @@ export async function cacheListImages ($axios, estateList) {
   }
 }
 
-export async function processEstateList ($axios, EstateListResponse, forSaleOnly, cache) {
+export function processEstateList ($axios, EstateListResponse, forSaleOnly) {
   let estateList = []
   if (EstateListResponse) {
     if (EstateListResponse[0]) {
@@ -87,12 +87,6 @@ export async function processEstateList ($axios, EstateListResponse, forSaleOnly
           ...forSaleOnly ? newValue.filter(e => e.status.id === '3') : newValue
         ]
       }
-      // estateList.forEach((estateItem) => {
-      //   estateItem.type = key
-      // })
-    }
-    if (cache && estateList) {
-      await cacheListImages($axios, estateList)
     }
   }
 

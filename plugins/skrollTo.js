@@ -2,6 +2,8 @@
 export default (context, inject) => {
   let skrollTo = null
   skrollTo = (target, root, smAndDown, xfactor, timeOut) => {
+    // console.log(root)
+    // console.log(target)
     xfactor = xfactor || -50
     const top = target.offsetTop || target.offsetHeight
     const doScroll = function () {

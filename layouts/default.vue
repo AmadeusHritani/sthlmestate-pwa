@@ -1,39 +1,49 @@
 <template>
   <v-app id="deus-application" ref="deus-application" v-scroll.self="onScroll" class="deus-application">
     <deus-app-drawer
-      v-if="$vuetify.breakpoint.mdAndDown"
-      :navigator="navigator"
+      v-show="drawer"
+      :deus-nav="deusNav"
       :drawer="drawer"
       @toggle-drawer="drawer = $event"
     />
     <deus-app-bar
-      :navigator="navigator"
+      :deus-nav="deusNav"
       :sticky="sticky"
       :offset-top="offsetTop"
       :clipped="clipped"
-      has-hero
+      :has-hero="$route && $route.name && ($route.name.includes('bostader-estate') || $route.name.includes('index'))"
       @toggle-sticky="sticky = !sticky"
       @toggle-drawer="drawer = !drawer"
     />
     <v-main
       ref="main"
+      :class="overlay ? 'd-none' : ''"
+      :style="search.active && $vuetify.breakpoint.smAndDown && $route.name !== 'index' && $route.name !== 'bostader-estate' ? 'margin-top: 40px;' : ''"
     >
       <v-scroll-x-transition>
         <Nuxt />
       </v-scroll-x-transition>
     </v-main>
-    <v-footer
-      paddless
-    >
-      <v-container class="text-center">
-        <span>Sthlm Estate &copy; {{ new Date().getFullYear() }}</span>
-        <span v-if="$nuxt.isOffline">You are offline</span>
-      </v-container>
-    </v-footer>
+    <div v-if="offsetTop > 600" class="sthlmestate-to-top">
+      <v-btn
+        :title="$txt('ui.back-to-top')"
+        class="mx-2"
+        icon
+        dark
+        x-large
+        color="primary"
+        @click="client ? $skrollTo(root, root, $vuetify.breakpoint.smAndDown, -10000, null,) : false"
+      >
+        <v-icon dark x-large>
+          mdi-format-vertical-align-top
+        </v-icon>
+      </v-btn>
+    </div>
+    <deus-footer />
     <v-overlay
-      :value="loading"
+      :value="overlay"
       :color="$vuetify.theme.dark ? 'black' : 'white'"
-      opacity="0.9"
+      opacity="1"
     >
       <v-progress-circular :color="$vuetify.theme.dark ? 'white' : 'black'" width="5" indeterminate size="30" />
     </v-overlay>
@@ -44,15 +54,19 @@
 /* eslint-disable no-console */
 import { mapState, mapActions } from 'vuex'
 import { getCurrentPage } from '@/functions/helpers'
+import DeusFooter from '~/components/cms/DeusFooter'
+import core from '~/config/core'
 export default {
   name: 'DefaultLayout',
   components: {
+    DeusFooter,
     DeusAppBar: () => import('@/components/layout/DeusAppBar.vue'),
     DeusAppDrawer: () => import('@/components/layout/DeusAppDrawer.vue')
   },
   scrollToTop: true,
   data () {
     return {
+      overlay: true,
       rootEl: null,
       offsetTop: 0,
       sticky: true,
@@ -63,20 +77,61 @@ export default {
       title: 'Sthlm Estate by Deus',
       currentPage: {},
       paths: []
+
     }
   },
   head () {
-    return this.$nuxtI18nHead()
+    return {
+      title: this.estateDetails && this.estateDetails.baseInformation && this.estateDetails.baseInformation.objectAddress
+        ? `${this.estateDetails.baseInformation.objectAddress.streetAddress}, ${this.estateDetails.baseInformation.objectAddress.municipality} ${this.estateDetails.baseInformation.objectAddress.zipCode}`
+        : core.settings.titleLong,
+      meta: [
+        {
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'Progressive Web App'
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.estateDetails && this.estateDetails.baseInformation && this.estateDetails.baseInformation.objectAddress
+            ? `${this.estateDetails.baseInformation.objectAddress.streetAddress}, ${this.estateDetails.baseInformation.objectAddress.municipality} ${this.estateDetails.baseInformation.objectAddress.zipCode}`
+            : core.settings.titleLong
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: core.settings.baseUrl.prod + (this.$route && this.$route.fullPath && !this.$route.name.includes('index') ? this.$route.fullPath : '')
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${core.settings.titleLong}`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `${core.settings.titleLong}`
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: core.settings.baseUrl.prod + (this.currentEstate && this.currentEstate.urlThumbnail
+            ? this.currentEstate.urlThumbnail.replace('thumb', 'hd')
+            : 'default-social-image.png')
+        }
+      ]
+    }
   },
   computed: {
     ...mapState({
-      navigator: 'navigator',
-      loading: 'loading',
-      search: 'search'
+      deusNav: 'deusNav',
+      search: 'search',
+      loading: 'loading'
     }),
     appStyle () {
       let style = ''
-      if (this.$route.name.includes('fastigheter-estate')) {
+      if (this.$route.name.includes('bostader-estate')) {
         style += 'margin-bottom: 100vh;'
       }
       return style
@@ -119,11 +174,14 @@ export default {
       return process.env.NODE_ENV === 'production'
         ? this.elements.root.prod.$el
         : this.elements.root.dev.$el
+    },
+    vuetify () {
+      return this.$vuetify
     }
   },
   watch: {
     $route (to) {
-      this.currentPage = getCurrentPage(to, this.navigator.top.items)
+      this.currentPage = getCurrentPage(to, this.deusNav.top.items)
       this.updatePage(this.currentPage)
       this.scrollToTopOfApp()
     },
@@ -135,21 +193,34 @@ export default {
     }
   },
   created () {
-    // console.log(this.$root)
+    setTimeout(() => {
+      this.overlay = false
+    }, this.$route && this.$route.name && !this.$route.name.includes('bostader-estate') ? 900 : 0)
     this.drawer = false
-    this.sticky = this.navigator.sticky
-    this.clipped = this.navigator.clipped
-    this.fixed = this.navigator.fixed
-    this.right = this.navigator.right
-    this.title = this.navigator.title
-    this.currentPage = getCurrentPage(this.$route, this.navigator.top.items)
+    this.sticky = this.deusNav.sticky
+    this.clipped = this.deusNav.clipped
+    this.fixed = this.deusNav.fixed
+    this.right = this.deusNav.right
+    this.title = this.deusNav.title
+    this.currentPage = getCurrentPage(this.$route, this.deusNav.top.items)
     this.updatePage(this.currentPage)
+    if (this.client && window) {
+      // eslint-disable-next-line nuxt/no-globals-in-created
+      window.dataLayer = window.dataLayer || []
+      // eslint-disable-next-line nuxt/no-globals-in-created
+      function gtag () { window.dataLayer.push(arguments) }
+      gtag('js', new Date())
+      gtag('config', 'G-4D4GTXS2PV')
+    }
   },
   mounted () {
     // this.setRootEl(this.client)
-    if (this.offsetTop !== 0) {
-      this.scrollToTopOfApp()
-    }
+    // if (this.offsetTop !== 0) {
+    //   this.scrollToTopOfApp()
+    // }
+    // setTimeout(() => {
+    //   this.loading = false
+    // }, 650)
   },
   methods: {
     ...mapActions({
@@ -180,17 +251,42 @@ export default {
 </script>
 
 <style lang="scss">
+html {
+  overflow: hidden !important;
+}
+a:link, a:visited {
+  text-decoration: none;
+}
+a:hover:not(.v-btn) {
+  text-decoration: underline !important;
+  text-decoration-thickness: 0.5px !important;
+  text-underline-offset: 2px;
+}
+.sthlmestate-to-top {
+  z-index: 5;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
 .page {
   background-position: top center;
   background-size:cover !important;
   margin-top: -64px;
-  min-height: calc(100vh - 56px);
+  min-height: calc(100vh - 64px - 56px);
+  &.no-bg {
+    padding-top: 0;
+    margin-top: 0;
+    min-height: auto;
+  }
 }
-.form-heading {
-  font-size: 1.8rem;
-  font-weight: 300;
-  font-family: $body-font-family;
-}
+//.form-heading {
+//  font-weight: 300;
+//  //margin-bottom: 10px;
+//  //padding-bottom: 10px;
+//  //border-bottom: thin solid rgba(140,140,140, .7);
+//  font-family: $body-font-family;
+//}
 
 .deus-application {
   position: fixed;
@@ -204,15 +300,15 @@ export default {
 }
 body,
 .v-application {
-  font-family: Aleo, Serif !important;
-  font-weight: normal;
+  font-family: $body-font-family;
   line-height: 1.35;
   letter-spacing: .05rem;
   background-color: #f9f9f9;
+  font-weight: 300;
 }
 
 .theme--light.v-application {
-    background: #f4f4f4;
+    //background: #f8f8f8;
     color: #111111;
 }
 
@@ -225,13 +321,19 @@ body,
 //   font-family: Barlow, Arial;
 // }
 
-h1, h2 {
-  font-weight: 300;
-  font-family: Barlow, Arial;
+h1, h2, h3 {
+  font-family: Aleo, Serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 2.3rem;
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 .v-btn,
@@ -292,14 +394,17 @@ footer {
     border-bottom: solid thin var(--v-primary-base) !important;
   }
 }
-// .theme--dark.v-footer {
-//     background-color: #0e1017 !important;
-//     color: #eae6da;
-// }
-// .theme--light.v-footer {
-//     background-color: transparent !important;
-//     color: var(--v-primary-darken4);
-// }
+.v-footer {
+  padding-bottom: 2rem !important;
+}
+ //.theme--dark.v-footer {
+ //    background-color: #0e1017 !important;
+ //    color: #eae6da;
+ //}
+ .theme--light.v-footer {
+     background-color: var(--v-secondary-base) !important;
+     color: var(--v-primary-darken4);
+ }
 
 .theme--light.v-app-bar.v-toolbar.v-sheet {
     background-color: var(--v-secondary-base) !important;
@@ -325,6 +430,12 @@ footer {
 // }
 
 @media (max-width: 550px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
   .page {
     background-position: center center;
     background-size:cover !important;
@@ -332,6 +443,11 @@ footer {
     padding-top: 156px;
     padding-bottom: 15px;
     min-height: 100vh;
+    &.no-bg {
+      // padding-top: 15px;
+       margin-top: 65px;
+      min-height: auto;
+    }
   }
 }
 
@@ -346,7 +462,7 @@ footer {
 }
 @media (min-width: 1904px) {
   .container {
-    max-width: 1280px !important;
+    max-width: 1100px !important;
   }
 }
 </style>

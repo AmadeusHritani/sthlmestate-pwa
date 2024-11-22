@@ -3,7 +3,7 @@
     :clipped-left="clipped"
     :fixed="sticky"
     :app="sticky"
-    :elevation="sticky && !hasHero ? 1 : 0"
+    :elevation="sticky && threshold && !$vuetify.theme.dark && !isDarkAppBar && !transparent ? 3 : 0"
     :style="getAppBarStyle"
     :class="$vuetify.theme.dark || (isDarkAppBar && transparent) ? 'is-dark' : ''"
     :dark="$vuetify.theme.dark || (isDarkAppBar && transparent)"
@@ -20,9 +20,8 @@
           @click="$router.push(`/${$i18n.locale === 'en' ? 'en' : ''}`)"
         >
           <img
-            max-height="70"
-            max-width="90"
-            title="SimHop"
+            alt="Sthlm Estate"
+            title="Sthlm Estate"
             class="logo"
             :src="$vuetify.theme.dark || (isDarkAppBar && transparent) ? '/logo-linear-dark-nomargin.svg' : '/logo-linear-light-nomargin.svg'"
           >
@@ -30,7 +29,7 @@
       </v-toolbar-title>
       <v-spacer class="d-none d-md-flex" />
       <v-btn
-        v-for="(item, index) in navigator.top.items"
+        v-for="(item, index) in deusNav.top.items"
         :key="index"
         :to="$txt(item.slug)"
         :title="$txt(item.title)"
@@ -51,55 +50,38 @@
       >
         <v-icon>mdi-align-vertical-top</v-icon>
       </v-btn> -->
-      <span
+      <div
         v-show="searchActive"
         :class="searchWrapperClasses"
       >
-        <form action="">
-          <v-text-field
-            ref="search-input"
-            v-model="searchTerm"
-            :prepend-icon="'mdi-magnify'"
-            clear-icon="mdi-backspace"
-            clearable
-            flat
-            solo
-            rounded
-            single-line
-            dense
-            hide-details
-            :label="$t('ui.search.label')"
-            type="text"
-            class="search-input"
-            @click:append-outer="doSearch"
-            @click:clear="clearTerm"
-            @focusout.stop="focusOut"
-          />
-        </form>
-      </span>
+        <estate-search-form :active="searchActive" @search-active="searchActive = $event" />
+      </div>
       <v-btn
         v-if="!searchActive"
         icon
         class="search-btn before-15bg"
-        @click.stop="toggleSearch($refs.searchInput)"
+        @click.stop="searchActive = true"
       >
         <v-icon>mdi-{{ searchActive ? 'close' : 'magnify' }}</v-icon>
       </v-btn>
-      <v-btn
-        :to="$i18n.locale === 'sv' ? switchLocalePath('en') : switchLocalePath('sv')"
-        icon
-        class="align-self-center d-none d-md-flex text-uppercase before-15bg"
-      >
-        <v-avatar color="transparent">
-          <span class="text-h6 bold">
-            {{ $i18n.locale === 'en' ? 'sv' : 'en' }}
-          </span>
-        </v-avatar>
-      </v-btn>
+      <!--      LANGUAGE SWITCHER-->
+      <!--      *****************-->
+      <!--      <v-btn-->
+      <!--        :to="$i18n.locale === 'sv' ? switchLocalePath('en') : switchLocalePath('sv')"-->
+      <!--        icon-->
+      <!--        class="align-self-center d-none d-md-flex text-uppercase before-15bg"-->
+      <!--      >-->
+      <!--        <v-avatar color="transparent">-->
+      <!--          <span class="text-h6 bold">-->
+      <!--            {{ $i18n.locale === 'en' ? 'sv' : 'en' }}-->
+      <!--          </span>-->
+      <!--        </v-avatar>-->
+      <!--      </v-btn>-->
+      <!--      *****************-->
       <v-btn
         icon
         class="d-none d-sm-block before-15bg"
-        @click.stop="$vuetify.theme.dark = !$vuetify.theme.dark"
+        @click.stop="dark = !dark"
       >
         <v-icon>mdi-theme-light-dark</v-icon>
       </v-btn>
@@ -112,11 +94,17 @@
 </template>
 
 <script>
-/* eslint-disable no-console */
+/* eslint-disable no-console,no-unused-vars */
 import { mapState, mapActions } from 'vuex'
+import { normalizeText } from 'normalize-text'
+// import core from '@/config/core'
 export default {
   name: 'DeusAppBar',
   props: {
+    isDark: {
+      type: String,
+      default: 'npd'
+    },
     offsetTop: {
       type: Number,
       default: 0
@@ -133,7 +121,7 @@ export default {
       type: Boolean,
       default: true
     },
-    navigator: {
+    deusNav: {
       type: Object,
       default () {
         return {}
@@ -142,9 +130,12 @@ export default {
   },
   data () {
     return {
+      dark: this.cookies ? this.cookies.settings.value.theme.dark : false,
       transparent: false,
+      threshold: false,
       searchActive: false,
-      searchTerm: null,
+      // searchTerm: null,
+      style: '',
       searchRules: [
         value => !!value || 'Required.',
         value => (value || '').length <= 20 || 'Max 20 characters',
@@ -157,18 +148,30 @@ export default {
   },
   computed: {
     ...mapState({
-      search: 'search'
+      search: 'search',
+      cookies: 'cookies'
     }),
+    settings () {
+      return this.cookies && this.$secookie && this.$secookie.get(this.cookies.settings.name, { fromRes: true })
+        ? JSON.parse(this.$secookie.get(this.cookies.settings.name, { fromRes: true }))
+        : null
+    },
+    // searchActive () {
+    //   return this.search.active
+    // },
+    searchTerm () {
+      return this.search.term
+    },
     isDarkAppBar () {
-      return this.$vuetify.theme.dark
+      return this.$vuetify.theme.dark || (this.$route && this.$route.name && this.$route.name.includes('index') && this.offsetTop < 100)
       // this.$route.name.includes('om-oss') || this.$route.name.includes('about-us'))
-      // this.$route.path === '/fastigheter' || this.$route.path === '/en/estates')
+      // this.$route.path === '/bostader' || this.$route.path === '/en/estates')
     },
     getAppBarStyle () {
       let style = ''
       if (this.hasHero) {
         style += this.transparent ? 'background-color: transparent !important;' : ''
-        style += !this.transparent ? 'box-shadow: 0 20px 20px rgba(0,0,0,.5) !importannt;' : ''
+        // style += !this.transparent ? 'box-shadow: 0 20px 20px rgba(0,0,0,.5) !important;' : ''
       }
       return style
     },
@@ -182,63 +185,108 @@ export default {
         classes += ' mobile'
       }
       classes += this.searchActive ? ' active' : ''
-      classes += this.$vuetify.theme.dark ? ' dark' : ' light'
-      classes += this.$route.name && this.$route.name.includes('fastigheter-estate')
+      classes += this.$vuetify.theme.dark || this.isDarkAppBar ? ' dark' : ' light'
+      classes += this.$route.name && (this.$route.name.includes('bostader-estate' || this.$route.name.includes('index')))
         ? ' nobg'
         : ''
       return classes
     }
   },
   watch: {
-    searchActive (active) {
-      this.updateSearch({
-        active,
-        term: this.searchTerm
-      })
-      this.$emit('search-active', active)
-      if (active) {
-        this.$nextTick(() => {
-          const search = this.$refs['search-input']
-          search.focus()
+    // search: {
+    //   deep: true,
+    //   immediate: false,
+    //   handler (search) {
+    //     if (search.term && search.term.length > 2) {
+    //       const term = normalizeText([search.term.toLowerCase().trimEnd()])
+    //       this.searchActive = true
+    //       this.$router.push(`?term=${term}`)
+    //     } else {
+    //       // this.searchActive = false
+    //       // this.$router.push('')
+    //     }
+    //   }
+    // },
+    dark (dark) {
+      this.$vuetify.theme.dark = dark
+      if (this.settings && dark !== this.settings.theme.dark) {
+        this.$vuetify.theme.dark = dark
+        this.$secookie.set(
+          this.cookies.settings.name,
+          JSON.stringify({ theme: { dark }, sticky: true }),
+          {
+            path: '/',
+            maxAge: 60 * 5
+          }
+        )
+        this.updateSettings({
+          name: this.cookies.settings.name,
+          value: { theme: { dark }, sticky: true },
+          path: '/',
+          maxAge: 60 * 5,
+          createdAt: new Date().toLocaleDateString()
         })
       }
     },
-    searchTerm (term) {
-      this.updateSearch({
-        active: this.searchActive,
-        term
-      })
-      this.$emit('search-term', term)
+    '$route' (route) {
+      this.transparent = route && route.name ? route.name.includes('bostader-estate') || route.name.includes('index') : false
+    },
+    // searchActive (active) {
+    //   this.updateSearch({
+    //     active,
+    //     term: this.searchTerm
+    //   })
+    // },
+    // searchTerm (term) {
+    //   this.updateSearch({
+    //     active: this.searchActive,
+    //     term
+    //   })
+    //   this.$emit('search-term', term)
+    // },
+    threshold (threshold) {
+      // this.style = !threshold ? 'box-shadow: none !important;' : ''
     },
     offsetTop (offsetTop) {
-      if (offsetTop > 120) {
+      // if (this.$route && this.$route.name && (this.$route.name.includes('bostader-estate') || this.$route.name.includes('index'))) {
+      if (offsetTop > 100) {
         this.transparent = false
+        this.threshold = true
       } else {
         this.transparent = true
+        this.threshold = false
+        this.searchActive = false
       }
+      // }
     }
   },
   created () {
-    this.transparent = this.$route.name ? this.$route.name.includes('fastigheter-estate') || this.hasHero : this.transparent
+    this.dark = this.settings ? this.settings.theme.dark : this.dark
+    this.transparent = this.$route && this.$route.name ? this.$route.name.includes('bostader-estate') || this.$route.name.includes('index') : false
   },
   methods: {
     ...mapActions({
-      updateSearch: 'updateSearch'
+      updateSearch: 'updateSearch',
+      updateSettings: 'setSettingsCookie'
     }),
     focusOut () {
       this.searchActive = false
     },
     toggleSearch () {
       if (!this.searchActive) {
-        this.searchActive = true
+        // this.searchActive = true
+        this.updateSearch({
+          active: true,
+          term: this.term
+        })
       }
-    },
-    doSearch () {
-      // Do search
-    },
-    clearTerm () {
-      this.term = null
     }
+    // doSearch () {
+    //   // Do search
+    // },
+    // clearTerm () {
+    //   this.term = null
+    // }
   }
 }
 </script>
@@ -287,6 +335,9 @@ export default {
     }
     &.dark {
       background-color: #272727;
+      * {
+        color: #FFFFFF !important;
+      }
     }
     &.light {
       background-color: var(--v-secondary-base);
@@ -303,9 +354,7 @@ export default {
     transform: scaleX(1);
   }
   .search-input {
-    border: unset !important;
-    border-width: 0 !important;
-    border-color: transparent !important;
+    border: 0 transparent !important;
     background: none !important;
     // * {
     //   border: unset !important;

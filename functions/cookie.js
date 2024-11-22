@@ -23,15 +23,15 @@ export function getRequestCookie ($cookie, requestStoreCookie, dispatch, setting
 }
 
 export function initResponseCookie ($cookie, responseStoreCookie, dispatch, response) {
-  if (!$cookie) {
+  if (!$cookie && !!responseStoreCookie) {
     dispatch('setResponseCookie', {
       name: responseStoreCookie.name,
-      value: response,
+      value: response || null,
       path: '/',
       maxAge: 60 * 5,
       createdAt: new Date().toLocaleDateString()
     })
-  } else if (!$cookie.get(responseStoreCookie.name) || $cookie.get(responseStoreCookie.name) === 'null') {
+  } else if (!!$cookie && !!responseStoreCookie && (!$cookie.get(responseStoreCookie.name) || $cookie.get(responseStoreCookie.name) === 'null')) {
     $cookie.set(responseStoreCookie.name, response || responseStoreCookie.value, {
       path: '/',
       maxAge: 60 * 5
@@ -45,7 +45,7 @@ export function initResponseCookie ($cookie, responseStoreCookie, dispatch, resp
     })
   } else {
     dispatch('setResponseCookie', {
-      name: responseStoreCookie.name,
+      name: 'response',
       value: response,
       path: '/',
       maxAge: 60 * 5,
@@ -64,6 +64,8 @@ export function initSettingsCookie ($cookie, settingsStoreCookie, newSettings, d
       createdAt: new Date().toLocaleDateString()
     })
   } else if (!$cookie.get(settingsStoreCookie.name, { fromRes: true })) {
+    // eslint-disable-next-line no-console
+    console.log('No cookies! Setting Settings')
     $cookie.set(settingsStoreCookie.name, newSettings || settingsStoreCookie.value, {
       path: '/',
       maxAge: 60 * 5

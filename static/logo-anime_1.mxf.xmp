@@ -1,0 +1,98 @@
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 6.0-c003 79.164527, 2020/10/15-17:48:32        ">
+ <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about=""
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"
+    xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#"
+    xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"
+    xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+    xmlns:xmpDM="http://ns.adobe.com/xmp/1.0/DynamicMedia/"
+    xmlns:stDim="http://ns.adobe.com/xap/1.0/sType/Dimensions#"
+    xmlns:creatorAtom="http://ns.adobe.com/creatorAtom/1.0/"
+   dc:identifier="060A2B340101010501010D111300000098766702379805A5AB43ACDE48001122"
+   dc:format="Apple ProRes MXF OP1a"
+   xmpMM:InstanceID="xmp.iid:b6d2e0c7-754c-4df9-ae71-d02513f99ef7"
+   xmpMM:DocumentID="35c1cc62-4ff9-5c3b-1b05-9f510000004b"
+   xmpMM:OriginalDocumentID="xmp.did:e766f786-69a9-4577-81c2-7f1f432a57a6"
+   xmp:MetadataDate="2022-09-15T13:12:21+02:00"
+   xmp:ModifyDate="2022-09-15T13:12:21+02:00"
+   xmp:CreatorTool="Adobe Photoshop 22.5 (20210825.orig.371 f9e5e2d)  (Windows)"
+   xmp:CreateDate="2022-09-15T13:11:45+02:00"
+   xmpDM:startTimeScale="60"
+   xmpDM:startTimeSampleSize="1"
+   xmpDM:videoFrameRate="60.000000"
+   xmpDM:videoFieldOrder="Progressive"
+   xmpDM:videoPixelAspectRatio="1/1">
+   <xmpMM:History>
+    <rdf:Seq>
+     <rdf:li
+      stEvt:action="saved"
+      stEvt:instanceID="d0bcf03c-2a44-fb3f-20e5-4de500000078"
+      stEvt:when="2022-09-15T13:12:21+02:00"
+      stEvt:softwareAgent="Adobe Adobe Media Encoder 2021.0 (Macintosh)"
+      stEvt:changed="/"/>
+     <rdf:li
+      stEvt:action="created"
+      stEvt:instanceID="xmp.iid:675381e6-6049-124f-b189-4e99e23ffe8a"
+      stEvt:when="2022-09-12T16:34:12+02:00"
+      stEvt:softwareAgent="Adobe Photoshop 22.5 (20210825.orig.371 f9e5e2d)  (Windows)"/>
+     <rdf:li
+      stEvt:action="saved"
+      stEvt:instanceID="xmp.iid:362adac4-e8ca-d742-96e1-795445aa9c26"
+      stEvt:when="2022-09-12T16:34:17+02:00"
+      stEvt:softwareAgent="Adobe Photoshop 22.5 (20210825.orig.371 f9e5e2d)  (Windows)"
+      stEvt:changed="/"/>
+     <rdf:li
+      stEvt:action="modified"
+      stEvt:parameters="unknown modifications"/>
+     <rdf:li
+      stEvt:action="saved"
+      stEvt:instanceID="35c736e5-b23b-c58f-a22f-e93d00000074"
+      stEvt:when="2022-09-15T13:06:06+02:00"
+      stEvt:softwareAgent="Adobe Adobe Media Encoder 2021.0 (Macintosh)"
+      stEvt:changed="/"/>
+     <rdf:li
+      stEvt:action="saved"
+      stEvt:instanceID="xmp.iid:876a682f-c44c-4fa8-a3bc-696368e7fc3e"
+      stEvt:when="2022-09-15T13:12:21+02:00"
+      stEvt:softwareAgent="Adobe Adobe Media Encoder 2021.0 (Macintosh)"
+      stEvt:changed="/"/>
+     <rdf:li
+      stEvt:action="saved"
+      stEvt:instanceID="xmp.iid:b6d2e0c7-754c-4df9-ae71-d02513f99ef7"
+      stEvt:when="2022-09-15T13:12:21+02:00"
+      stEvt:softwareAgent="Adobe Adobe Media Encoder 2021.0 (Macintosh)"
+      stEvt:changed="/metadata"/>
+    </rdf:Seq>
+   </xmpMM:History>
+   <xmpMM:DerivedFrom
+    stRef:instanceID="35c736e5-b23b-c58f-a22f-e93d00000074"
+    stRef:documentID="657d138b-5dd5-1dea-6456-6d9700000047"
+    stRef:originalDocumentID="xmp.did:675381e6-6049-124f-b189-4e99e23ffe8a"/>
+   <xmpDM:altTimecode
+    xmpDM:timeValue="00:00:00:00"
+    xmpDM:timeFormat="60Timecode"/>
+   <xmpDM:videoFrameSize
+    stDim:w="1920"
+    stDim:h="1080"
+    stDim:unit="pixel"/>
+   <xmpDM:startTimecode
+    xmpDM:timeFormat="60Timecode"
+    xmpDM:timeValue="00:00:00:00"/>
+   <xmpDM:duration
+    xmpDM:value="300"
+    xmpDM:scale="1/60"/>
+   <creatorAtom:windowsAtom
+    creatorAtom:extension=".aep"
+    creatorAtom:invocationFlags="-ep"/>
+   <creatorAtom:macAtom
+    creatorAtom:applicationCode="1180193859"
+    creatorAtom:invocationAppleEvent="1131559026"/>
+   <creatorAtom:aeProjectLink
+    creatorAtom:compositionID="1"
+    creatorAtom:renderQueueItemID="4"
+    creatorAtom:renderOutputModuleIndex="0"
+    creatorAtom:fullPath="C:\Users\Chrille\Documents\Adobe\sthlm.aep"/>
+  </rdf:Description>
+ </rdf:RDF>
+</x:xmpmeta>

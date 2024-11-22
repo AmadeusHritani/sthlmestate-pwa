@@ -1,5 +1,17 @@
 # Sthlm Estate Progressive Web App
 
+## Requirements
+The app has been developed and tested using these requirements. You may try other untested versions,
+however we can't guarantee stability and continuous development. 
+
+### General Requirements
+* Node JS: **v16.19.0**
+* NPM: **8.19.3**
+
+### Production Requirements
+* Nginx: **1.18.0 (Ubuntu)**
+* Jenkins: **2.375.1 (Ubuntu)**
+
 ## Build Setup
 
 ```bash

@@ -1,0 +1,102 @@
+{
+  "phone-number": "08-889360",
+  "search": {
+    "label": "Sök",
+    "placeholder": "Sök bostader.."
+  },
+  "back-to-top": "UPP",
+  "coming-soon": "Kommer Snart",
+  "our-latest-objects": "Våra Senaste Objekt",
+  "back": "Tillbaka",
+  "back-to-list": "Tillbaka till listan",
+  "description": "Beskrivning",
+  "other": {
+    "label": "Övrig",
+    "text": {
+      "balcony": "Balkong",
+      "parking": "Parking",
+      "parkingLot": "Bilplats",
+      "patio": "Uteplats",
+      "squereMeterype": "Mark som ingår i upplåtelsen",
+      "summary": "Summary",
+      "type": "Type"
+    }
+  },
+  "facts": {
+    "label": "Fakta"
+  },
+  "bidding": "Budgivning Pågår",
+  "bidder": "Budgivare",
+  "operation-cost": "Driftkostnad",
+  "operations": {
+    "annualFeeCommunity": "Årsavgift Till Samfällighet",
+    "annualFeeCommunityIncluded": "Kommentar",
+    "chimneySweeping": "Chimney Sweeping",
+    "commentAnnualFee": "Comment Annual Fee",
+    "commentary": "Commentary",
+    "electricity": "Elkostnad",
+    "heating": "Uppvärmning",
+    "insurance": "Försäkring",
+    "maintenance": "Maintenance",
+    "other": "Other",
+    "personsInTheHousehold": "Personer I Hushållet",
+    "road-community-fee": "Väg/Samfällighetsavgift",
+    "roadCharge": "Road Charge",
+    "sanitation": "Renhållning",
+    "sum": "Total Driftkostnad",
+    "waterAndDrain": "Vatten Och Avlopp"
+  },
+  "association": "Förening",
+  "documents": "Dokument",
+  "viewings": {
+    "label": "Planerade Visningar",
+    "more-options": "Färre Val",
+    "less-options": "Fler Val",
+    "no-options": "Select Viewing",
+    "select-time": "Select time",
+    "sms-reminder": "SMS Påminnelse",
+    "minutes": "minuter",
+    "messages": {
+      "vi": {
+        "main": "There are no preplanned Viewings",
+        "call": "To plan a viewing, please give us a call at",
+        "form-unfilled": "You can also fill the Intresse form. We'll contact you shortly.",
+        "form-filled": "Form is ready, hit 'Skicka' to continue."
+      },
+      "is": {
+        "main": "Please choose a preplanned Viewing",
+        "call": "Need help? Give us a call at",
+        "form-unfilled": "Fill all form fields.",
+        "form-filled": "Form is ready to send."
+      },
+      "form": "Please fill in your data correctly so we can contact you.",
+      "deselected": "Select a Viewing time.",
+      "deselected-title": "Click to select Viewing time",
+      "selected-one": "You selected:",
+      "selected-multiple": "Multiple Viewing times are selected.",
+      "selected-title": "At least one Viewing must be selected"
+    }
+  },
+  "all": "Våra Hem",
+  "show-all": "Visa Allt",
+  "send": "Skicka",
+  "show-less": "Visa Mindre",
+  "location": "Plats",
+  "go-to-location": "Plats",
+  "floorplan": "Planritning",
+  "go-to-floorplan": "Planritning",
+  "photos": "Foton",
+  "go-to-photos": "Foton",
+  "interest-privacy-text1": "Jag har tagit del av",
+  "interest-privacy-link": "Privacy",
+  "interest-privacy-hint": "Information om behandling av personuppgifter",
+  "interest-privacy-text2": "och samtycker till att mina uppgifter sparas.",
+  "interest-privacy-error": "Du måste godkänna att bli kontaktad.",
+  "email-success-msg": "Thanks! We'll contact you shortly.",
+  "email-error-msg": "Oops! There was an error. Please try again.",
+  "form": {
+    "evaluate": "Värdera",
+    "buy": "Köp",
+    "sell": "Sälj"
+  }
+}

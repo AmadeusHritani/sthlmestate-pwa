@@ -1,0 +1,29 @@
+{
+  "title": "Sthlm Estate",
+  "items": [
+    {
+      "slug": "/",
+      "label": "Hem",
+      "title": "Sthlm Estate Hemsida",
+      "short_desc": "Explore properties for sale and rent"
+    },
+    {
+      "slug": "/bostader",
+      "label": "Till Salu",
+      "title": "Alla Bostaden",
+      "short_desc": "Utforska bostader till salu"
+    },
+    {
+      "slug": "/om-oss",
+      "label": "Om Oss",
+      "title": "Om Sthlm Estate",
+      "short_desc": "Information Om Sthlm Estate"
+    },
+    {
+      "slug": "/kontakta-oss",
+      "label": "Kontakta Oss",
+      "title": "Kontakta Sthlm Estate",
+      "short_desc": "Explore properties for sale."
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 <template>
   <div class="homepage">
     <client-only>
-      <video-background
+      <deus-video-bg
         v-if="heroVideo"
         :src="heroVideo"
         :poster="heroPoster"
@@ -12,25 +12,49 @@
         :style="heroBgStyle"
         :overlay="heroOverlay"
       >
-        <div class="content-inner">
-          <img :src="heroImage" class="logo-stacked-hero">
-          <h1 :style="heroHeadingStyle">
+        <div :style="showVideo ? '' : 'opacity: 0;'" class="content-inner" style="mix-blend-mode: screen;">
+          <div style="width: 100%; mix-blend-mode: screen; display: block; margin: 0 auto;">
+            <video
+              :style="$vuetify.breakpoint.lgAndUp ? 'width: 70%;' : 'width: 100%;'"
+              src="/STHLM_only_text.mp4"
+              autoplay
+              muted
+              playsinline
+              preload="metadata"
+              style="height: auto; display: block; margin: 0 auto;"
+            />
+          </div>
+        </div>
+        <div v-if="videoHero.content.heading.active" style="position: absolute; bottom: 20%; left: 50%; transform: translateX(-50%); text-align: center; min-width: 350px">
+          <h2 :style="heroHeadingStyle" class="my-2" style="mix-blend-mode: normal;">
             {{ videoHero.content.heading.label }}
-          </h1>
+          </h2>
           <v-btn
-            large
-            outlined
-            rounded
             x-large
+            tile
+            color="white"
+            outlined
+            elevation="0"
             :to="headerCtaTo"
-            class="mt-6"
+            class="mt-2"
+            style="mix-blend-mode: normal;"
           >
             {{ videoHero.content.cta.label }}
           </v-btn>
         </div>
-      </video-background>
+        <span v-if="videoHero.settings.showContinue" class="continue" style="bottom: 10px;">
+          <span
+            style="text-decoration:none; display:block; cursor: pointer;"
+            @click="$skrollTo(target, root, $vuetify.breakpoint.smAndDown, null, null,)"
+          >
+            <v-icon x-large style="font-size:3rem; color: white">
+              mdi-arrow-down
+            </v-icon>
+          </span>
+        </span>
+      </deus-video-bg>
+      <v-divider />
     </client-only>
-    <deus-products-row v-if="productRowEstates && productRowEstates.length" :estates="productRowEstates" />
     <deus-push-simple
       :published="solutionsPush.published"
       :dark="solutionsPush.dark"
@@ -41,27 +65,53 @@
       :icon="solutionsPush.icon"
       :heading="solutionsPush.heading"
       :text="solutionsPush.text"
+      :max-width="'100%'"
       :bg="{ active: false, url: null, position: 'top center' }"
+      :heading-width="{ desktop: '350px', mobile: '300px' }"
+      :actions="actions"
       style="min-height: 350px;"
     />
-    <!-- <deus-hero :settings="localSettings" :actions="actions" /> -->
+    <v-divider />
+    <deus-products-row v-if="productRowEstates && productRowEstates.length" :estates="productRowEstates" />
+    <v-divider />
+    <mail-interest-form />
+    <!--    <br>-->
+    <!--    dddd-->
+    <!--    <br>-->
+    <!--    <br>-->
+    <!--    <a-->
+    <!--      style="font-weight: bold; text-decoration: none; padding: 10px 20px; border: thin solid #777777;"-->
+    <!--      @click.prevent="trigger()"-->
+    <!--    >-->
+    <!--      PUBLISH STHLM ESTATE APP-->
+    <!--    </a>-->
+    <!--    <br>-->
+    <!--    <br>-->
+    <!--    dddd-->
+    <!--    <br>-->
+    <!--    <br>-->
   </div>
 </template>
 
 <script>
+/* eslint-disable no-console */
 import { mapState } from 'vuex'
+import axios from 'axios'
 import videoHeroData from '@/data/cms/video-hero-home'
 import solutionsPushSimple from '@/data/cms/solutions-push-simple-home.js'
 import DeusPushSimple from '~/components/cms/DeusPushSimple.vue'
 import DeusProductsRow from '~/components/cms/DeusProductsRow.vue'
 import DeusHero from '~/components/cms/DeusHero.vue'
+import DeusVideoBg from '~/components/cms/DeusVideoBg/index.vue'
+import MailInterestForm from '~/components/MailInterestForm'
 export default {
   name: 'IndexPage',
   // eslint-disable-next-line vue/no-unused-components
-  components: { DeusPushSimple, DeusProductsRow, DeusHero },
+  components: { DeusVideoBg, MailInterestForm, DeusPushSimple, DeusProductsRow, DeusHero },
   data () {
     return {
       videoHero: videoHeroData,
+      showVideo: false,
       solutionsPush: solutionsPushSimple,
       localSettings: {
         height: '500px',
@@ -74,8 +124,8 @@ export default {
           label: 'Läs mer om oss',
           to: '/om-oss',
           color: null, // default: '#ffffff'. Or example: var(--v-secondary-base)
-          text: true,
-          outlined: false,
+          text: false,
+          outlined: true,
           dark: true,
           tile: false,
           flat: false,
@@ -88,9 +138,9 @@ export default {
           },
           floating: false,
           icon: false,
-          showLoader: false,
+          showLoader: true,
           plain: false,
-          rounded: true,
+          rounded: false,
           size: {
             desktop: 'large', // 'x-small'|'small'|'default'|'large'|'x-large'
             mobile: 'default'
@@ -101,14 +151,50 @@ export default {
         cta2: {
           show: false
         }
-      },
-      productRowEstates: null
+      }
     }
   },
   computed: {
     ...mapState({
-      cookies: 'cookies'
+      cookies: 'cookies',
+      productRowEstates: 'productRowEstates'
     }),
+    target () {
+      return process.env.NODE_ENV === 'production'
+        ? this.elements.target.prod.$el
+        : this.elements.target.dev.$el
+    },
+    root () {
+      return process.env.NODE_ENV === 'production'
+        ? this.elements.root.prod.$el
+        : this.elements.root.dev.$el
+    },
+    elements () {
+      return {
+        target: {
+          dev: this.$nuxt && this.$nuxt.$children && this.$nuxt.$children.length && !!this.$nuxt.$children[2] &&
+          !!this.$nuxt.$children[2].$refs && !!this.$nuxt.$children[2].$refs['deus-application']
+            ? this.$nuxt.$root.$children[2].$children[0].$children[0].$children[0].$children[0].$children[0]
+            : this.$nuxt.$root.$children[1].$children[0].$children[0].$children[0].$children[0].$children[0],
+
+          prod: this.$nuxt && this.$nuxt.$children && this.$nuxt.$children.length && !!this.$nuxt.$children[1] &&
+          !!this.$nuxt.$children[1].$refs && this.$nuxt.$children[1].$refs['deus-application']
+            ? this.$nuxt.$children[1].$refs['deus-application'].$children[0].$children[0].$children[0].$children[0]
+            : this.$nuxt.$children[2].$refs['deus-application'].$children[0].$children[0].$children[0].$children[0]
+        },
+        root: {
+          dev: this.$nuxt && this.$nuxt.$children && this.$nuxt.$children.length && !!this.$nuxt.$children[2] &&
+          !!this.$nuxt.$children[2].$refs && !!this.$nuxt.$children[2].$refs['deus-application']
+            ? this.$nuxt.$children[2].$refs['deus-application']
+            : this.$nuxt.$children[1].$refs['deus-application'],
+
+          prod: this.$nuxt && this.$nuxt.$children && this.$nuxt.$children.length && !!this.$nuxt.$children[1] &&
+          !!this.$nuxt.$children[1].$refs && this.$nuxt.$children[1].$refs['deus-application']
+            ? this.$nuxt.$children[1].$refs['deus-application']
+            : this.$nuxt.$children[2].$refs['deus-application']
+        }
+      }
+    },
     heroVideo () {
       return (this.videoHero && this.videoHero.video)
         ? this.$vuetify.breakpoint.smAndUp
@@ -117,7 +203,7 @@ export default {
         : null
     },
     heroBgStyle () {
-      return `${this.$vuetify.breakpoint.smAndDown ? 'top: -56px;' : 'top: -64px;'} ${this.videoHero.settings.maxHeight ? 'max-height: ' + this.videoHero.settings.maxHeight : ''}; height: ${this.videoHero.settings.fullHeight ? this.videoHero.settings.height.full : this.videoHero.settings.height.custom}; ${this.videoHero.settings.mono ? 'filter: grayscale();' : ''}`
+      return `${this.$vuetify.breakpoint.smAndDown ? 'top: -56px;' : 'top: -64px;'} ${this.videoHero.settings.maxHeight ? 'max-height: ' + this.videoHero.settings.maxHeight : ''}; height: ${this.videoHero.settings.fullHeight ? this.$vuetify.breakpoint.smAndDown ? `calc(${this.videoHero.settings.height.full} - 56px)` : this.videoHero.settings.height.full : this.videoHero.settings.height.custom}; ${this.videoHero.settings.mono ? 'filter: grayscale();' : ''}; margin-bottom: ${this.$vuetify.breakpoint.smAndDown ? '-56px' : '-64px'};`
     },
     heroPoster () {
       return this.$vuetify.breakpoint.smAndUp ? this.videoHero.poster.desktop : this.videoHero.poster.mobile
@@ -139,15 +225,43 @@ export default {
     }
   },
   created () {
-    this.setProductRowEstates()
+    setTimeout(() => {
+      this.showVideo = true
+    }, 2000)
+  },
+  mounted () {
+    setTimeout(() => {
+      this.showVideo = true
+    }, 900)
   },
   methods: {
-    setProductRowEstates () {
-      if (!!this.cookies && !!this.cookies.response && this.cookies.response.value.length && !this.productRowEstates) {
-        const response = [...this.cookies.response.value]
-        const shuffled = response.sort(() => 0.5 - Math.random())
-        this.productRowEstates = shuffled.slice(0, 3)
+    async trigger () {
+      const data = {
+        name: 'Objekt',
+        id: 'OBJ19854_1958618774',
+        event: 'Update',
+        type: 'Estate',
+        subtype: 'HousingCooperative',
+        customerId: 'M19854',
+        chainId: null,
+        tenantId: 'T1022',
+        data: {
+          status: 'ForSale'
+        }
       }
+      const config = {
+        method: 'post',
+        url: 'https://jenkins.sthlmestate.se/generic-webhook-trigger/invoke?token=d7b528fa5d11f60b2409e60b48c5d531',
+        data,
+        withCredentials: false
+      }
+      await axios(config)
+        .then((res) => {
+          console.log(res)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     }
   }
 }
@@ -155,16 +269,16 @@ export default {
 
 <style lang="sass">
 .logo-stacked-hero
-  width: 70%
+  width: 100%
   max-width: 500px
   height: auto
   margin: 0 auto
 
 .content-inner
   position: absolute
-  width: 80%
-  max-width: 650px
-  top: 40%
+  width: 100%
+  //max-width: 650px
+  top: 50%
   left: 50%
   transform: translate(-50%, -50%)
   text-align: center

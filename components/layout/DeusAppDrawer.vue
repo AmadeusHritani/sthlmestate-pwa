@@ -18,6 +18,18 @@
             mdi-close
           </v-icon>
         </v-col>
+        <!--        <v-col>-->
+        <!--          <v-btn-->
+        <!--            :to="$i18n.locale === 'sv' ? switchLocalePath('en') : switchLocalePath('sv')"-->
+        <!--            icon-->
+        <!--          >-->
+        <!--            <v-avatar color="transparent">-->
+        <!--              <span class="text-h6 bold">-->
+        <!--                {{ $i18n.locale === 'en' ? 'sv' : 'en' }}-->
+        <!--              </span>-->
+        <!--            </v-avatar>-->
+        <!--          </v-btn>-->
+        <!--        </v-col>-->
         <v-col>
           <v-btn
             icon
@@ -30,7 +42,7 @@
     </div>
     <v-list>
       <v-list-item
-        v-for="(item, i) in navigator.top.items"
+        v-for="(item, i) in deusNav.top.items"
         :key="i"
         :to="$txt(item.slug)"
         router
@@ -67,7 +79,7 @@ export default {
       type: Boolean,
       default: true
     },
-    navigator: {
+    deusNav: {
       type: Object,
       default () {
         return {}
@@ -91,6 +103,11 @@ export default {
 </script>
 
 <style lang="scss">
+.v-navigation-drawer {
+  transition: transform .8s ease !important;
+  display: flex !important;
+  opacity: 1 !important;
+}
 .theme--dark.v-navigation-drawer {
   background-color: var(--v-secondary-base);
   .v-list-item--link:before {

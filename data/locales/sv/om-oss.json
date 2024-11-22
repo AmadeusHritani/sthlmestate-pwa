@@ -1,0 +1,22 @@
+{
+  "title": "Sthlm Estate",
+  "description": "Sthlm Estate",
+  "components": [
+    {
+      "name": "intro",
+      "flex-align" : "center",
+      "flex-justify" : "center",
+      "width": {
+        "xs" : "12",
+        "md" : "7",
+        "lg" : "6"
+      },
+      "min-height" : "500px",
+      "txt-align" : "center",
+      "bg-color" : {
+        "light" : "",
+        "dark" : ""
+      }
+    }
+  ]
+}

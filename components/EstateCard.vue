@@ -1,19 +1,24 @@
 <template>
   <nuxt-link
-    :to="`${$txt(core.settings.navigator.top.items[1].slug)}/${estateObject && estateObject.id ? estateObject.id : ''}`"
+    :to="`${listPageSlug}/${estateObject && estateObject.id ? estateObject.id : ''}`"
     :exact="false"
     style="display:block; text-decoration: none !important;"
   >
     <v-card flat color="transparent" class="estate-card" tile>
-      <!-- <span class="label">
-        {{ estate.status.name }}
-      </span> -->
-      <v-img v-if="estateObject && estateObject.urlThumbnail" :src="estateObject.urlThumbnail" :height="height" />
+      <v-img v-if="estateObject && estateObject.urlThumbnail" :src="estateObject.urlThumbnail" :height="height">
+        <span v-if="estateObject.isBiddingOngoing" class="label">
+          Budgivning
+        </span>
+      </v-img>
       <v-img
         v-else
-        :src="`/placeholder-home.png`"
+        :src="`placeholder-home.png`"
         :height="height"
-      />
+      >
+        <span v-if="estateObject.isBiddingOngoing" class="label">
+          Budgivning
+        </span>
+      </v-img>
       <v-list-item v-if="estateObject" three-line class="pa-3">
         <v-list-item-content>
           <div class="text-overline mb-2 date">
@@ -38,25 +43,26 @@
               <span class="inline-label">Monthly Fees:</span>
               <span class="value">{{ estateObject.monthlyFee }}</span>
             </span> -->
-            <div v-if="estateObject.startingPrice || estateObject.monthlyFee" class="detail-item price">
+            <div v-if="estateObject.startingPrice" class="detail-item price">
               <div class="value">
                 <money-format
-                  v-if="estateObject.startingPrice"
                   :value="estateObject.startingPrice"
                   locale="sv-SE"
                   currency-code="SEK"
                   :subunits-value="false"
                   :hide-subunits="true"
                 />
-                <template v-if="estateObject.monthlyFee">
-                  <money-format
-                    :value="estateObject.monthlyFee"
-                    locale="sv-SE"
-                    currency-code="SEK"
-                    :subunits-value="false"
-                    :hide-subunits="true"
-                  />/mån
-                </template>
+              </div>
+            </div>
+            <div v-if="estateObject.monthlyFee" class="detail-item price">
+              <div class="value">
+                <money-format
+                  :value="estateObject.monthlyFee"
+                  locale="sv-SE"
+                  currency-code="SEK"
+                  :subunits-value="false"
+                  :hide-subunits="true"
+                />/mån
               </div>
             </div>
           </div>
@@ -84,7 +90,7 @@ export default {
       type: Object,
       default () {
         return {
-          desktop: 300,
+          desktop: 450,
           mobile: 250
         }
       }
@@ -98,6 +104,9 @@ export default {
   computed: {
     height () {
       return this.$vuetify.breakpoint.mdAndDown ? this.gridItemHeight.mobile : this.gridItemHeight.desktop
+    },
+    listPageSlug () {
+      return this.$txt(core.settings.deusNav.top.items.find(it => it.name === 'estate-list').slug)
     }
   },
   created () {
@@ -110,32 +119,61 @@ export default {
     }),
     goToEstate (estateObject) {
       this.updateCurrentEstate(estateObject)
-      this.$router.push(`/fastigheter/${estateObject.id}`)
+      this.$router.push(`/bostader/${estateObject.id}`)
     }
   }
 }
 </script>
-<style lang="scss">
+<style scoped lang="scss">
 .estate-card {
-  margin: 20px 0;
+  margin: 10px 0;
   position: relative;
   font-family: Barlow, Arial !important;
   text-align: center;
+  &:hover {
+    .v-image {
+      transform: scale(103%);
+      box-shadow: 0 6px 15px rgba($color: #000000, $alpha: .3);
+      .v-image__image--cover {
+        transform: scale(110%);
+      }
+      .label {
+        background-color: rgba(0,0,0,.3);
+        letter-spacing: 5px;
+      }
+    }
+  }
+  .v-image {
+    transform: scale(100%);
+    // border: 1px solid #FFFFFF;
+    transition: all .4s ease-in-out;
+    box-shadow: 0 2px 8px rgba($color: #000000, $alpha: .2);
+    .v-image__image--cover {
+      transition: transform .7s ease;
+      transform: scale(100%);
+    }
+  }
   * {
     text-decoration: none !important;
     text-decoration-thickness: 0 !important;
   }
   .label {
+    background-color: rgba(0,0,0,.2);
+    transition: all .4s ease-in-out;
     position: absolute;
-    font-family: Barlow, Arial;
+    font-family: Barlow, Arial, serif;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,.5);
     font-size: .95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
     z-index: 1;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 3px 10px;
+    left: 0;
+    padding: 3px 10px 6px 10px;
+    border-bottom-right-radius: 10px;
     text-transform: uppercase;
-    background-color: var(--v-secondary-base);
+    //background-color: rgba(200,200,200, .5);
   }
   .date { line-height: 1; font-size: 1rem !important; font-weight: 400; }
   .street {

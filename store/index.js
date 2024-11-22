@@ -1,30 +1,19 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-import core from '@/config/core'
-import {
-  initCookies, getRequestCookie,
-  initResponseCookie, initSettingsCookie
-} from '@/functions/cookie'
-import { getEstates, getEstateData } from '@/functions/api'
-import { getCurrentPage } from '@/functions/helpers'
-import { cacheEstateImages } from '~/images'
+import core from '../config/core'
+import { getRequestCookie, initCookies, initResponseCookie, initSettingsCookie } from '~/functions/cookie'
+import { getEmployees, getEstateData, getEstates } from '~/functions/api'
+// import { cacheBrokerImage, cacheEmployeeImage, cacheEstateFiles, cacheEstateImages } from '../images'
+import { getCurrentPage } from '~/functions/helpers'
 // const fs = require('fs')
 
 export const state = () => ({
+  employees: [],
   cookies: null,
-  navigator: core.settings.navigator,
+  filteredEstatesList: null,
+  deusNav: core.settings.deusNav,
   currentEstate: null,
   productRowEstates: null,
-  // randomProducts: [
-  //   {
-  //     page: 'index',
-  //     qty: 3,
-  //     cols: 12,
-  //     sm: 6,
-  //     md: 4,
-  //     data: null
-  //   }
-  // ],
   currentEstateObj: null,
   currentPage: null,
   loading: false,
@@ -41,8 +30,8 @@ export const getters = {
   cookies (state) {
     return state.cookies
   },
-  getOffsetTop (state) {
-    return state.offsetTop
+  employees (state) {
+    return state.employees
   }
 }
 
@@ -85,68 +74,72 @@ export const actions = {
   setSettingsCookie ({ commit }, state, payload) {
     commit('SET_SETTINGS_COOKIE', state, payload)
   },
+  setEmployees ({ commit }, state, payload) {
+    commit('SET_EMPLOYEES', state, payload)
+  },
   initCookies ({ commit }, state, payload) {
     commit('INIT_COOKIES', state, payload)
   },
 
-  async nuxtServerInit ({ dispatch }, { app, route, store, payload }) {
-    dispatch('updatePage', getCurrentPage(route, core.settings.navigator.top.items))
+  async nuxtServerInit ({ dispatch }, { app, route, store, router }) {
+    dispatch('updatePage', getCurrentPage(route, core.settings.deusNav.top.items))
     let estates = null
+    let getEstatesResponse = null
     const cookies = store.state.cookies
-    const response = cookies ? cookies.response : null
-    const settings = cookies ? cookies.settings : null
-    if (payload) {
-      estates = payload
-      initResponseCookie(false, response, dispatch, estates)
-      initSettingsCookie(false, settings, null, dispatch)
-    } else {
-      initCookies(store.state.cookies, core.cookies, dispatch)
-      const requestCookie = getRequestCookie(app.$secookie, store.state.cookies.request, dispatch, core.settings)
-      let estates = null
-      try {
-        estates = await getEstates(app.$secookie, true, app.$axios, requestCookie, false)
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.error(error)
-      }
-      const shuffled = [...estates].sort(() => 0.5 - Math.random())
-      const productRowEstates = shuffled.slice(0, 10)
-      dispatch('updateProductRowEstates', productRowEstates)
+    const response = cookies ? cookies.response : core.cookies.response
+    const settings = cookies ? cookies.settings : core.cookies.settings
+    initCookies(store.state.cookies, core.cookies, dispatch)
+    const requestCookie = getRequestCookie(app.$secookie, store.state.cookies.request, dispatch, core.settings)
+    try {
+      getEstatesResponse = await getEstates(app.$secookie, true, app.$axios, requestCookie)
+      estates = getEstatesResponse.estates
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error)
+    }
 
-      initResponseCookie(app.$secookie, store.state.cookies.response, dispatch, estates)
-      initSettingsCookie(app.$secookie, store.state.cookies.settings, null, dispatch)
-      if (route.name && route.name.includes('fastigheter-estate') && !!route.params.estate && estates && estates.length) {
-        // Get Estate Object
-        /** ************* */
-        // Get Current Estate & its Type from Response:
-        const currentEstate = estates.find(est => est.id === route.params.estate)
-        if (currentEstate && currentEstate.id) {
-          const estateId = currentEstate.id
-          const estateType = currentEstate.type
-          let estateObject = null
-          // let cached = false
-          try {
-            estateObject = await getEstateData(app.$axios, estateId, estateType)
-            // console.log(estateObject)
-            // cacheEstateImages(app.$axios, estateId, estateObject.images)
-            await cacheEstateImages(app.$axios, estateId, estateObject.images)
-              .then((res) => {
-                estateObject.images = [...res]
-                dispatch('updateCurrentEstateObj', estateObject)
-              })
-              .catch(() => {
-                console.log('Something went wrong!')
-                dispatch('updateCurrentEstateObj', estateObject)
-              })
-          } catch (error) {
-            console.error(error)
-          }
+    const productRowEstates = estates ? estates.slice(0, 10) : []
+    dispatch('updateProductRowEstates', productRowEstates)
+
+    initResponseCookie(app.$secookie, store.state.cookies.response, dispatch, estates)
+    // initSettingsCookie(app.$secookie, store.state.cookies.settings, null, dispatch)
+
+    // Get Employees (Team on Kontakt page) //
+    /* ************************************ */
+    let employees = []
+    try {
+      employees = await getEmployees()
+    } catch (error) {
+      console.error(error)
+    }
+    dispatch('setEmployees', employees)
+
+    if (route && route.name && route.name.includes('bostader-estate') && !!route.params.estate && estates && estates.length) {
+      // Get Estate Object from list in Store //
+      /* ************************************ */
+      const currentEstate = estates.find(est => est.id === route.params.estate)
+      if (currentEstate && currentEstate.id) {
+        const estateId = route.params.estate
+        const estateType = currentEstate.type
+        let estateObject = null
+        try {
+          estateObject = await getEstateData(app.$axios, estateId, estateType)
+        } catch (error) {
+          console.error(error)
         }
+        dispatch('updateCurrentEstateObj', estateObject)
+      } else if (router) {
+        router.replace('not-found')
       }
+    } else {
+      dispatch('updateCurrentEstateObj', null)
     }
   }
 }
 export const mutations = {
+  SET_EMPLOYEES (state, payload) {
+    state.employees = payload
+  },
   UPDATE_LOADING (state, payload) {
     state.loading = payload
   },
@@ -169,9 +162,9 @@ export const mutations = {
     const currentEstate = state.currentEstate
     const estateObj = payload
     if (currentEstate) {
-      const mainImageUrl = currentEstate.urlThumbnail.replace('thumb', '4k')
-      estateObj.mainImageUrl = mainImageUrl
-      console.log(mainImageUrl)
+      estateObj.mainImageUrl = currentEstate.urlThumbnail
+        ? currentEstate.urlThumbnail.replace('hd', '4k').replace('thumb', '4k')
+        : null
     }
     state.currentEstateObj = estateObj
   },

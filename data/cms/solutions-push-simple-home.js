@@ -3,7 +3,7 @@ export default {
   dark: false,
   dense: true,
   maxWidth: '1150px',
-  showIcon: true,
+  showIcon: false,
   showHeading: true,
   showText: true,
   icon: {
@@ -19,10 +19,10 @@ export default {
   },
   heading: {
     label: 'Hitta ditt hem hos oss',
-    uppercase: true,
+    uppercase: false,
     size: {
-      desktop: '2.5rem',
-      mobile: '2rem'
+      desktop: '2.4rem',
+      mobile: '2.5rem'
     }
   },
   text: {
@@ -41,8 +41,8 @@ export default {
       light: 'transparent'
     },
     size: {
-      desktop: '1.2rem',
-      mobile: '.9rem'
+      desktop: '1.1rem',
+      mobile: '1rem'
     }
   },
   actions: {
@@ -53,12 +53,12 @@ export default {
       to: '/om-oss',
       color: null, // default: '#ffffff'. Or example: var(--v-secondary-base)
       text: true,
-      outlined: false,
+      outlined: true,
       dark: false,
-      tile: false,
+      tile: true,
       flat: false,
       raised: false,
-      elevation: null,
+      elevation: 0,
       light: false,
       block: {
         desktop: false,
@@ -68,40 +68,12 @@ export default {
       icon: false,
       showLoader: false,
       plain: false,
-      rounded: true,
       size: {
         desktop: 'large', // 'x-small'|'small'|'default'|'large'|'x-large'
         mobile: 'default'
       },
       prepend: null,
       append: null
-    },
-    cta2: {
-      show: false,
-      label: 'Read more',
-      to: '/',
-      color: null, // default: '#ffffff'. Or example: var(--v-secondary-base)
-      text: true,
-      outlined: false,
-      dark: false,
-      tile: false,
-      flat: false,
-      raised: false,
-      elevation: null,
-      light: false,
-      block: {
-        desktop: false,
-        mobile: true
-      },
-      floating: false,
-      icon: false,
-      showLoader: false,
-      plain: false,
-      rounded: true,
-      size: {
-        desktop: 'large', // 'x-small'|'small'|'default'|'large'|'x-large'
-        mobile: 'default'
-      }
     }
   }
 }

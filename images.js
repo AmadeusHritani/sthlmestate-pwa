@@ -1,73 +1,23 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-import fs from 'fs'
 // import fse from 'fs-extra'
 import axios from 'axios'
 import core from './config/core'
 const path = require('path')
 
-export async function cacheFiles ($axios, estateId, files) {
-  $axios.setHeader('Authorization', process.env.API_AUTHORIZATION)
-  $axios.setHeader('Access-Control-Allow-Origin', '*')
-  const images = []
-  const ep = core.api.requests.endpoints.file
-  const customerId = ep.params.default.customerId
-  if (files && files.length) {
-    const dir = path.resolve(`static/files/${estateId}`)
-    if (process.server) {
-      try {
-        fs.mkdirSync(dir)
-      } catch {
-        // console.log('Directory already exists...')
-      }
-    }
-    for (let i = 0; i < files.length; i++) {
-      if (files[i].id) {
-        const fileId = files[i].id
-        const fileName = `${fileId}.${files[i].extension}`
-        const estateFilesDir = 'estate-files'
-        const staticRoot = 'static'
-        let hasFile = false
-        const file = path.resolve('', `${staticRoot}/${estateFilesDir}/${estateId}/`, fileName)
-        if (process.server) {
-          const fse = require('fs-extra')
-          try {
-            hasFile = await fse.pathExists(file)
-          } catch (error) {
-            hasFile = false
-          }
-          if (!hasFile) {
-            const fileData = await $axios.$get(`${ep.action}?customerId=${customerId}&fileId=${fileId}`)
-            fs.writeFile(file, fileData, 'base64', function (err) {
-              if (err) {
-                console.log('Error saving the file...')
-                console.log(err)
-              }
-            })
-          }
-        }
-        images[i] = files[i]
-        images[i].cdnReferences.push(`${estateFilesDir}/${estateId}/${fileName}`)
-      }
-    }
-  }
-  return images
-}
+const base = process.server ? 'https://connect.maklare.vitec.net' : '/api'
 
-export async function cacheEstateImages ($axios, estateId, estateImages) {
-  $axios.setHeader('Authorization', process.env.API_AUTHORIZATION)
-  $axios.setHeader('Access-Control-Allow-Origin', '*')
+export async function cacheEstateImages ($axios, estateId, estateImages, doCache = true) {
   const images = []
   const ep = core.api.requests.endpoints.image
   const customerId = ep.params.default.customerId
   if (estateImages && estateImages.length) {
     const dir = path.resolve(`static/estate-images/${estateId}`)
-    if (process.server) {
+    if (doCache && process.server) {
       try {
+        const fs = require('fs')
         fs.mkdirSync(dir)
-      } catch {
-        // console.log('Directory already exists...')
-      }
+      } catch {}
     }
     for (let i = 0; i < estateImages.length; i++) {
       if (estateImages[i].imageId) {
@@ -75,19 +25,26 @@ export async function cacheEstateImages ($axios, estateId, estateImages) {
         const fileName = `${imageId}.${estateImages[i].extension}`
         const estateImagesDir = 'estate-images'
         const staticRoot = 'static'
-        const imgParams = 'w=1400&quality=80'
+        const imgParams = estateImages[i].orderNumber === 1 ? 'w=1920&quality=95&mode=max' : 'w=1920&quality=90&mode=max'
         let hasFile = false
         const file = path.resolve('', `${staticRoot}/${estateImagesDir}/${estateId}/`, fileName)
-        if (process.server) {
+        if (doCache && process.server) {
           const fse = require('fs-extra')
           try {
             hasFile = await fse.pathExists(file)
-          } catch (error) {
+          } catch {
             hasFile = false
           }
           if (!hasFile) {
-            const fileData = await $axios.$get(`${ep.action}?customerId=${customerId}&ImageId=${imageId}&${imgParams}`)
-            fs.writeFile(file, fileData, 'base64', function (err) {
+            const fileData = await axios({
+              method: 'get',
+              url: `${base}${ep.action}?customerId=${customerId}&ImageId=${imageId}&${imgParams}`,
+              headers: {
+                Authorization: process.env.API_AUTHORIZATION
+              }
+            })
+            const fs = require('fs')
+            await fs.writeFile(file, fileData.data, 'base64', function (err) {
               if (err) {
                 console.log('Error saving the file...')
                 console.log(err)
@@ -96,63 +53,151 @@ export async function cacheEstateImages ($axios, estateId, estateImages) {
           }
         }
         images[i] = estateImages[i]
-        images[i].cdnReferences.push(`${estateImagesDir}/${estateId}/${fileName}`)
+        images[i].cdnReferences = [`${estateImagesDir}/${estateId}/${fileName}`]
       }
     }
   }
   return images
 }
 
-export async function cacheBrokerImage ($axios, estateId, brokerId, brokerImage) {
-  $axios.setHeader('Authorization', process.env.API_AUTHORIZATION)
-  $axios.setHeader('Access-Control-Allow-Origin', '*')
-  let image = {}
+export async function cacheEstateFiles ($axios, estateId, estateFiles, doCache = true) {
+  // $axios.setHeader('Authorization', process.env.API_AUTHORIZATION)
+  // $axios.setHeader('Access-Control-Allow-Origin', '*')
+  const files = []
+  const ep = core.api.requests.endpoints.file
+  const customerId = ep.params.default.customerId
+  if (estateFiles && estateFiles.length) {
+    const dir = path.resolve('', `static/estate-files/${estateId}`)
+    if (doCache && process.server) {
+      try {
+        const fs = require('fs')
+        fs.mkdirSync(dir)
+      } catch {}
+    }
+    for (let i = 0; i < estateFiles.length; i++) {
+      if (estateFiles[i].id) {
+        files[i] = estateFiles[i]
+        const fileId = estateFiles[i].id
+        const fileName = `${fileId}${estateFiles[i].extension}`
+        const estateFilesDir = 'estate-files'
+        const staticRoot = 'static'
+        let hasFile = false
+        const file = path.resolve('', `${staticRoot}/${estateFilesDir}/${estateId}/`, fileName)
+        if (doCache && process.server) {
+          const fse = require('fs-extra')
+          try {
+            hasFile = await fse.pathExists(file)
+          } catch {}
+          if (!hasFile) {
+            const fileData = await axios({
+              method: 'get',
+              url: `${base}${ep.action}?customerId=${customerId}&fileId=${fileId}`,
+              headers: {
+                Authorization: process.env.API_AUTHORIZATION
+              }
+            })
+            const fs = require('fs')
+            fs.writeFile(file, fileData.data, 'base64', function (err) {
+              if (err) {
+                console.log('Error saving the file...')
+                console.log(err)
+              }
+            })
+          }
+        }
+        files[i].src = `/${estateFilesDir}/${estateId}/${fileName}`
+      }
+    }
+  }
+  return files
+}
+
+export async function cacheBrokerImage ($axios, estateId, brokerId, brokerImage, doCache = true) {
   const ep = core.api.requests.endpoints.image
   const customerId = ep.params.default.customerId
+  const image = brokerImage || null
   if (estateId && brokerImage) {
     const dir = path.resolve(`static/estate-images/${estateId}/${brokerId}`)
-    if (process.server) {
+    if (doCache && process.server) {
       try {
+        const fs = require('fs')
         fs.mkdirSync(dir)
-      } catch {
-        // console.log('Directory already exists...')
-      }
+      } catch {}
     }
     const imageId = brokerImage.imageId
     const fileName = `${imageId}.${brokerImage.extension}`
-    const brokerImageDir = `estate-images/${estateId}/${brokerId}`
+    const estateImagesDir = 'estate-images'
     const staticRoot = 'static'
-    const imgParams = 'w=600&quality=90'
+    const imgParams = 'quality=100'
     let hasFile = false
-    const file = path.resolve('', `${staticRoot}/${brokerImageDir}/`, fileName)
+    const file = path.resolve('', `${staticRoot}/${estateImagesDir}/${estateId}/${brokerId}/`, fileName)
+    if (doCache && process.server) {
+      const fse = require('fs-extra')
+      try {
+        hasFile = await fse.pathExists(file)
+      } catch {
+        hasFile = false
+      }
+      if (!hasFile) {
+        const fileData = await axios({
+          method: 'get',
+          url: `${base}${ep.action}?customerId=${customerId}&ImageId=${imageId}&${imgParams}`,
+          headers: {
+            Authorization: process.env.API_AUTHORIZATION
+          }
+        })
+        const fs = require('fs')
+        await fs.writeFile(file, fileData.data, 'base64', function (err) {
+          if (err) {
+            console.log('Error saving the file...')
+            console.log(err)
+          }
+        })
+      }
+    }
+    image.cdnReferences.push(`estate-images/${estateId}/${brokerId}/${fileName}`)
+  }
+  return image
+}
+
+export async function cacheEmployeeImage (employeeImage) {
+  const ep = core.api.requests.endpoints.image
+  const customerId = ep.params.default.customerId
+  const image = employeeImage
+  if (employeeImage) {
+    const imgParams = 'w=700&quality=100'
+    const teamImagesDir = 'team-images'
+    const staticRoot = 'static'
+    const imageId = employeeImage.imageId
+    const fileName = `${imageId}.${employeeImage.extension}`
+    let hasFile = false
+    const file = path.resolve('', `${staticRoot}/${teamImagesDir}/`, fileName)
     if (process.server) {
       const fse = require('fs-extra')
       try {
         hasFile = await fse.pathExists(file)
-      } catch (error) {
+      } catch {
         hasFile = false
       }
       if (!hasFile) {
-        let fileData = null
-        try {
-          fileData = await $axios.$get(`${ep.action}?customerId=${customerId}&ImageId=${imageId}&${imgParams}`)
-          // console.log(fileData)
-        } catch (error) {
-          console.log('Failed to get broker image data')
-        }
-        if (fileData) {
-          // console.log('Data ready! Begin to write...')
-          fs.writeFile(file, fileData, 'base64', function (err) {
-            if (err) {
-              console.log('Error saving the file...')
-              console.log(err)
-            }
-          })
-        }
+        const fileData = await axios({
+          method: 'get',
+          url: `${base}${ep.action}?customerId=${customerId}&ImageId=${imageId}&${imgParams}`,
+          headers: {
+            Authorization: process.env.API_AUTHORIZATION,
+            'Content-Type': `image/${employeeImage.extension}`
+          }
+        })
+        const fs = require('fs')
+        await fs.writeFile(file, fileData.data, 'base64', function (err) {
+          if (err) {
+            console.log('Error saving the file...')
+            console.log(err)
+          }
+        })
       }
     }
-    image = brokerImage
-    image.cdnReferences.push(`${brokerImageDir}/${fileName}`)
+    image.cdnReferences.push(`${teamImagesDir}/${fileName}`)
   }
   return image
 }

@@ -1,22 +1,134 @@
 {
+  "pages": {
+    "home": {},
+    "estates": {},
+    "about": {},
+    "contact": {
+      "hero": {
+        "title-1": "Kontakta oss",
+        "title-2": "så vägleder vi dig",
+        "details": "Att hitta ett nytt hem eller sälja sitt nuvarande kräver en dedikerad mäklare med fingertoppkänsla. Vi har hjälpt många kunder att hitta hem. Kontakta oss så hjälper vi dig vidare."
+      }
+    }
+  },
+  "forms": {
+    "mail-form-title-default": "Anmäl Intresse",
+    "mail-form-title--page-contact-us": "Kontakta Oss",
+    "mail-form--show-on-homepage": "yes",
+    "mail-form--show-on-about-us": "no",
+    "mail-form--show-on-objects-list": "no",
+    "mail-form--show-on-object-details": "no",
+    "mail-form--show-on-privacy": "no",
+    "mail-form--show-on-gdpr": "no",
+    "mail-form--messages--required-fname": "Förnamn krävs.",
+    "mail-form--messages--required-lname": "Efternamn krävs.",
+    "mail-form--messages--required-email": "E-post krävs.",
+    "mail-form--messages--required-phone": "Telefonnummer krävs.",
+    "mail-form--messages--error-email-format": "Detta är inte ett giltigt e-postadress.",
+    "first-name": "Förnamn",
+    "last-name": "Efternamn",
+    "email": "E-post",
+    "phone": "Telefonnummer"
+  },
+  "phone-number": "08-889360",
   "search": {
     "label": "Sök",
-    "placeholder": "Sök fastigheter.."
+    "placeholder": "Sök bostader.."
   },
+  "back-to-top": "UPP",
+  "coming-soon": "Var god dröj",
+  "read-more": "Läs mer",
+  "our-latest-objects": "Våra Senaste Objekt",
   "back": "Tillbaka",
   "back-to-list": "Tillbaka till listan",
   "description": "Beskrivning",
-  "facts": "Fakta",
+  "other": {
+    "label": "Övrig",
+    "text": {
+      "balcony": "Balkong",
+      "parking": "Parkering",
+      "parkingLot": "Bilplats",
+      "patio": "Uteplats",
+      "squereMeterype": "Mark som ingår i upplåtelsen",
+      "summary": "Sammanfattning",
+      "type": "Typ"
+    }
+  },
+  "facts": {
+    "label": "Fakta"
+  },
+  "bidding": "Budgivning pågår",
+  "bidder": "Budgivare",
   "operation-cost": "Driftkostnad",
-  "waterAndDrain": "Vatten Och Avlopp",
-  "electricity": "Elkostnad",
-  "heating": "Uppvärmning",
-  "insurance": "Försäkring",
-  "sum": "Total Driftkostnad",
-  "personsInTheHousehold": "Personer I Hushållet",
+  "operations": {
+    "annualFeeCommunity": "Årsavgift Till Samfällighet",
+    "annualFeeCommunityIncluded": "Kommentar",
+    "chimneySweeping": "Chimney Sweeping",
+    "commentAnnualFee": "Kommentar avgift",
+    "commentary": "Kommentar",
+    "electricity": "Elkostnad",
+    "heating": "Uppvärmning",
+    "insurance": "Försäkring",
+    "maintenance": "Underhåll",
+    "other": "Andra",
+    "personsInTheHousehold": "Personer I hushållet",
+    "road-community-fee": "Väg/samfällighetsavgift",
+    "roadCharge": "vägavgift",
+    "sanitation": "Renhållning",
+    "sum": "Total Driftkostnad",
+    "waterAndDrain": "Vatten Och avlopp"
+  },
   "association": "Förening",
   "documents": "Dokument",
-  "viewings": "Planerade Visningar",
+  "viewings": {
+    "label": "Planerade Visningar",
+    "more-options": "Färre Val",
+    "less-options": "Fler Val",
+    "no-options": "välj visning",
+    "select-time": "välj tid",
+    "sms-reminder": "SMS Påminnelse",
+    "minutes": "minuter",
+    "messages": {
+      "vi": {
+        "main": "Det finns inga planerade visningar",
+        "call": "För att boka en visning, vänligen ring oss på",
+        "form-unfilled": "Du kan också anmäla intresse så kontaktar vi dig inom kort.",
+        "form-filled": "Din data ser bra ut. Tryck på 'Skicka' för att fortsätta."
+      },
+      "is": {
+        "main": "Välj en förplanerad visning",
+        "call": "Behövs hjälp? Ring oss på",
+        "form-unfilled": "Fyll i alla formulärfält.",
+        "form-filled": "Formuläret är klart att skicka."
+      },
+      "form": "Fyll i dina kontaktuppgifter så kontaktar vi dig inom kort.",
+      "deselected": "Välj en visningstid.",
+      "deselected-title": "Click to select Viewing time",
+      "selected-one": "du har valt:",
+      "selected-multiple": "Multiple Viewing times are selected.",
+      "selected-title": "ett val måste göras"
+    }
+  },
+  "all": "Våra Hem",
   "show-all": "Visa Allt",
-  "show-less": "Visa Mindre"
+  "send": "Skicka",
+  "show-less": "Visa Mindre",
+  "location": "Plats",
+  "go-to-location": "Plats",
+  "floorplan": "Planritning",
+  "go-to-floorplan": "Planritning",
+  "photos": "Bilder",
+  "go-to-photos": "bilder",
+  "interest-privacy-text1": "Jag har tagit del av",
+  "interest-privacy-link": "Privacy",
+  "interest-privacy-hint": "Information om behandling av personuppgifter",
+  "interest-privacy-text2": "och samtycker till att mina uppgifter sparas.",
+  "interest-privacy-error": "Du måste godkänna att bli kontaktad.",
+  "email-success-msg": "Tack för visat intresse, vi hör av oss inom kort.",
+  "email-error-msg": " Ett fel har inträffat, försök gärna igen.",
+  "form": {
+    "evaluate": "Värdera",
+    "buy": "Köp",
+    "sell": "Sälj"
+  }
 }

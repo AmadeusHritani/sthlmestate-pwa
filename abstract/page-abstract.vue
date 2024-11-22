@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     ...mapState({
-      navigator: 'navigator'
+      deusNav: 'deusNav'
     })
   }
 }
